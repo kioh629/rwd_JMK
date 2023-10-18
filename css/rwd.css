@@ -1,0 +1,268 @@
+@charset "UTF-8";
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100%;
+}
+
+#back_img {
+  width: 100%;
+  height: 800px;
+  background-image: url(../img/background_1.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+/* 헤더 */
+header {
+  width: 100%;
+  height: 60px;
+  background: #005BAE;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+header li {
+  height: 60px;
+  line-height: 60px;
+}
+header #login_btn {
+  color: #fff;
+  font-size: 40px;
+}
+header #ham_btn {
+  color: #fff;
+  font-size: 40px;
+}
+header > div > li {
+  float: left;
+}
+header > div > ul {
+  float: right;
+}
+header > div > ul > li {
+  float: left;
+  margin-right: 10px;
+}
+
+#logo {
+  margin-left: 20px;
+}
+#logo img {
+  height: 40px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 햄버거메뉴 */
+#modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 1001;
+  display: none;
+}
+
+#ham_wrap {
+  width: 80%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  right: -80%;
+  z-index: 1002;
+  overflow-y: scroll;
+  /* 스크롤 되게 */
+}
+
+.xi-hamburger-out {
+  color: #414141;
+  font-size: 40px;
+  height: 60px;
+  line-height: 60px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#ham_top {
+  width: 80%;
+  margin: 70px auto 40px;
+  display: flex;
+}
+#ham_top li {
+  width: 33.3%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #414141;
+  text-align: center;
+}
+
+.ham_quick {
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 20px auto 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #414141;
+  border-radius: 10px;
+}
+.ham_quick i {
+  font-size: 20px;
+}
+
+#ham_login {
+  background: #C2E2FF;
+}
+
+#ham_go_ticket {
+  background: #C2FFC8;
+}
+
+#hammenu {
+  width: 80%;
+  margin: 40px auto 0px;
+}
+
+.ham_main {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 40px 10px 20px;
+}
+.ham_main i {
+  float: right;
+  clear: both;
+  position: relative;
+  right: 10px;
+}
+
+.ham_sub {
+  display: none;
+}
+.ham_sub li {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 0 10px 30px;
+}
+
+.show_in_tablet {
+  display: none;
+}
+
+/* 태블릿 항목 안보이게 */
+#tablet_pc_header {
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+#tablet_pc_header li {
+  height: 80px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+#full_menu {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 80px;
+  background: #fff;
+}
+
+#main_menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 70px;
+  margin: 0 auto;
+}
+#main_menu li {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+}
+
+#sub_menu {
+  width: 100%;
+  padding-top: 20px;
+  height: 200px;
+  background: #fff;
+  border-top: 1px solid #cecece;
+  display: none;
+}
+#sub_menu ul {
+  display: none;
+}
+#sub_menu ul li {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  float: left;
+  width: 25%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+#sub_menu ul li:hover {
+  color: #005BAE;
+  font-weight: 500;
+}
+
+.sub_box {
+  margin: 0 auto;
+}
+
+/* responsive window */
+@media screen and (min-width: 740px) {
+  #ham, #mobile_header {
+    display: none;
+  }
+  #logo img {
+    height: 50px;
+  }
+  header {
+    height: 80px;
+    position: absolute;
+  }
+  header li {
+    height: 80px;
+    line-height: 80px;
+  }
+  .show_in_tablet {
+    display: block;
+  }
+}
+@media screen and (min-width: 1320px) {
+  #header_wrap, #main_menu, .sub_box {
+    width: 1320px;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=rwd.css.map */
