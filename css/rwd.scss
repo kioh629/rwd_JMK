@@ -5,11 +5,23 @@
     top: 50%;
     transform: translateY(-50%);
 }
-@mixin sub_text {
-    color: #414141;
+
+@mixin sub_text_to_size {
     font-family: 'Noto Sans KR',sans-serif;
     font-weight: 400;
     font-size: 16px; 
+}
+
+@mixin sub_text {
+    color: #414141;
+    @include sub_text_to_size;
+}
+
+@mixin title_text {
+    color: #414141;
+    font-family: 'Noto Sans KR',sans-serif;
+    font-weight: 700;
+    font-size: 32px; 
 }
 
 *,*::after,*::before {
@@ -157,6 +169,7 @@ header {
         clear: both;
         position: relative;
         right: 10px;
+        top: 5px;
     }
 }
 
@@ -242,6 +255,99 @@ header {
     margin: 0 auto;
 }
 
+// 메인 - 승차권 예매
+#ticket {
+    position: relative;
+    top: 100px;
+    width: 90%;
+    height: 580px;
+    margin: 0 auto;
+    text-align: center;
+    
+    #ticket_category {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+
+        li {
+            @include sub_text_to_size;
+            color: #fff;
+            width: 25%;
+            height: 100px;
+            background: rgba(65,65,65,0.7);
+            border-radius: 20px;
+            margin-right: 1px;
+            padding-top: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .ticket_selected {
+            background: #fff;
+            color: #414141;
+            font-weight: 600;
+        }
+    }
+    #ticket_main {
+        width: 100%;
+        height: 550px;
+        background: #fff;
+        position: absolute;
+        top: 40px;
+        z-index: 2;
+        border-radius: 20px;
+    
+        >div {
+            float: left;
+            width: 100%;
+            height: 25%;
+        }
+
+        .ticket_sub {
+            @include sub_text;
+        }
+        .ticket_title {
+            @include title_text;
+        }
+        .ticket_xi {
+            font-size: 32px;
+            color: #414141;
+        }
+        #select_station {
+            display: flex;
+            justify-content: center;
+
+            ul {
+                height: 80px;
+                width: 70px;
+                margin: auto 10px;
+            }
+            >li {
+                height: 40px;
+                width: 40px;
+                margin: auto 10px;
+                border: 1px solid #414141;
+                border-radius: 40px;
+
+                i {
+                    margin: 4px auto;
+                }
+            }
+            .ticket_title {
+                margin-top: 5px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #414141;
+            }
+        } // select_station 종료
+        
+
+    }
+}
+
+
 
 /* responsive window */
 @media screen and (min-width:740px) {
@@ -263,6 +369,11 @@ header {
         display: block;
     }
 
+    #ticket #ticket_main>div {
+        float: left;
+        width: 50%;
+        height: 50%;
+    }
 }
 @media screen and (min-width:1320px) {
     #header_wrap, #main_menu, .sub_box {

@@ -26,9 +26,9 @@
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">고객센터</a></li>
                 <li>LANGUAGE<i class="xi-caret-down-min"></i></li>
-                <!-- LANGUAGE -> Select로 변경 必 -->
+                <!-- LANGUAGE -> Select로 변경 -->
                 <li><a href="#">기업전용</a></li>
-            </ul>
+            </ul> 
         </div>
     </header>
     <nav id="ham">
@@ -39,7 +39,7 @@
                 <li><a href="#">고객센터</a></li>
                 <li><a href="#">기업전용</a></li>
                 <li>LANGUAGE<i class="xi-caret-down-min"></i></li> 
-                <!-- LANGUAGE -> Select로 변경 必 -->
+                <!-- LANGUAGE -> Select로 변경 -->
             </ul>
             <div id="ham_login" class="ham_quick">
                 <a href="#">
@@ -182,5 +182,60 @@
         </div>
         
     </nav>
+    <section id="ticket">
+        <ul id="ticket_category">
+            <li class="ticket_selected">일반</li>
+            <li>할인</li>
+            <li>4인동반</li>
+            <li>관광열차</li>
+        </ul>
+        <div id="ticket_main"  class="cf">
+            <div id="select_station">
+                <ul>
+                    <li class="ticket_sub">출발지</li>
+                    <li class="ticket_title">서울</li>
+                    <!-- select로 변경 -->
+                </ul>
+                <li><i class="xi-renew ticket_xi"></i></li>
+                <ul>
+                    <li class="ticket_sub">도착지</li>
+                    <li class="ticket_title">부산</li>
+                    <!-- select로 변경 -->                    
+                </ul>                
+            </div>
+            <div id="select_date">
+                <ul class="cf">
+                    <li class="ticket_sub">날짜선택</li>
+                    <li class="date_selected">편도</li>
+                    <li>왕복</li>
+                </ul>
+                <ul class="cf">
+                    <li><i class="xi-calendar-check ticket_xi"></i></li>
+                    <li class="ticket_title">2023.10.21.토</li>
+                    <!-- select로 변경 -->                                
+                </ul>
+            </div>
+            <div id="select_NumberOfPeople">
+                <li class="ticket_sub">승객 연령 및 좌석</li>
+                <ul class="cf">
+                    <li><i class="xi-user-plus ticket_xi"></i></li>
+                    <li class="ticket_title">어른 1명</li>
+                    <!-- select로 변경 -->                                
+                </ul>
+            </div>
+            <div id="select_train">
+                <ul class="cf">
+                    <li class="ticket_sub">열차유형</li>
+                    <li class="train_selected">단일</li>
+                    <li>환승</li>
+                </ul>
+                <ul class="cf">
+                    <li><i class="xi-train ticket_xi"></i></li>
+                    <li class="ticket_title">KTX</li>
+                    <li id="search_btn"><i class="xi-search"></i></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

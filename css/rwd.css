@@ -151,6 +151,7 @@ header > div > ul > li {
   clear: both;
   position: relative;
   right: 10px;
+  top: 5px;
 }
 
 .ham_sub {
@@ -237,6 +238,97 @@ header > div > ul > li {
   margin: 0 auto;
 }
 
+#ticket {
+  position: relative;
+  top: 100px;
+  width: 90%;
+  height: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+#ticket #ticket_category {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+#ticket #ticket_category li {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  width: 25%;
+  height: 100px;
+  background: rgba(65, 65, 65, 0.7);
+  border-radius: 20px;
+  margin-right: 1px;
+  padding-top: 10px;
+}
+#ticket #ticket_category li:last-child {
+  margin-right: 0;
+}
+#ticket #ticket_category .ticket_selected {
+  background: #fff;
+  color: #414141;
+  font-weight: 600;
+}
+#ticket #ticket_main {
+  width: 100%;
+  height: 550px;
+  background: #fff;
+  position: absolute;
+  top: 40px;
+  z-index: 2;
+  border-radius: 20px;
+}
+#ticket #ticket_main > div {
+  float: left;
+  width: 100%;
+  height: 25%;
+}
+#ticket #ticket_main .ticket_sub {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+#ticket #ticket_main .ticket_title {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+#ticket #ticket_main .ticket_xi {
+  font-size: 32px;
+  color: #414141;
+}
+#ticket #ticket_main #select_station {
+  display: flex;
+  justify-content: center;
+}
+#ticket #ticket_main #select_station ul {
+  height: 80px;
+  width: 70px;
+  margin: auto 10px;
+}
+#ticket #ticket_main #select_station > li {
+  height: 40px;
+  width: 40px;
+  margin: auto 10px;
+  border: 1px solid #414141;
+  border-radius: 40px;
+}
+#ticket #ticket_main #select_station > li i {
+  margin: 4px auto;
+}
+#ticket #ticket_main #select_station .ticket_title {
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #414141;
+}
+
 /* responsive window */
 @media screen and (min-width: 740px) {
   #ham, #mobile_header {
@@ -255,6 +347,11 @@ header > div > ul > li {
   }
   .show_in_tablet {
     display: block;
+  }
+  #ticket #ticket_main > div {
+    float: left;
+    width: 50%;
+    height: 50%;
   }
 }
 @media screen and (min-width: 1320px) {
