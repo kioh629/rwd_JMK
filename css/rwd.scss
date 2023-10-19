@@ -36,9 +36,10 @@ body {
 }
 
 #back_img {
+    margin-top: 30px;
     width: 100%;
     height: 800px;
-    background-image: url(../img/background_1.jpg);
+    background-image: url(../img/background_0.jpg);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -184,11 +185,6 @@ header {
     }
 }
 
-.show_in_tablet {
-    display: none;
-}
-/* 태블릿 항목 안보이게 */
-
 #tablet_pc_header {
     color: #fff;
     font-family: 'Noto Sans KR',sans-serif;
@@ -206,6 +202,7 @@ header {
     width: 100%;
     height: 70px;
     position: absolute;
+    z-index: 3;
     top: 80px;
     background: #fff;
 }
@@ -230,7 +227,7 @@ header {
     width: 100%;
     padding-top: 20px;
     height: 200px;
-    background: #fff;
+    background: #C2E2FF;
     border-top: 1px solid #cecece;
     display: none;
     ul {
@@ -259,8 +256,8 @@ header {
 #ticket {
     position: relative;
     top: 100px;
-    width: 90%;
-    height: 580px;
+    width: 85%;
+    height: 500px;
     margin: 0 auto;
     text-align: center;
     
@@ -271,15 +268,15 @@ header {
         width: 100%;
         position: absolute;
         z-index: 1;
+        
 
         li {
             @include sub_text_to_size;
             color: #fff;
             width: 25%;
             height: 100px;
-            background: rgba(65,65,65,0.7);
-            border-radius: 20px;
-            margin-right: 1px;
+            background: rgba(58, 60, 83, 0.9);
+            border-radius: 15px;
             padding-top: 10px;
             &:last-child {
                 margin-right: 0;
@@ -299,6 +296,7 @@ header {
         top: 40px;
         z-index: 2;
         border-radius: 20px;
+        
     
         >div {
             float: left;
@@ -343,14 +341,100 @@ header {
             }
         } // select_station 종료
         
+        // select_date ~ _train 까지 양식 동시 적용
+        >div:nth-child(2), >div:nth-child(3), >div:nth-child(4) {
+            ul {
+                width: 270px;
+                margin: 0 auto;
+
+                &:first-child {
+                    height: 30px;
+                    line-height: 30px;
+                }
+                &:last-child {
+                    height: 60px;
+                    line-height: 60px;
+                    border-bottom: 1px solid #414141;
+                }
+            }
+        }
+        // 버튼
+        .ticket_btn {
+            float: right;
+                
+            a {
+                display: inline-block;
+                width: 40px;
+                height: 22px;
+                line-height: 20px;
+                margin-left: 5px;
+                font-size: 14px;
+                font-family: 'Noto Sans KR',sans-serif;
+                font-weight: 500;
+                border-radius: 5px;
+
+                color: #414141;
+                background: #fff;
+                border: 1px solid #cfcfcf;
+                
+                &.btn_selected {
+                    color: #fff;
+                    background: #005BAE;
+                    border: none;
+                }
+            }
+        } // .ticket_btn 종료
+        #select_NumberOfPeople {
+            >li {
+                width: 270px;
+                margin: 0 auto;
+                text-align: left;
+            }
+        }
+        #select_train {
+            .search_btn {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                vertical-align: center;
+                margin-left: 30px;
+                color: #fff;
+                background: #005BAE;
+                border-radius: 10px;
+            }
+        }
+
+    } // #ticket_main 종료
+} // #ticket 종료
+
+ul.cf {
+    li:first-child {
+    float: left;
+    clear: both;
+    }
+    li:last-child {
+        float: right
+    }
+    i {
+        vertical-align: middle;
 
     }
+
 }
 
 
-
 /* responsive window */
+.show_in_tablet {
+    display: none;
+}
+/* 태블릿 항목 안보이게 */
+
 @media screen and (min-width:740px) {
+    #back_img {
+        margin-top: -60px;
+    }
+
     #ham, #mobile_header {
         display: none;
     }
@@ -369,11 +453,22 @@ header {
         display: block;
     }
 
-    #ticket #ticket_main>div {
-        float: left;
-        width: 50%;
-        height: 50%;
+    #ticket {
+            top: 200px;
+        #ticket_main {
+            height: 350px;
+            &>div {
+                float: left;
+                width: 50%;
+                height: 50%;
+            } 
+            #select_date ul:first-child {
+                margin-top: 42.5px;
+            }
+        }
     }
+    
+
 }
 @media screen and (min-width:1320px) {
     #header_wrap, #main_menu, .sub_box {

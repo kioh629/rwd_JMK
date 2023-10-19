@@ -130,7 +130,7 @@
             <li><a href="#">기차역정보/노선도</a></li>       
         </ul>
         <div id="sub_menu">
-            <ul id="ticket" class="sub_box cf">
+            <ul id="sub_ticket" class="sub_box cf">
                 <li><a href="#">승차권예약</a></li>
                 <li><a href="#">발권/취소/ 변경</a></li>
                 <li><a href="#">정기승차권</a></li>
@@ -204,10 +204,12 @@
                 </ul>                
             </div>
             <div id="select_date">
-                <ul class="cf">
+                <ul class=" cf">
                     <li class="ticket_sub">날짜선택</li>
-                    <li class="date_selected">편도</li>
-                    <li>왕복</li>
+                    <li class="ticket_btn">
+                        <a href="#" class="btn_selected">편도</a>
+                        <a href="#">왕복</a>
+                    </li>
                 </ul>
                 <ul class="cf">
                     <li><i class="xi-calendar-check ticket_xi"></i></li>
@@ -226,13 +228,16 @@
             <div id="select_train">
                 <ul class="cf">
                     <li class="ticket_sub">열차유형</li>
-                    <li class="train_selected">단일</li>
-                    <li>환승</li>
+                    <li class="ticket_btn">
+                        <a href="#" class="btn_selected">단일</a>
+                        <a href="#">환승</a>
+                    </li>
                 </ul>
                 <ul class="cf">
                     <li><i class="xi-train ticket_xi"></i></li>
-                    <li class="ticket_title">KTX</li>
-                    <li id="search_btn"><i class="xi-search"></i></li>
+                    <li class="ticket_title">
+                        KTX<a class="search_btn" href="#"><i class="xi-search"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
