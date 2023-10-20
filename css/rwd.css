@@ -13,13 +13,13 @@ body {
 }
 
 #back_img {
-  margin-top: 30px;
   width: 100%;
   height: 800px;
   background-image: url(../img/background_0.jpg);
   background-size: cover;
   background-position: center;
   position: absolute;
+  top: 40px;
 }
 
 /* 헤더 */
@@ -369,11 +369,13 @@ header > div > ul > li {
   width: 40px;
   height: 40px;
   line-height: 40px;
-  vertical-align: center;
   margin-left: 30px;
   color: #fff;
   background: #005BAE;
   border-radius: 10px;
+}
+#ticket #ticket_main #select_train .search_btn i {
+  margin-bottom: 8px;
 }
 
 ul.cf li:first-child {
@@ -395,7 +397,7 @@ ul.cf i {
 /* 태블릿 항목 안보이게 */
 @media screen and (min-width: 740px) {
   #back_img {
-    margin-top: -60px;
+    top: -100px;
   }
   #ham, #mobile_header {
     display: none;
@@ -418,7 +420,7 @@ ul.cf i {
     top: 200px;
   }
   #ticket #ticket_main {
-    height: 350px;
+    height: 300px;
   }
   #ticket #ticket_main > div {
     float: left;
@@ -436,5 +438,32 @@ ul.cf i {
   header {
     display: flex;
     justify-content: center;
+  }
+  #back_img {
+    top: -100px;
+    width: 1920px;
+    background-size: cover;
+    background-position: bottom;
+  }
+  #ticket {
+    width: 1280px;
+    top: 250px;
+  }
+  #ticket #ticket_main {
+    height: 200px;
+  }
+  #ticket #ticket_main > div {
+    float: left;
+    width: 25%;
+    height: 100%;
+  }
+  #ticket #ticket_main #select_date ul:first-child {
+    margin-top: 52px;
+  }
+  #ticket #ticket_main #select_NumberOfPeople > li {
+    margin-top: 58px;
+  }
+  #ticket #ticket_main #select_train ul:first-child {
+    margin-top: 52px;
   }
 }/*# sourceMappingURL=rwd.css.map */

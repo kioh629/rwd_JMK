@@ -36,13 +36,13 @@ body {
 }
 
 #back_img {
-    margin-top: 30px;
     width: 100%;
     height: 800px;
     background-image: url(../img/background_0.jpg);
     background-size: cover;
     background-position: center;
     position: absolute;
+    top: 40px;
 }
 
 /* 헤더 */
@@ -397,11 +397,14 @@ header {
                 width: 40px;
                 height: 40px;
                 line-height: 40px;
-                vertical-align: center;
                 margin-left: 30px;
                 color: #fff;
                 background: #005BAE;
                 border-radius: 10px;
+
+                i {
+                    margin-bottom: 8px;
+                }
             }
         }
 
@@ -432,7 +435,7 @@ ul.cf {
 
 @media screen and (min-width:740px) {
     #back_img {
-        margin-top: -60px;
+        top: -100px;
     }
 
     #ham, #mobile_header {
@@ -456,7 +459,7 @@ ul.cf {
     #ticket {
             top: 200px;
         #ticket_main {
-            height: 350px;
+            height: 300px;
             &>div {
                 float: left;
                 width: 50%;
@@ -478,4 +481,32 @@ ul.cf {
         display: flex;
         justify-content: center;
     }
+    #back_img {
+        top: -100px;
+        width: 1920px;
+        background-size: cover;
+        background-position: bottom;
+
+    }
+    #ticket {
+        width: 1280px;
+        top: 250px;
+    #ticket_main {
+        height: 200px;
+        &>div {
+            float: left;
+            width: 25%;
+            height: 100%;
+        } 
+        #select_date ul:first-child {
+            margin-top: 52px;
+        }
+        #select_NumberOfPeople>li {
+            margin-top: 58px;
+        }
+        #select_train ul:first-child {
+            margin-top: 52px;
+        }
+    }
+}
 }
