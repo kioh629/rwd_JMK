@@ -34,6 +34,10 @@ a {
 body {
     width: 100%;
 }
+.body_lock {
+    height: 100%;
+    overflow: hidden;
+}
 
 #back_img {
     width: 100%;
@@ -225,9 +229,11 @@ header {
     width: 100%;
     padding-top: 20px;
     height: 200px;
-    background: #cfcfcf;
+    background: #fff;
     border-top: 1px solid #cecece;
     display: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
     ul {
         display: none;
         li {
@@ -537,6 +543,7 @@ ul.cf {
             top: 240px;
         #ticket_main {
             height: 300px;
+            padding-top: 15px;
             &>div {
                 float: left;
                 width: 50%;
@@ -576,23 +583,24 @@ ul.cf {
     #ticket {
         width: 1280px;
         top: 250px;
-    #ticket_main {
-        height: 200px;
-        &>div {
-            float: left;
-            width: 25%;
-            height: 100%;
-        } 
-        #select_date ul:first-child {
-            margin-top: 52px;
+        
+        #ticket_main {
+            height: 200px;padding-top: 0;
+            &>div {
+                float: left;
+                width: 25%;
+                height: 100%;
+            } 
+            #select_date ul:first-child {
+                margin-top: 52px;
+            }
+            #select_NumberOfPeople>li {
+                margin-top: 58px;
+            }
+            #select_train ul:first-child {
+                margin-top: 52px;
+            }
         }
-        #select_NumberOfPeople>li {
-            margin-top: 58px;
-        }
-        #select_train ul:first-child {
-            margin-top: 52px;
-        }
-    }
     }
     #banner {
         margin-top: 200px;
