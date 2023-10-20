@@ -77,7 +77,18 @@ header {
         margin-right: 10px;
         }
     }
+    #tablet_pc_header {
+        color: #fff;
+        font-family: 'Noto Sans KR',sans-serif;
+        font-weight: 400;
+        font-size: 16px;
     
+        li {
+            height: 80px;
+            text-align: center;
+            margin-right: 20px;
+        }
+    }
 }
 
 #logo {
@@ -185,19 +196,6 @@ header {
     }
 }
 
-#tablet_pc_header {
-    color: #fff;
-    font-family: 'Noto Sans KR',sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-
-    li {
-        height: 80px;
-        text-align: center;
-        margin-right: 20px;
-    }
-}
-
 #full_menu {
     width: 100%;
     height: 70px;
@@ -227,7 +225,7 @@ header {
     width: 100%;
     padding-top: 20px;
     height: 200px;
-    background: #C2E2FF;
+    background: #cfcfcf;
     border-top: 1px solid #cecece;
     display: none;
     ul {
@@ -269,7 +267,6 @@ header {
         position: absolute;
         z-index: 1;
         
-
         li {
             @include sub_text_to_size;
             color: #fff;
@@ -296,7 +293,7 @@ header {
         top: 40px;
         z-index: 2;
         border-radius: 20px;
-        
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     
         >div {
             float: left;
@@ -411,6 +408,7 @@ header {
     } // #ticket_main 종료
 } // #ticket 종료
 
+
 ul.cf {
     li:first-child {
     float: left;
@@ -421,8 +419,81 @@ ul.cf {
     }
     i {
         vertical-align: middle;
-
     }
+}
+
+// 배너 시작
+#banner {
+    margin-top: 400px;
+    margin: 370px auto 0;
+    width: 90%;
+
+    #slide_banner {
+        position: relative;
+        li {
+            margin: 0 5px;
+            img {
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+        .slick-arrow {
+            border: none;
+            color: transparent;
+            font-size: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.3) 0px 2px 4px -1px;
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            transform: translateY(-50%);
+            &::before {
+                font-family: "xeicon";
+                color: #414141;
+                font-size:20px;
+                font-weight: 700;
+                content:"\e940";
+            }
+            &.slick-prev {
+                left: -4%;
+                &::before {
+                    content:"\e93d";
+                }
+            }
+            &.slick-next {
+                right: -4%;
+                &::before {
+                    content:"\e940";
+                }
+            }
+
+        } // .slick-arrow 종료
+        
+        .slick-dots {
+            text-align: center;
+            margin-top: 5px;
+            li {
+                display: inline-block;
+
+                button {
+                    border: none;
+                    font-size: 0;
+                    color: transparent;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 10px;
+                    background: #cfcfcf;
+                }
+                &.slick-active button {
+                    background: #414141;
+                }
+            }          
+        }
+
+    }  // #slide_banner 종료
 
 }
 
@@ -431,7 +502,9 @@ ul.cf {
 .show_in_tablet {
     display: none;
 }
-/* 태블릿 항목 안보이게 */
+.category_text_add {
+    display: none;
+}
 
 @media screen and (min-width:740px) {
     #back_img {
@@ -455,6 +528,10 @@ ul.cf {
     .show_in_tablet {
         display: block;
     }
+    .category_text_add {
+        display: inline;
+    }
+
 
     #ticket {
             top: 240px;
@@ -466,9 +543,15 @@ ul.cf {
                 height: 50%;
             } 
             #select_date ul:first-child {
-                margin-top: 42.5px;
+                margin-top: 26px;
+            }
+            #select_NumberOfPeople>li {
+                margin-top: 6px;
             }
         }
+    }
+    #banner {
+        margin-top: 260px;
     }
     
 
@@ -482,14 +565,17 @@ ul.cf {
         justify-content: center;
     }
     #back_img {
-        top: -100px;
+        top: -150px;
         width: 1920px;
         background-position: bottom;
 
     }
+    #main_menu li {
+        font-size: 18px;
+    }
     #ticket {
         width: 1280px;
-        top: 280px;
+        top: 250px;
     #ticket_main {
         height: 200px;
         &>div {
@@ -507,5 +593,9 @@ ul.cf {
             margin-top: 52px;
         }
     }
-}
+    }
+    #banner {
+        margin-top: 200px;
+        width: 1280px;
+    }
 }

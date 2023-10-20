@@ -53,6 +53,17 @@ header > div > ul > li {
   float: left;
   margin-right: 10px;
 }
+header #tablet_pc_header {
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+header #tablet_pc_header li {
+  height: 80px;
+  text-align: center;
+  margin-right: 20px;
+}
 
 #logo {
   margin-left: 20px;
@@ -166,18 +177,6 @@ header > div > ul > li {
   margin: 0 0 10px 30px;
 }
 
-#tablet_pc_header {
-  color: #fff;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-#tablet_pc_header li {
-  height: 80px;
-  text-align: center;
-  margin-right: 20px;
-}
-
 #full_menu {
   width: 100%;
   height: 70px;
@@ -208,7 +207,7 @@ header > div > ul > li {
   width: 100%;
   padding-top: 20px;
   height: 200px;
-  background: #C2E2FF;
+  background: #cfcfcf;
   border-top: 1px solid #cecece;
   display: none;
 }
@@ -278,6 +277,7 @@ header > div > ul > li {
   top: 40px;
   z-index: 2;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 #ticket #ticket_main > div {
   float: left;
@@ -389,12 +389,83 @@ ul.cf i {
   vertical-align: middle;
 }
 
+#banner {
+  margin-top: 400px;
+  margin: 370px auto 0;
+  width: 90%;
+}
+#banner #slide_banner {
+  position: relative;
+}
+#banner #slide_banner li {
+  margin: 0 5px;
+}
+#banner #slide_banner li img {
+  width: 100%;
+  border-radius: 20px;
+}
+#banner #slide_banner .slick-arrow {
+  border: none;
+  color: transparent;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.3) 0px 2px 4px -1px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#banner #slide_banner .slick-arrow::before {
+  font-family: "xeicon";
+  color: #414141;
+  font-size: 20px;
+  font-weight: 700;
+  content: "\e940";
+}
+#banner #slide_banner .slick-arrow.slick-prev {
+  left: -4%;
+}
+#banner #slide_banner .slick-arrow.slick-prev::before {
+  content: "\e93d";
+}
+#banner #slide_banner .slick-arrow.slick-next {
+  right: -4%;
+}
+#banner #slide_banner .slick-arrow.slick-next::before {
+  content: "\e940";
+}
+#banner #slide_banner .slick-dots {
+  text-align: center;
+  margin-top: 5px;
+}
+#banner #slide_banner .slick-dots li {
+  display: inline-block;
+}
+#banner #slide_banner .slick-dots li button {
+  border: none;
+  font-size: 0;
+  color: transparent;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background: #cfcfcf;
+}
+#banner #slide_banner .slick-dots li.slick-active button {
+  background: #414141;
+}
+
 /* responsive window */
 .show_in_tablet {
   display: none;
 }
 
-/* 태블릿 항목 안보이게 */
+.category_text_add {
+  display: none;
+}
+
 @media screen and (min-width: 740px) {
   #back_img {
     top: -80px;
@@ -416,6 +487,9 @@ ul.cf i {
   .show_in_tablet {
     display: block;
   }
+  .category_text_add {
+    display: inline;
+  }
   #ticket {
     top: 240px;
   }
@@ -428,7 +502,13 @@ ul.cf i {
     height: 50%;
   }
   #ticket #ticket_main #select_date ul:first-child {
-    margin-top: 42.5px;
+    margin-top: 26px;
+  }
+  #ticket #ticket_main #select_NumberOfPeople > li {
+    margin-top: 6px;
+  }
+  #banner {
+    margin-top: 260px;
   }
 }
 @media screen and (min-width: 1320px) {
@@ -440,13 +520,16 @@ ul.cf i {
     justify-content: center;
   }
   #back_img {
-    top: -100px;
+    top: -150px;
     width: 1920px;
     background-position: bottom;
   }
+  #main_menu li {
+    font-size: 18px;
+  }
   #ticket {
     width: 1280px;
-    top: 280px;
+    top: 250px;
   }
   #ticket #ticket_main {
     height: 200px;
@@ -464,5 +547,9 @@ ul.cf i {
   }
   #ticket #ticket_main #select_train ul:first-child {
     margin-top: 52px;
+  }
+  #banner {
+    margin-top: 200px;
+    width: 1280px;
   }
 }/*# sourceMappingURL=rwd.css.map */

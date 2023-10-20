@@ -39,4 +39,29 @@ $(function(){
         $("#sub_menu").slideUp();
         $("#sub_menu ul").css("display","none");
     });
+
+    $('#slide_banner').slick({
+        dots: true, // 인디케이터 활성화
+        autoplay: true,
+        infinite: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 3, // 한 화면에 보여줄 아이템 수
+        slidesToScroll: 1,  // 한번에 슬라이드 시킬 아이템 수
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 980,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1
+                    }
+            },
+
+        ]
+    });
 });
