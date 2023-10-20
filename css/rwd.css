@@ -369,7 +369,7 @@ header > div > ul > li {
   width: 40px;
   height: 40px;
   line-height: 40px;
-  margin-left: 30px;
+  margin-left: 60px;
   color: #fff;
   background: #005BAE;
   border-radius: 10px;
@@ -397,7 +397,7 @@ ul.cf i {
 /* 태블릿 항목 안보이게 */
 @media screen and (min-width: 740px) {
   #back_img {
-    top: -100px;
+    top: -80px;
   }
   #ham, #mobile_header {
     display: none;
@@ -417,7 +417,7 @@ ul.cf i {
     display: block;
   }
   #ticket {
-    top: 200px;
+    top: 240px;
   }
   #ticket #ticket_main {
     height: 300px;
@@ -442,12 +442,11 @@ ul.cf i {
   #back_img {
     top: -100px;
     width: 1920px;
-    background-size: cover;
     background-position: bottom;
   }
   #ticket {
     width: 1280px;
-    top: 250px;
+    top: 280px;
   }
   #ticket #ticket_main {
     height: 200px;
