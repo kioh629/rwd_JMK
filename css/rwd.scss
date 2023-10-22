@@ -265,6 +265,21 @@ header {
     margin: 0 auto;
     text-align: center;
     
+    ul.cf {
+        li:first-child {
+        float: left;
+        clear: both;
+        }
+        li:last-child {
+            float: right
+        }
+        i {
+            vertical-align: middle;
+        }
+    
+    }
+    
+
     #ticket_category {
         display: flex;
         justify-content: space-evenly;
@@ -415,19 +430,6 @@ header {
 } // #ticket 종료
 
 
-ul.cf {
-    li:first-child {
-    float: left;
-    clear: both;
-    }
-    li:last-child {
-        float: right
-    }
-    i {
-        vertical-align: middle;
-    }
-}
-
 // 배너 시작
 #banner {
     margin-top: 400px;
@@ -444,6 +446,7 @@ ul.cf {
             }
         }
         .slick-arrow {
+            cursor: pointer;
             border: none;
             color: transparent;
             font-size: 0;
@@ -492,6 +495,8 @@ ul.cf {
                     height: 15px;
                     border-radius: 10px;
                     background: #cfcfcf;
+                    cursor: pointer;
+
                 }
                 &.slick-active button {
                     background: #414141;
@@ -503,9 +508,101 @@ ul.cf {
 
 }
 
+// contents 시작
+#contents {
+    margin-top: 50px;
+    ul.cf {
+        li:first-child {
+        float: left;
+        clear: both;
+        }
+        li:last-child {
+            float: right
+        }
+    }
+    .contents_top {
+        height: 70px;
+        line-height: 70px;
+        .contents_title {
+            @include title_text();
+        }
+        .more {
+            font-family: 'Noto Sans KR',sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            color: #414141; 
+        }        
+    }
+
+    // 공지사항 부분
+    #announcement {
+        width: 90%;
+        margin: 0 auto;
+        
+        ul:first-child {
+            border-bottom: 1px solid #8D8C8C;
+        }
+        .announcement_board {
+            height: 70px;
+            line-height: 70px;
+            font-family: 'Noto Sans KR',sans-serif;
+            border-bottom: 1px solid #8D8C8C;
+            overflow: hidden;
+
+            .ab_text {
+                width: 75%;
+                font-size: 16px;
+                color: #414141;
+                overflow: hidden;
+            }
+            .ab_date {
+                width: 20%;
+                font-size: 12px;
+                color: #414141;
+                text-align: right;
+            }
+        }
+    }
+    #magazine {
+        margin:50px auto 0;
+        width: 90%;
+    
+        img {
+            width: 100%;
+        }
+        .magazine_title {
+            height: 50px;
+            line-height: 50px;
+            .magazine_sub {
+                font-family: 'Noto Sans KR',sans-serif;
+                color:#8D8C8C;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .magazine_main {
+                color: #414141;
+                font-family: 'Noto Sans KR',sans-serif;
+                font-weight: 900;
+                font-size: 28px;
+            }
+        }
+        >li {
+            height: 70px;
+            color: #414141;
+            font-family: 'Noto Sans KR',sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            padding-top: 10px;
+        }
+    }
+}
+
 
 /* responsive window */
 .show_in_tablet {
+    display: none;
+}
+.show_in_PC {
     display: none;
 }
 .category_text_add {
@@ -560,10 +657,25 @@ ul.cf {
     #banner {
         margin-top: 260px;
     }
-    
+}
 
+@media screen and (min-width:980px) {
+    #contents {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90%;
+        margin: 50px auto 0;
+
+
+        #magazine {
+            margin:0 0 0 40px;
+        }
+    }
 }
 @media screen and (min-width:1320px) {
+    .show_in_PC {
+        display: block;
+    }
     #header_wrap, #main_menu, .sub_box {
         width: 1320px;
     }
@@ -572,8 +684,9 @@ ul.cf {
         justify-content: center;
     }
     #back_img {
-        top: -150px;
-        width: 1920px;
+        top: -120px;
+        width: 100%;
+        background-size: cover;
         background-position: bottom;
 
     }
@@ -582,7 +695,7 @@ ul.cf {
     }
     #ticket {
         width: 1280px;
-        top: 250px;
+        top: 280px;
         
         #ticket_main {
             height: 200px;padding-top: 0;
@@ -603,7 +716,10 @@ ul.cf {
         }
     }
     #banner {
-        margin-top: 200px;
+        margin-top: 250px;
         width: 1280px;
+    }
+    #contents {
+        width: 1260px;
     }
 }

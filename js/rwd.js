@@ -41,23 +41,6 @@ $(function(){
         $("#sub_menu ul").css("display","none");
     });
     
-    // // 풀메뉴 클릭 이벤트
-    // $("#main_menu li").on("click",function(){
-    //     const a = $(this).index();
-    //     const sub = $("#sub_menu ul").eq(a);
-    //     if (sub.is(':visible')){
-    //         $("#main_menu li").css("color","#414141").css("border-bottom","none");
-    //         $("#sub_menu").slideUp();
-    //         $("#sub_menu ul").css("display","none");
-    //     } else {
-    //         $("#main_menu li").css("color","#414141").css("border-bottom","none");
-    //         $(this).css("color","#005BAE").css("border-bottom","5px solid #005bae");
-    //         $("#sub_menu").slideDown();
-    //         $("#sub_menu ul").css("display","none");
-    //         sub.css("display","block");
-    //     }
-    // });
-
     // 배너(slick)
     $('#slide_banner').slick({
         dots: true, // 인디케이터 활성화

@@ -248,6 +248,16 @@ header #tablet_pc_header li {
   margin: 0 auto;
   text-align: center;
 }
+#ticket ul.cf li:first-child {
+  float: left;
+  clear: both;
+}
+#ticket ul.cf li:last-child {
+  float: right;
+}
+#ticket ul.cf i {
+  vertical-align: middle;
+}
 #ticket #ticket_category {
   display: flex;
   justify-content: space-evenly;
@@ -384,17 +394,6 @@ header #tablet_pc_header li {
   margin-bottom: 8px;
 }
 
-ul.cf li:first-child {
-  float: left;
-  clear: both;
-}
-ul.cf li:last-child {
-  float: right;
-}
-ul.cf i {
-  vertical-align: middle;
-}
-
 #banner {
   margin-top: 400px;
   margin: 370px auto 0;
@@ -411,6 +410,7 @@ ul.cf i {
   border-radius: 20px;
 }
 #banner #slide_banner .slick-arrow {
+  cursor: pointer;
   border: none;
   color: transparent;
   font-size: 0;
@@ -458,13 +458,102 @@ ul.cf i {
   height: 15px;
   border-radius: 10px;
   background: #cfcfcf;
+  cursor: pointer;
 }
 #banner #slide_banner .slick-dots li.slick-active button {
   background: #414141;
 }
 
+#contents {
+  margin-top: 50px;
+}
+#contents ul.cf li:first-child {
+  float: left;
+  clear: both;
+}
+#contents ul.cf li:last-child {
+  float: right;
+}
+#contents .contents_top {
+  height: 70px;
+  line-height: 70px;
+}
+#contents .contents_top .contents_title {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+#contents .contents_top .more {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #414141;
+}
+#contents #announcement {
+  width: 90%;
+  margin: 0 auto;
+}
+#contents #announcement ul:first-child {
+  border-bottom: 1px solid #8D8C8C;
+}
+#contents #announcement .announcement_board {
+  height: 70px;
+  line-height: 70px;
+  font-family: "Noto Sans KR", sans-serif;
+  border-bottom: 1px solid #8D8C8C;
+  overflow: hidden;
+}
+#contents #announcement .announcement_board .ab_text {
+  width: 75%;
+  font-size: 16px;
+  color: #414141;
+  overflow: hidden;
+}
+#contents #announcement .announcement_board .ab_date {
+  width: 20%;
+  font-size: 12px;
+  color: #414141;
+  text-align: right;
+}
+#contents #magazine {
+  margin: 50px auto 0;
+  width: 90%;
+}
+#contents #magazine img {
+  width: 100%;
+}
+#contents #magazine .magazine_title {
+  height: 50px;
+  line-height: 50px;
+}
+#contents #magazine .magazine_title .magazine_sub {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #8D8C8C;
+  font-size: 20px;
+  font-weight: 700;
+}
+#contents #magazine .magazine_title .magazine_main {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+}
+#contents #magazine > li {
+  height: 70px;
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
 /* responsive window */
 .show_in_tablet {
+  display: none;
+}
+
+.show_in_PC {
   display: none;
 }
 
@@ -518,7 +607,21 @@ ul.cf i {
     margin-top: 260px;
   }
 }
+@media screen and (min-width: 980px) {
+  #contents {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 50px auto 0;
+  }
+  #contents #magazine {
+    margin: 0 0 0 40px;
+  }
+}
 @media screen and (min-width: 1320px) {
+  .show_in_PC {
+    display: block;
+  }
   #header_wrap, #main_menu, .sub_box {
     width: 1320px;
   }
@@ -527,8 +630,9 @@ ul.cf i {
     justify-content: center;
   }
   #back_img {
-    top: -150px;
-    width: 1920px;
+    top: -120px;
+    width: 100%;
+    background-size: cover;
     background-position: bottom;
   }
   #main_menu li {
@@ -536,7 +640,7 @@ ul.cf i {
   }
   #ticket {
     width: 1280px;
-    top: 250px;
+    top: 280px;
   }
   #ticket #ticket_main {
     height: 200px;
@@ -557,7 +661,10 @@ ul.cf i {
     margin-top: 52px;
   }
   #banner {
-    margin-top: 200px;
+    margin-top: 250px;
     width: 1280px;
+  }
+  #contents {
+    width: 1260px;
   }
 }/*# sourceMappingURL=rwd.css.map */
