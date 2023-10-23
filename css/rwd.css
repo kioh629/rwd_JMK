@@ -545,6 +545,54 @@ header #tablet_pc_header li {
   clear: both;
 }
 
+#guide {
+  width: 90%;
+  margin: 80px auto 0;
+}
+#guide .guide_title {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#guide .guide_list ul {
+  float: left;
+  width: 50%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+#guide .guide_list ul li {
+  text-align: center;
+}
+#guide .guide_list ul li:first-child {
+  border: 1px solid #414141;
+  border-radius: 10px;
+  width: 130px;
+  height: 130px;
+  line-height: 130px;
+  margin: 0 auto;
+  position: relative;
+}
+#guide .guide_list ul li:first-child a {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#guide .guide_list ul li:last-child {
+  margin-top: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 700;
+  color: #414141;
+}
+#guide .guide_list ul li img {
+  height: 60px;
+}
+
 /* responsive window */
 .show_in_tablet {
   display: none;
@@ -609,6 +657,9 @@ header #tablet_pc_header li {
   #contents .magazine_title .magazine_main {
     font-size: 28px !important;
   }
+  #guide .guide_list ul {
+    width: 25%;
+  }
 }
 @media screen and (min-width: 980px) {
   #contents {
@@ -669,5 +720,11 @@ header #tablet_pc_header li {
   }
   #contents {
     width: 1260px;
+  }
+  #guide {
+    max-width: 1280px;
+  }
+  #guide .guide_list ul {
+    width: 12.5%;
   }
 }/*# sourceMappingURL=rwd.css.map */
