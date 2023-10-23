@@ -523,21 +523,17 @@ header #tablet_pc_header li {
 #contents #magazine img {
   width: 100%;
 }
-#contents #magazine .magazine_title {
-  height: 50px;
-  line-height: 50px;
-}
 #contents #magazine .magazine_title .magazine_sub {
   font-family: "Noto Sans KR", sans-serif;
   color: #8D8C8C;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
 }
 #contents #magazine .magazine_title .magazine_main {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 900;
-  font-size: 28px;
+  font-size: 24px;
 }
 #contents #magazine > li {
   height: 70px;
@@ -546,6 +542,7 @@ header #tablet_pc_header li {
   font-weight: 400;
   font-size: 16px;
   padding-top: 10px;
+  clear: both;
 }
 
 /* responsive window */
@@ -605,6 +602,12 @@ header #tablet_pc_header li {
   }
   #banner {
     margin-top: 260px;
+  }
+  #contents .magazine_title .magazine_sub {
+    font-size: 20px !important;
+  }
+  #contents .magazine_title .magazine_main {
+    font-size: 28px !important;
   }
 }
 @media screen and (min-width: 980px) {

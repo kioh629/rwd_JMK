@@ -513,8 +513,8 @@ header {
     margin-top: 50px;
     ul.cf {
         li:first-child {
-        float: left;
-        clear: both;
+            float: left;
+            clear: both;
         }
         li:last-child {
             float: right
@@ -563,6 +563,7 @@ header {
             }
         }
     }
+    // 매거진 부분
     #magazine {
         margin:50px auto 0;
         width: 90%;
@@ -571,19 +572,17 @@ header {
             width: 100%;
         }
         .magazine_title {
-            height: 50px;
-            line-height: 50px;
             .magazine_sub {
                 font-family: 'Noto Sans KR',sans-serif;
                 color:#8D8C8C;
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 700;
             }
             .magazine_main {
                 color: #414141;
                 font-family: 'Noto Sans KR',sans-serif;
                 font-weight: 900;
-                font-size: 28px;
+                font-size: 24px;
             }
         }
         >li {
@@ -593,6 +592,7 @@ header {
             font-weight: 400;
             font-size: 16px;
             padding-top: 10px;
+            clear: both;
         }
     }
 }
@@ -657,6 +657,18 @@ header {
     #banner {
         margin-top: 260px;
     }
+
+    #contents {
+        .magazine_title {
+            .magazine_sub {
+                font-size: 20px!important;
+            }
+            .magazine_main {
+                font-size: 28px!important;
+            }
+        }        
+    }
+
 }
 
 @media screen and (min-width:980px) {
