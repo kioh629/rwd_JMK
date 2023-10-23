@@ -593,6 +593,71 @@ header #tablet_pc_header li {
   height: 60px;
 }
 
+footer {
+  margin-top: 70px;
+  width: 100%;
+  height: 470px;
+  background: #414141;
+}
+footer #f_top {
+  width: 100%;
+}
+footer #f_top #scrl_top {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #676767;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+footer #f_top #scrl_top a i {
+  margin-right: 7px;
+}
+footer #f_bot {
+  width: 100%;
+  height: 420px;
+  background: #414141;
+}
+footer #f_bot .f_logo {
+  text-align: center;
+  padding: 20px 0 50px;
+}
+footer #f_bot .f_sns {
+  text-align: center;
+}
+footer #f_bot .f_sns a i {
+  color: #fff;
+  font-size: 40px;
+}
+footer #f_bot .copy {
+  width: 335px;
+  height: 170px;
+  margin: 30px auto 0;
+}
+footer #f_bot .copy ul {
+  margin: 0 auto 10px;
+}
+footer #f_bot .copy ul li {
+  float: left;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+footer #f_bot .copy address {
+  font-size: 12px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+}
+
 /* responsive window */
 .show_in_tablet {
   display: none;
@@ -607,6 +672,9 @@ header #tablet_pc_header li {
 }
 
 @media screen and (min-width: 740px) {
+  .show_in_mobile {
+    display: none;
+  }
   #back_img {
     top: -80px;
   }
@@ -659,6 +727,82 @@ header #tablet_pc_header li {
   }
   #guide .guide_list ul {
     width: 25%;
+  }
+  footer {
+    height: 350px;
+  }
+  footer #f_top {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer #f_top #f_info {
+    width: 85%;
+    height: 50px;
+    border-bottom: 1px solid #676767;
+  }
+  footer #f_top #f_info ul {
+    padding-left: 30px;
+    line-height: 50px;
+  }
+  footer #f_top #f_info ul li {
+    float: left;
+    margin-right: 30px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+  }
+  footer #f_top #scrl_top {
+    width: 15% !important;
+    border-left: 1px solid #676767;
+  }
+  footer #f_bot {
+    height: 300px;
+  }
+  footer #f_bot .icon_wrap {
+    width: 100%;
+    margin-top: 20px;
+  }
+  footer #f_bot .icon_wrap .f_logo {
+    float: left;
+    clear: both;
+    height: 60px;
+    margin-left: 30px;
+    padding: 0;
+  }
+  footer #f_bot .icon_wrap .f_sns {
+    float: right;
+    height: 60px;
+    padding-top: 10px;
+    padding-right: 30px;
+  }
+  footer #f_bot .copy {
+    width: 100%;
+    height: 170px;
+    margin-top: 30px;
+    padding-left: 30px;
+  }
+  footer #f_bot .copy ul {
+    margin: 0 auto 10px;
+  }
+  footer #f_bot .copy ul li {
+    float: left;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  footer #f_bot .copy address {
+    font-size: 16px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: left;
   }
 }
 @media screen and (min-width: 980px) {
@@ -726,5 +870,37 @@ header #tablet_pc_header li {
   }
   #guide .guide_list ul {
     width: 12.5%;
+  }
+  footer {
+    height: 300px;
+  }
+  footer #f_bot {
+    height: 220px;
+    position: relative;
+  }
+  footer #f_bot .copy {
+    position: absolute;
+    top: -15px;
+    left: 350px;
+  }
+  footer #f_bot .site_map {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  footer #f_bot .site_map a {
+    float: left;
+  }
+  footer #f_bot .site_map i {
+    float: right;
+    margin-top: 7px;
   }
 }/*# sourceMappingURL=rwd.css.map */

@@ -647,6 +647,76 @@ header {
     }
 }
 
+// Footer
+footer {
+    margin-top: 70px;
+    width: 100%;
+    height:470px;
+    background: #414141;
+    
+    #f_top {
+        width: 100%;
+    
+        #scrl_top {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #676767;
+            text-align: center;
+            font-family: 'Noto Sans KR',sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+            a {
+                i {margin-right: 7px;}
+            }
+        }
+    }
+
+    #f_bot {
+        width: 100%;
+        height: 420px;
+        background: #414141;
+        .f_logo {
+            text-align: center;
+            padding: 20px 0 50px;
+        }
+        .f_sns {
+            text-align: center;
+            a i {
+                color: #fff;
+                font-size: 40px;
+            }
+        }
+        .copy {
+            width: 335px;
+            height: 170px;
+            margin: 30px auto 0;
+
+            ul {
+                margin: 0 auto 10px;
+            
+                li {
+                    float: left;
+                    @include sub_text_to_size;
+                    color: #fff;
+                    margin-right: 20px;
+                    margin-left: 10px;
+                }
+            }
+            address {
+                font-size: 12px;
+                font-family: 'Noto Sans KR',sans-serif;
+                font-weight: 400;
+                color: #fff;
+                text-align: center;
+                margin-top: 50px;
+            }
+        }
+    }
+
+}
+
 
 /* responsive window */
 .show_in_tablet {
@@ -660,10 +730,12 @@ header {
 }
 
 @media screen and (min-width:740px) {
+    .show_in_mobile {
+        display: none;
+    }
     #back_img {
         top: -80px;
     }
-
     #ham, #mobile_header {
         display: none;
     }
@@ -684,8 +756,6 @@ header {
     .category_text_add {
         display: inline;
     }
-
-
     #ticket {
             top: 240px;
         #ticket_main {
@@ -707,7 +777,6 @@ header {
     #banner {
         margin-top: 260px;
     }
-
     #contents {
         .magazine_title {
             .magazine_sub {
@@ -725,7 +794,83 @@ header {
             }
         }
     }
-
+    footer {
+        height: 350px;
+        #f_top {
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            #f_info {
+                width: 85%;
+                height: 50px;
+                border-bottom: 1px solid #676767;
+                ul {
+                    padding-left: 30px;
+                    line-height: 50px;
+                    li {
+                        float: left;
+                        margin-right: 30px;
+                        font-family: 'Noto Sans KR',sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #fff;
+                    }
+                }
+            }
+            #scrl_top {
+                width: 15%!important;
+                border-left: 1px solid #676767;
+            }
+        }
+        #f_bot {
+            height: 300px;
+            .icon_wrap {
+                width: 100%;
+                margin-top: 20px;
+                .f_logo {
+                    float: left;
+                    clear: both;
+                    height: 60px;
+                    margin-left: 30px;
+                    padding: 0;
+                }
+                .f_sns {
+                    float: right;
+                    height: 60px;
+                    padding-top: 10px;
+                    padding-right: 30px;
+                }
+            }
+            .copy {
+                width: 100%;
+                height: 170px;
+                margin-top: 30px;
+                padding-left: 30px;
+                
+                ul {
+                    margin: 0 auto 10px;
+                
+                    li {
+                        float: left;
+                        @include sub_text_to_size;
+                        color: #fff;
+                        margin-right: 20px;
+                        margin-left: 10px;
+                    }
+                }
+                address {
+                    font-size: 16px;
+                    font-family: 'Noto Sans KR',sans-serif;
+                    font-weight: 400;
+                    color: #fff;
+                    margin-top: 20px;
+                    margin-left: 10px;
+                    text-align: left;
+                }
+            }
+            
+        }
+    }
 }
 
 @media screen and (min-width:980px) {
@@ -796,6 +941,39 @@ header {
         .guide_list {
             ul {
                 width: 12.5%;
+            }
+        }
+    }
+    footer {
+        height: 300px;
+        #f_bot {
+            height: 220px;
+            position: relative;
+            .copy {
+                position: absolute;
+                top: -15px;
+                left: 350px;
+            }
+            .site_map {
+                position: absolute;
+                top: 80px;
+                right: 40px;
+
+                width: 160px;
+                height:30px;
+                line-height: 30px;
+                font-size: 16px;
+                font-family: 'Noto Sans KR',sans-serif;
+                font-weight: 400;
+                color: #fff;
+                border-bottom: 1px solid #fff;
+                a {
+                    float: left;
+                }
+                i {
+                    float: right;
+                    margin-top: 7px;
+                }
             }
         }
     }
