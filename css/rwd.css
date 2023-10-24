@@ -44,9 +44,15 @@ header #login_btn {
   color: #fff;
   font-size: 40px;
 }
+header #login_btn:hover {
+  color: #3da1ff;
+}
 header #ham_btn {
   color: #fff;
   font-size: 40px;
+}
+header #ham_btn:hover {
+  color: #3da1ff;
 }
 header > div > li {
   float: left;
@@ -63,6 +69,9 @@ header #tablet_pc_header {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
+}
+header #tablet_pc_header li:hover {
+  color: #3da1ff;
 }
 header #tablet_pc_header li {
   height: 80px;
@@ -100,8 +109,7 @@ header #tablet_pc_header li {
   overflow-y: scroll;
   /* 스크롤 되게 */
 }
-
-.xi-hamburger-out {
+#ham_wrap .xi-hamburger-out {
   color: #414141;
   font-size: 40px;
   height: 60px;
@@ -111,13 +119,15 @@ header #tablet_pc_header li {
   top: 10px;
   cursor: pointer;
 }
-
-#ham_top {
+#ham_wrap .xi-hamburger-out:hover {
+  color: #3da1ff;
+}
+#ham_wrap #ham_top {
   width: 80%;
   margin: 70px auto 40px;
   display: flex;
 }
-#ham_top li {
+#ham_wrap #ham_top li {
   width: 33.3%;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
@@ -125,8 +135,10 @@ header #tablet_pc_header li {
   color: #414141;
   text-align: center;
 }
-
-.ham_quick {
+#ham_wrap #ham_top li:hover {
+  color: #3da1ff;
+}
+#ham_wrap .ham_quick {
   width: 80%;
   height: 50px;
   line-height: 50px;
@@ -138,24 +150,29 @@ header #tablet_pc_header li {
   color: #414141;
   border-radius: 10px;
 }
-.ham_quick i {
+#ham_wrap .ham_quick i {
   font-size: 20px;
 }
-
-#ham_login {
+#ham_wrap #ham_login {
   background: #C2E2FF;
 }
-
-#ham_go_ticket {
+#ham_wrap #ham_login:hover {
+  background: #90c9ff;
+}
+#ham_wrap #ham_go_ticket {
   background: #C2FFC8;
 }
-
-#hammenu {
+#ham_wrap #ham_go_ticket:hover {
+  background: #88e991;
+}
+#ham_wrap #hammenu {
   width: 80%;
   margin: 40px auto 0px;
 }
-
-.ham_main {
+#ham_wrap #hammenu ul li:hover {
+  color: #3da1ff;
+}
+#ham_wrap #hammenu .ham_main {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
@@ -163,18 +180,17 @@ header #tablet_pc_header li {
   cursor: pointer;
   margin: 40px 10px 20px;
 }
-.ham_main i {
+#ham_wrap #hammenu .ham_main i {
   float: right;
   clear: both;
   position: relative;
   right: 10px;
   top: 5px;
 }
-
-.ham_sub {
+#ham_wrap #hammenu .ham_sub {
   display: none;
 }
-.ham_sub li {
+#ham_wrap #hammenu .ham_sub li {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
@@ -311,6 +327,7 @@ header #tablet_pc_header li {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: 32px;
+  cursor: pointer;
 }
 #ticket #ticket_main .ticket_xi {
   font-size: 32px;
@@ -424,6 +441,9 @@ header #tablet_pc_header li {
   top: 50%;
   transform: translateY(-50%);
 }
+#banner #slide_banner .slick-arrow:hover {
+  background: #ececec;
+}
 #banner #slide_banner .slick-arrow::before {
   font-family: "xeicon";
   color: #414141;
@@ -464,6 +484,60 @@ header #tablet_pc_header li {
   background: #414141;
 }
 
+#guide {
+  width: 90%;
+  margin: 80px auto 80px;
+}
+#guide .guide_title {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#guide .guide_list ul {
+  float: left;
+  width: 25%;
+  margin-bottom: 20px;
+}
+#guide .guide_list ul:hover {
+  color: #005BAE;
+}
+#guide .guide_list ul:hover li:first-child {
+  background: #cfcfcf;
+}
+#guide .guide_list ul li {
+  text-align: center;
+}
+#guide .guide_list ul li:first-child {
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  line-height: 90px;
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+}
+#guide .guide_list ul li:first-child a {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#guide .guide_list ul li:last-child {
+  margin-top: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+#guide .guide_list ul li img {
+  height: 30px;
+}
+
 #contents {
   margin-top: 50px;
 }
@@ -498,8 +572,8 @@ header #tablet_pc_header li {
   border-bottom: 1px solid #8D8C8C;
 }
 #contents #announcement .announcement_board {
-  height: 70px;
-  line-height: 70px;
+  height: 60px;
+  line-height: 60px;
   font-family: "Noto Sans KR", sans-serif;
   border-bottom: 1px solid #8D8C8C;
   overflow: hidden;
@@ -517,11 +591,21 @@ header #tablet_pc_header li {
   text-align: right;
 }
 #contents #magazine {
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   width: 90%;
 }
-#contents #magazine img {
+#contents #magazine .magazine_img {
   width: 100%;
+  height: 250px;
+  background: url(../img/magazine_0.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+#contents #magazine .magazine_title {
+  padding-top: 5px;
+  height: 40px;
+  line-height: 40px;
 }
 #contents #magazine .magazine_title .magazine_sub {
   font-family: "Noto Sans KR", sans-serif;
@@ -540,61 +624,105 @@ header #tablet_pc_header li {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  padding-top: 10px;
+  font-size: 12px;
+  padding-top: 5px;
   clear: both;
 }
 
-#guide {
+#trip {
   width: 90%;
-  margin: 80px auto 0;
+  margin: 50px auto 0;
 }
-#guide .guide_title {
+#trip #trip_top {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+#trip #trip_top ul {
+  line-height: 70px;
+  display: flex;
+}
+#trip #trip_top ul .contents_title {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
-  font-weight: 900;
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-#guide .guide_list ul {
-  float: left;
-  width: 50%;
-  height: 200px;
-  margin-bottom: 10px;
-}
-#guide .guide_list ul li {
-  text-align: center;
-}
-#guide .guide_list ul li:first-child {
-  border: 1px solid #414141;
-  border-radius: 10px;
-  width: 130px;
-  height: 130px;
-  line-height: 130px;
-  margin: 0 auto;
-  position: relative;
-}
-#guide .guide_list ul li:first-child a {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#guide .guide_list ul li:last-child {
-  margin-top: 5px;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
   font-weight: 700;
-  color: #414141;
+  font-size: 32px;
 }
-#guide .guide_list ul li img {
-  height: 60px;
+#trip #trip_top ul .trip_btn {
+  margin-left: 20px;
+  text-align: center;
+}
+#trip #trip_top ul .trip_btn a {
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  line-height: 20px;
+  margin-left: 5px;
+  font-size: 14px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #414141;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+}
+#trip #trip_top ul .trip_btn a.p_btn_selected {
+  color: #fff;
+  background: #005BAE;
+  border: none;
+}
+#trip #trip_top li {
+  line-height: 70px;
+}
+#trip .trip_box > ul {
+  margin-bottom: 40px;
+  width: 100%;
+  aspect-ratio: 5/2;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+#trip .trip_box > ul li:first-child {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0 0;
+}
+#trip .trip_box > ul li:last-child {
+  margin: 10px 10px 10px 20px;
+  height: 70px;
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#trip .trip_box > ul li:last-child a {
+  font-size: 20px;
+  font-weight: 700;
+}
+#trip .trip_box > ul li:last-child span {
+  display: block;
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+}
+#trip .trip_box > ul .sightseeing_train_img {
+  background: url(../img/package1.jpg);
+}
+#trip .trip_box > ul .nailo_img {
+  background: url(../img/package2.jpg);
+}
+#trip .trip_box > ul .Japan_pass_img {
+  background: url(../img/abroad1.jpg);
+}
+#trip .trip_box > ul .Europe_pass_img {
+  background: url(../img/abroad2.jpg);
+}
+#trip .trip_box#trip_overseas {
+  display: none;
 }
 
 footer {
-  margin-top: 70px;
+  margin-top: 100px;
   width: 100%;
   height: 470px;
   background: #414141;
@@ -671,6 +799,22 @@ footer #f_bot .copy address {
   display: none;
 }
 
+@media screen and (min-width: 441px) {
+  #guide .guide_list ul li:first-child {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+  }
+  #guide .guide_list ul li:first-child a {
+    top: 65%;
+  }
+  #guide .guide_list ul li:last-child {
+    font-size: 12px;
+  }
+  #guide .guide_list ul li img {
+    height: 40px;
+  }
+}
 @media screen and (min-width: 740px) {
   .show_in_mobile {
     display: none;
@@ -719,14 +863,35 @@ footer #f_bot .copy address {
   #banner {
     margin-top: 260px;
   }
+  #guide .guide_list ul li:first-child {
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+  }
+  #guide .guide_list ul li:first-child a {
+    top: 70%;
+  }
+  #guide .guide_list ul li:last-child {
+    font-size: 16px;
+  }
+  #guide .guide_list ul li img {
+    height: 60px;
+  }
   #contents .magazine_title .magazine_sub {
     font-size: 20px !important;
   }
   #contents .magazine_title .magazine_main {
     font-size: 28px !important;
   }
-  #guide .guide_list ul {
-    width: 25%;
+  #trip .trip_box ul {
+    float: left;
+    width: 47.5%;
+  }
+  #trip .trip_box ul:first-child {
+    margin-right: 2.5%;
+  }
+  #trip .trip_box ul:last-child {
+    margin-left: 2.5%;
   }
   footer {
     height: 350px;
@@ -862,14 +1027,17 @@ footer #f_bot .copy address {
     margin-top: 250px;
     width: 1280px;
   }
-  #contents {
-    width: 1260px;
-  }
   #guide {
     max-width: 1280px;
   }
   #guide .guide_list ul {
     width: 12.5%;
+  }
+  #contents {
+    width: 1260px;
+  }
+  #trip {
+    width: 1280px;
   }
   footer {
     height: 300px;

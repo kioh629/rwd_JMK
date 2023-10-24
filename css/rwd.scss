@@ -65,10 +65,16 @@ header {
     #login_btn {
         color: #fff;
         font-size: 40px;
+        &:hover {
+        color: #3da1ff;
+        }
     }
     #ham_btn {
         color: #fff;
         font-size: 40px;
+        &:hover {
+            color: #3da1ff;
+            }
     }
     &>div>li {
         float: left;
@@ -86,6 +92,9 @@ header {
         font-family: 'Noto Sans KR',sans-serif;
         font-weight: 400;
         font-size: 16px;
+        & li:hover {
+            color: #3da1ff;
+        }
     
         li {
             height: 80px;
@@ -121,84 +130,103 @@ header {
     z-index: 1002;
     overflow-y: scroll;
     /* 스크롤 되게 */
-}
-.xi-hamburger-out {
-    color: #414141;
-    font-size: 40px;
-    height: 60px;
-    line-height: 60px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-}
-#ham_top {
-    width: 80%;
-    margin: 70px auto 40px;
-    display: flex;
-    
-    li {
-        width: 33.3%;
+
+    .xi-hamburger-out {
+        color: #414141;
+        font-size: 40px;
+        height: 60px;
+        line-height: 60px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        &:hover {
+            color: #3da1ff;
+        }
+    }
+    #ham_top {
+        width: 80%;
+        margin: 70px auto 40px;
+        display: flex;
+        
+        li {
+            width: 33.3%;
+            font-family: 'Noto Sans KR',sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #414141;
+            text-align: center;
+            &:hover {
+                color: #3da1ff;
+            }
+        }
+    }
+    .ham_quick {
+        width: 80%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin: 20px auto 0;
         font-family: 'Noto Sans KR',sans-serif;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 16px;
         color: #414141;
-        text-align: center;
-    }
-}
-.ham_quick {
-    width: 80%;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    margin: 20px auto 0;
-    font-family: 'Noto Sans KR',sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #414141;
-    border-radius: 10px;
+        border-radius: 10px;
 
-    i {
-        font-size: 20px;
+        i {
+            font-size: 20px;
+        }
     }
-}
-#ham_login {
-    background: #C2E2FF;
-}
-#ham_go_ticket {
-    background: #C2FFC8;
-}
-#hammenu {
-    width: 80%;
-    margin: 40px auto 0px;
-}
-.ham_main {
-    color: #414141;
-    font-family: 'Noto Sans KR',sans-serif;
-    font-weight: 700;
-    font-size: 20px; 
-    cursor: pointer;
-    margin: 40px 10px 20px;
-
-    i {
-        float: right;
-        clear: both;
-        position: relative;
-        right: 10px;
-        top: 5px;
+    #ham_login {
+        background: #C2E2FF;
+        &:hover {
+            background: #90c9ff;
+        }
     }
-}
-
-.ham_sub {
-    display: none;
-    li {
+    #ham_go_ticket {
+        background: #C2FFC8;
+        &:hover {
+            background: #88e991;
+        }
+    }
+    #hammenu {
+        width: 80%;
+        margin: 40px auto 0px;
+        ul li:hover {
+            color: #3da1ff;
+        }
+        .ham_main {
         color: #414141;
         font-family: 'Noto Sans KR',sans-serif;
-        font-weight: 400;
-        font-size: 16px; 
-        margin: 0 0 10px 30px;
+        font-weight: 700;
+        font-size: 20px; 
+        cursor: pointer;
+        margin: 40px 10px 20px;
+
+            i {
+                float: right;
+                clear: both;
+                position: relative;
+                right: 10px;
+                top: 5px;
+            }
+        }
+
+
+        .ham_sub {
+            display: none;
+            li {
+                color: #414141;
+                font-family: 'Noto Sans KR',sans-serif;
+                font-weight: 400;
+                font-size: 16px; 
+                margin: 0 0 10px 30px;
+            }
+        }
     }
+
 }
+
 
 #full_menu {
     width: 100%;
@@ -271,7 +299,7 @@ header {
         clear: both;
         }
         li:last-child {
-            float: right
+            float: right;
         }
         i {
             vertical-align: middle;
@@ -327,6 +355,7 @@ header {
         }
         .ticket_title {
             @include title_text;
+            cursor: pointer;
         }
         .ticket_xi {
             font-size: 32px;
@@ -454,6 +483,9 @@ header {
             height: 40px;
             border-radius: 20px;
             background: #ffffff;
+            &:hover {
+                background: #ececec;
+            }
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.3) 0px 2px 4px -1px;
             position: absolute;
             z-index: 5;
@@ -507,6 +539,61 @@ header {
     }  // #slide_banner 종료
 
 }
+// 종합 이용 가이드
+#guide {
+    width: 90%;
+    margin: 80px auto 80px;
+    .guide_title {
+        color: #414141;
+        font-family: 'Noto Sans KR',sans-serif;
+        font-weight: 900;
+        font-size: 32px; 
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .guide_list {
+        ul {
+            float: left;
+            width: 25%;
+            margin-bottom: 20px;
+            &:hover {
+                color: #005BAE;
+                li:first-child {
+                    background: #cfcfcf;
+                }
+            }
+            li {
+                text-align: center;
+                &:first-child {
+                    border: 1px solid #cfcfcf;
+                    border-radius: 10px;
+                    width: 70px;
+                    height: 70px;
+                    line-height: 90px;
+                    margin: 0 auto;
+                    position: relative;
+                    background: #fff;
+                    a {
+                        position: absolute;
+                        top: 65%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+                &:last-child {
+                    margin-top: 5px;
+                    @include sub_text_to_size;
+                    font-size: 12px;
+                    font-weight: 700;
+                }
+                
+                img {
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
 
 // contents 시작
 #contents {
@@ -543,8 +630,8 @@ header {
             border-bottom: 1px solid #8D8C8C;
         }
         .announcement_board {
-            height: 70px;
-            line-height: 70px;
+            height: 60px;
+            line-height: 60px;
             font-family: 'Noto Sans KR',sans-serif;
             border-bottom: 1px solid #8D8C8C;
             overflow: hidden;
@@ -565,13 +652,20 @@ header {
     }
     // 매거진 부분
     #magazine {
-        margin:50px auto 0;
+        margin:30px auto 0;
         width: 90%;
-    
-        img {
+        .magazine_img {
             width: 100%;
+            height: 250px;
+            background: url(../img/magazine_0.jpg);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
         }
         .magazine_title {
+            padding-top: 5px;
+            height: 40px;
+            line-height: 40px;
             .magazine_sub {
                 font-family: 'Noto Sans KR',sans-serif;
                 color:#8D8C8C;
@@ -590,66 +684,112 @@ header {
             color: #414141;
             font-family: 'Noto Sans KR',sans-serif;
             font-weight: 400;
-            font-size: 16px;
-            padding-top: 10px;
+            font-size: 12px;
+            padding-top: 5px;
             clear: both;
         }
     }
 }
-// 종합 이용 가이드
-#guide {
+
+// trip section
+#trip {
     width: 90%;
-    margin: 80px auto 0;
-    .guide_title {
-        color: #414141;
-        font-family: 'Noto Sans KR',sans-serif;
-        font-weight: 900;
-        font-size: 32px; 
-        text-align: center;
-        margin-bottom: 50px;
-    }
-    .guide_list {
+    margin: 50px auto 0;
+    #trip_top {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
         ul {
-            float: left;
-            width: 50%;
-            height: 200px;
-            margin-bottom: 10px;
-            li {
+            line-height: 70px;
+            display: flex;
+            .contents_title {
+                @include title_text;
+            }
+            .trip_btn {
+                margin-left: 20px;
                 text-align: center;
-                &:first-child {
-                    border: 1px solid #414141;
-                    border-radius: 10px;
-                    width: 130px;
-                    height: 130px;
-                    line-height: 130px;
-                    margin: 0 auto;
-                    position: relative;
+                a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 22px;
+                    line-height: 20px;
+                    margin-left: 5px;
+                    font-size: 14px;
+                    font-family: 'Noto Sans KR',sans-serif;
+                    font-weight: 500;
+                    border-radius: 5px;
+                    color: #414141;
+                    background: #fff;
+                    border: 1px solid #cfcfcf;
                     
-                    a {
-                        position: absolute;
-                        top: 70%;
-                        left: 50%;
-                        transform: translate(-50%,-50%);
+                    &.p_btn_selected {
+                        color: #fff;
+                        background: #005BAE;
+                        border: none;
                     }
                 }
-                &:last-child {
-                    margin-top: 5px;
-                    @include sub_text_to_size;
+            }
+        }
+        li {
+            line-height: 70px;
+        }    
+    }
+    .trip_box {
+        >ul {
+            margin-bottom: 40px;
+            width: 100%;
+            aspect-ratio: 5 / 2;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+            li:first-child {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                border-radius: 20px 20px 0 0;
+            }
+            li:last-child {
+                margin: 10px 10px 10px 20px;
+                height: 70px;
+                color: #414141;
+                font-family: 'Noto Sans KR',sans-serif;
+                a {
+                    font-size: 20px;
                     font-weight: 700;
-                    color: #414141;
                 }
-                
-                img {
-                    height: 60px;
+                span {
+                    display: block;
+                    height: 17px;
+                    font-size: 12px;
+                    font-weight: 400;
                 }
             }
+            .sightseeing_train_img {
+                background: url(../img/package1.jpg);
+            }
+            .nailo_img {
+                background: url(../img/package2.jpg);
+            }
+            .Japan_pass_img {
+                background: url(../img/abroad1.jpg);
+            }
+            .Europe_pass_img {
+                background: url(../img/abroad2.jpg);
+            }
+
+        }
+        &#trip_overseas {
+            display: none;
         }
     }
 }
 
+
 // Footer
 footer {
-    margin-top: 70px;
+    margin-top: 100px;
     width: 100%;
     height:470px;
     background: #414141;
@@ -729,6 +869,30 @@ footer {
     display: none;
 }
 
+@media screen and (min-width:441px) {
+    #guide {
+        .guide_list {
+            ul {
+                li {
+                    &:first-child {
+                        width: 90px;
+                        height: 90px;
+                        line-height: 90px;
+                        a {
+                            top: 65%;
+                        }
+                    }
+                    &:last-child {
+                        font-size: 12px;
+                    }
+                    img {
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }   
+}
 @media screen and (min-width:740px) {
     .show_in_mobile {
         display: none;
@@ -777,6 +941,28 @@ footer {
     #banner {
         margin-top: 260px;
     }
+    #guide {
+        .guide_list {
+            ul {
+                li {
+                    &:first-child {
+                        width: 130px;
+                        height: 130px;
+                        line-height: 130px;
+                        a {
+                            top: 70%;
+                        }
+                    }
+                    &:last-child {
+                        font-size: 16px;
+                    }
+                    img {
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }   
     #contents {
         .magazine_title {
             .magazine_sub {
@@ -787,13 +973,20 @@ footer {
             }
         }        
     }
-    #guide {
-        .guide_list {
+    #trip {
+        .trip_box {
             ul {
-                width: 25%;
+                float: left;
+                width: 47.5%;
+                &:first-child {
+                    margin-right: 2.5%;
+                }
+                &:last-child {
+                    margin-left: 2.5%;
+                }
+            }
             }
         }
-    }
     footer {
         height: 350px;
         #f_top {
@@ -879,12 +1072,11 @@ footer {
         justify-content: space-evenly;
         width: 90%;
         margin: 50px auto 0;
-
-
         #magazine {
             margin:0 0 0 40px;
         }
     }
+    
 }
 @media screen and (min-width:1320px) {
     .show_in_PC {
@@ -933,9 +1125,6 @@ footer {
         margin-top: 250px;
         width: 1280px;
     }
-    #contents {
-        width: 1260px;
-    }
     #guide {
         max-width: 1280px;
         .guide_list {
@@ -943,6 +1132,12 @@ footer {
                 width: 12.5%;
             }
         }
+    }   
+    #contents {
+        width: 1260px;
+    }
+    #trip {
+        width: 1280px;
     }
     footer {
         height: 300px;
