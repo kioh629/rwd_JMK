@@ -405,6 +405,11 @@ header {
                 }
             }
         }
+        #select_date {
+            .round_trip {
+                display: none;
+            }
+        }
         // 버튼
         .ticket_btn {
             float: right;
@@ -423,6 +428,9 @@ header {
                 color: #414141;
                 background: #fff;
                 border: 1px solid #cfcfcf;
+                &:hover {
+                    background: #cfcfcf;
+                }
                 
                 &.btn_selected {
                     color: #fff;
@@ -448,6 +456,9 @@ header {
                 color: #fff;
                 background: #005BAE;
                 border-radius: 10px;
+                &:hover {
+                    background: #3da1ff;
+                }
 
                 i {
                     margin-bottom: 8px;
@@ -528,6 +539,9 @@ header {
                     border-radius: 10px;
                     background: #cfcfcf;
                     cursor: pointer;
+                    &:hover {
+                        background: #adadad;
+                    }
 
                 }
                 &.slick-active button {
@@ -596,6 +610,15 @@ header {
 }
 
 // contents 시작
+.more {
+    font-family: 'Noto Sans KR',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #414141;
+    &:hover {
+        color: #3da1ff;
+    }
+} 
 #contents {
     margin-top: 50px;
     ul.cf {
@@ -612,13 +635,7 @@ header {
         line-height: 70px;
         .contents_title {
             @include title_text();
-        }
-        .more {
-            font-family: 'Noto Sans KR',sans-serif;
-            font-weight: 400;
-            font-size: 12px;
-            color: #414141; 
-        }        
+        }       
     }
 
     // 공지사항 부분
@@ -671,12 +688,18 @@ header {
                 color:#8D8C8C;
                 font-size: 16px;
                 font-weight: 700;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
             .magazine_main {
                 color: #414141;
                 font-family: 'Noto Sans KR',sans-serif;
                 font-weight: 900;
                 font-size: 24px;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
         >li {
@@ -722,6 +745,9 @@ header {
                     color: #414141;
                     background: #fff;
                     border: 1px solid #cfcfcf;
+                    &:hover {
+                        background: #cfcfcf;
+                    }
                     
                     &.p_btn_selected {
                         color: #fff;
@@ -742,6 +768,10 @@ header {
             aspect-ratio: 5 / 2;
             border-radius: 20px;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
 
             li:first-child {
                 width: 100%;
@@ -1145,6 +1175,7 @@ footer {
             height: 220px;
             position: relative;
             .copy {
+                width: 800px;
                 position: absolute;
                 top: -15px;
                 left: 350px;

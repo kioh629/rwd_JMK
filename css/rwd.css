@@ -370,6 +370,9 @@ header #tablet_pc_header li {
   line-height: 60px;
   border-bottom: 1px solid #414141;
 }
+#ticket #ticket_main #select_date .round_trip {
+  display: none;
+}
 #ticket #ticket_main .ticket_btn {
   float: right;
 }
@@ -386,6 +389,9 @@ header #tablet_pc_header li {
   color: #414141;
   background: #fff;
   border: 1px solid #cfcfcf;
+}
+#ticket #ticket_main .ticket_btn a:hover {
+  background: #cfcfcf;
 }
 #ticket #ticket_main .ticket_btn a.btn_selected {
   color: #fff;
@@ -406,6 +412,9 @@ header #tablet_pc_header li {
   color: #fff;
   background: #005BAE;
   border-radius: 10px;
+}
+#ticket #ticket_main #select_train .search_btn:hover {
+  background: #3da1ff;
 }
 #ticket #ticket_main #select_train .search_btn i {
   margin-bottom: 8px;
@@ -480,6 +489,9 @@ header #tablet_pc_header li {
   background: #cfcfcf;
   cursor: pointer;
 }
+#banner #slide_banner .slick-dots li button:hover {
+  background: #adadad;
+}
 #banner #slide_banner .slick-dots li.slick-active button {
   background: #414141;
 }
@@ -538,6 +550,16 @@ header #tablet_pc_header li {
   height: 30px;
 }
 
+.more {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #414141;
+}
+.more:hover {
+  color: #3da1ff;
+}
+
 #contents {
   margin-top: 50px;
 }
@@ -557,12 +579,6 @@ header #tablet_pc_header li {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: 32px;
-}
-#contents .contents_top .more {
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  color: #414141;
 }
 #contents #announcement {
   width: 90%;
@@ -613,11 +629,17 @@ header #tablet_pc_header li {
   font-size: 16px;
   font-weight: 700;
 }
+#contents #magazine .magazine_title .magazine_sub:hover {
+  text-decoration: underline;
+}
 #contents #magazine .magazine_title .magazine_main {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 24px;
+}
+#contents #magazine .magazine_title .magazine_main:hover {
+  text-decoration: underline;
 }
 #contents #magazine > li {
   height: 70px;
@@ -667,6 +689,9 @@ header #tablet_pc_header li {
   background: #fff;
   border: 1px solid #cfcfcf;
 }
+#trip #trip_top ul .trip_btn a:hover {
+  background: #cfcfcf;
+}
 #trip #trip_top ul .trip_btn a.p_btn_selected {
   color: #fff;
   background: #005BAE;
@@ -681,6 +706,10 @@ header #tablet_pc_header li {
   aspect-ratio: 5/2;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  cursor: pointer;
+}
+#trip .trip_box > ul:hover {
+  opacity: 0.7;
 }
 #trip .trip_box > ul li:first-child {
   width: 100%;
@@ -1047,6 +1076,7 @@ footer #f_bot .copy address {
     position: relative;
   }
   footer #f_bot .copy {
+    width: 800px;
     position: absolute;
     top: -15px;
     left: 350px;
