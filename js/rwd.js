@@ -66,4 +66,65 @@ $(function(){
 
         ]
     });
+
+    // 역 선택 창
+    // input클릭 여닫기
+    $("#depart").on("click",function(){
+        if ($(".select_station_window").is(':visible')){
+            $(".select_station_window").stop().slideUp();
+        } else {
+            $(this).next().stop().slideDown();
+        }
+    });
+    $("#arrival").on("click",function(){
+        if ($(".select_station_window").is(':visible')){
+            $(".select_station_window").stop().slideUp();
+        } else {
+            $(this).next().stop().slideDown();
+        }
+    });
+    // 버튼클릭 여닫기
+    $(".close_win").on("click",function(){
+        $(".select_station_window").stop().slideUp();
+    });
+    // 검색어 필터
+    const $station = $('.station li')
+    const $search = $('#station_search');
+    const cache = [];
+    $station.each(function(){
+        cache.push({
+            element: this,
+            text: $(this).text().trim()            
+        })
+    });
+    function filter(){
+        const query = this.value.trim();
+        cache.forEach(function(li){
+            let index = 0;
+            if (query) {
+                index = li.text.indexOf(query);
+            }
+            li.element.style.display = index === -1 ? 'none':'';
+        });
+    };
+    $search.on('keyup',filter)
+    // 선택창에서 역 클릭 시 밸류값 변경
+    $(".select_depart .search_filter ul li").on("click",function(){
+        let departure = $(this).text();
+        $("#depart").attr('value',departure);
+        $("#depart").attr('placeholder',departure);
+        $(".select_station_window").stop().slideUp();
+    });
+    $(".select_arrival .search_filter ul li").on("click",function(){
+        let arrival = $(this).text();
+        $("#arrival").attr('value',arrival);
+        $("#arrival").attr('placeholder',arrival);
+        $(".select_station_window").stop().slideUp();
+    });
+    // 체인지 버튼 클릭 시 출발지-도착지 변경
+    $("#select_station>div").on("click",function(){
+        let dum = $("#depart").attr("value");
+        $("#depart").attr("value",$("#arrival").attr("value"));
+        $("#arrival").attr("value",dum); 
+    });
 });
