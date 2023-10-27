@@ -86,6 +86,7 @@ $(function(){
     // 버튼클릭 여닫기
     $(".close_win").on("click",function(){
         $(".select_station_window").stop().slideUp();
+        return false;
     });
     // 검색어 필터
     const $station = $('.station li')

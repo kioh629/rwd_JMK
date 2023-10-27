@@ -383,17 +383,19 @@ header #tablet_pc_header li {
   border-bottom: 1px solid #414141;
 }
 #ticket #ticket_main #select_station .select_station_window {
+  display: none;
   position: absolute;
   top: 107px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1003;
   width: 90%;
-  height: 500px;
+  height: 650px;
   margin-left: auto;
   margin-right: auto;
-  background: #c3def8;
+  background: #ffffff;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 #ticket #ticket_main #select_station .select_station_window .close_win {
   border: none;
@@ -401,31 +403,84 @@ header #tablet_pc_header li {
   height: 25px;
   line-height: 25px;
   font-size: 20px;
-  background: #b0d3f4;
+  background: #ffffff;
   border-radius: 20px 20px 0 0;
+}
+#ticket #ticket_main #select_station .select_station_window .close_win:hover {
+  background: #cfcfcf;
 }
 #ticket #ticket_main #select_station .select_station_window .station_search {
   margin-top: 20px;
   height: 80px;
 }
 #ticket #ticket_main #select_station .select_station_window .station_search #search_win {
-  width: 250px;
-  height: 30px;
-  background: #fff;
+  width: 85%;
+  height: 35px;
+  background: #ececec;
   margin: 0 auto;
   border-radius: 20px;
 }
+#ticket #ticket_main #select_station .select_station_window .station_search #search_win i.xi-search {
+  margin-left: 20px;
+  line-height: 35px;
+  font-size: 20px;
+  color: #414141;
+}
 #ticket #ticket_main #select_station .select_station_window .station_search #search_win #station_search {
+  margin: 0 0 7px 20px;
   background: none;
   outline: none;
   border: none;
+  line-height: 35px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0;
+}
+#ticket #ticket_main #select_station .select_station_window .station_search .result {
+  width: 85%;
+  margin: 20px auto 10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  font-size: 20px;
+}
+#ticket #ticket_main #select_station .select_station_window .station_search .result span {
+  font-size: 12px;
+}
+#ticket #ticket_main #select_station .select_station_window .station_search .result span::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  background: #C2E2FF;
+  margin: 0 10px 0 20px;
+  border-radius: 5px;
+}
+#ticket #ticket_main #select_station .select_station_window .search_filter .station {
+  width: 82%;
+  margin: 20px auto;
 }
 #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
   float: left;
   text-align: center;
-  width: 20%;
+  width: 23%;
+  margin: 1%;
   height: 30px;
   line-height: 30px;
+  background: #ECECEC;
+  border-radius: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #414141;
+}
+#ticket #ticket_main #select_station .select_station_window .search_filter .station li.ktx_station {
+  background: #C2E2FF;
 }
 #ticket #ticket_main > div:nth-child(2) ul, #ticket #ticket_main > div:nth-child(3) ul, #ticket #ticket_main > div:nth-child(4) ul {
   width: 270px;
@@ -953,6 +1008,9 @@ footer #f_bot .copy address {
     width: 50%;
     height: 50%;
   }
+  #ticket #ticket_main #select_station {
+    width: 50%;
+  }
   #ticket #ticket_main #select_date ul:first-child {
     margin-top: 26px;
   }
@@ -1112,6 +1170,9 @@ footer #f_bot .copy address {
     float: left;
     width: 25%;
     height: 100%;
+  }
+  #ticket #ticket_main #select_station {
+    width: 25%;
   }
   #ticket #ticket_main #select_date ul:first-child {
     margin-top: 52px;
