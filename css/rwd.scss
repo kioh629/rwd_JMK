@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
 @mixin align_vertical{
     position: relative;
     top: 50%;
@@ -295,7 +301,6 @@ header {
     width: 85%;
     height: 500px;
     margin: 0 auto;
-    text-align: center;
     
     ul.cf {
         li:first-child {
@@ -366,6 +371,7 @@ header {
             color: #414141;
         }
         #select_station {
+            padding-top: 8px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -374,7 +380,7 @@ header {
                 font-size: 28px;
             }
             .ticket_sub {
-
+                text-align: center;
             }
             form {
                 height: 90px;
@@ -387,6 +393,7 @@ header {
                     width: 115px;
                     border: none;
                     text-align: center;
+                    border-radius: 0;
                     &::placeholder {
                         color: #414141;
                     }
@@ -403,14 +410,14 @@ header {
                 &:hover {
                     background: #cfcfcf;
                 }
-
+                text-align: center;
                 i {
                     font-size: 26px;
                     margin: 1px auto;
                 }
             }
             .ticket_title {
-                margin-top: 5px;
+                margin-top: 15px;
                 padding-bottom: 5px;
                 border-bottom: 1px solid #414141;
             }
@@ -455,9 +462,11 @@ header {
                             line-height: 35px;
                             font-size: 20px;
                             color: #414141;
+                            text-align: left;
                         }
                         #station_search {
                             margin: 0 0 7px 20px;
+                            width: 170px;
                             background: none;
                             outline: none;
                             border: none;
@@ -495,6 +504,7 @@ header {
                 .search_filter {
                     .station {
                         width: 82%;
+                        height: 465px;
                         margin: 20px auto;
                         li {
                             float: left;
@@ -556,7 +566,7 @@ header {
                 font-family: 'Noto Sans KR',sans-serif;
                 font-weight: 500;
                 border-radius: 5px;
-
+                text-align: center;
                 color: #414141;
                 background: #fff;
                 border: 1px solid #cfcfcf;
@@ -588,6 +598,7 @@ header {
                 color: #fff;
                 background: #005BAE;
                 border-radius: 10px;
+                text-align: center;
                 &:hover {
                     background: #3da1ff;
                 }
@@ -691,8 +702,7 @@ header {
     margin: 80px auto 80px;
     .guide_title {
         color: #414141;
-        font-family: 'Noto Sans KR',sans-serif;
-        font-weight: 900;
+        font-family: 'Noto Sans KR Black';
         font-size: 32px; 
         text-align: center;
         margin-bottom: 30px;
@@ -743,24 +753,26 @@ header {
 
 // contents 시작
 .more {
-    font-family: 'Noto Sans KR',sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #414141;
+    a {
+        font-family: 'Noto Sans KR',sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #414141;
+    }
+    i {
+        display: inline;
+        font-size: 13px;
+    }
     &:hover {
         color: #3da1ff;
     }
+
 } 
 #contents {
-    margin-top: 50px;
-    ul.cf {
-        li:first-child {
-            float: left;
-            clear: both;
-        }
-        li:last-child {
-            float: right
-        }
+    margin-top: 80px;
+    ul.flex {
+        display: flex;
+        justify-content: space-between;
     }
     .contents_top {
         height: 70px;
@@ -826,8 +838,7 @@ header {
             }
             .magazine_main {
                 color: #414141;
-                font-family: 'Noto Sans KR',sans-serif;
-                font-weight: 900;
+                font-family: 'Noto Sans KR Black';
                 font-size: 24px;
                 &:hover {
                     text-decoration: underline;
@@ -849,7 +860,7 @@ header {
 // trip section
 #trip {
     width: 90%;
-    margin: 50px auto 0;
+    margin: 80px auto 0;
     #trip_top {
         width: 100%;
         height: 70px;
@@ -1277,6 +1288,9 @@ footer {
             }
             #select_station {
                 width: 25%;
+                .ticket_title {
+                    margin-top: 12px;
+                }
             }
             #select_date ul:first-child {
                 margin-top: 52px;
