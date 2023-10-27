@@ -264,6 +264,7 @@ header #tablet_pc_header li {
 
 #ticket {
   position: relative;
+  z-index: 6;
   top: 100px;
   width: 85%;
   height: 500px;
@@ -395,11 +396,10 @@ header #tablet_pc_header li {
 #ticket #ticket_main #select_station .select_station_window {
   display: none;
   position: absolute;
-  top: 107px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1003;
-  width: 90%;
+  width: 105%;
   height: 650px;
   margin-left: auto;
   margin-right: auto;
@@ -491,9 +491,16 @@ header #tablet_pc_header li {
   font-size: 14px;
   font-weight: 500;
   color: #414141;
+  cursor: pointer;
+}
+#ticket #ticket_main #select_station .select_station_window .search_filter .station li:hover {
+  background: #cfcfcf;
 }
 #ticket #ticket_main #select_station .select_station_window .search_filter .station li.ktx_station {
   background: #C2E2FF;
+}
+#ticket #ticket_main #select_station .select_station_window .search_filter .station li.ktx_station:hover {
+  background: #90c9ff;
 }
 #ticket #ticket_main > div:nth-child(2) ul, #ticket #ticket_main > div:nth-child(3) ul, #ticket #ticket_main > div:nth-child(4) ul {
   width: 270px;
@@ -982,6 +989,12 @@ footer #f_bot .copy address {
   #guide .guide_list ul li img {
     height: 40px;
   }
+  #ticket #ticket_main #select_station .select_station_window {
+    height: 580px;
+  }
+  #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
+    width: 18%;
+  }
 }
 @media screen and (min-width: 740px) {
   .show_in_mobile {
@@ -1024,6 +1037,13 @@ footer #f_bot .copy address {
   }
   #ticket #ticket_main #select_station {
     width: 50%;
+  }
+  #ticket #ticket_main #select_station .select_station_window {
+    top: 135px;
+    width: 105%;
+  }
+  #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
+    width: 14.66%;
   }
   #ticket #ticket_main #select_date ul:first-child {
     margin-top: 26px;
@@ -1151,6 +1171,17 @@ footer #f_bot .copy address {
   #contents #magazine {
     margin: 0 0 0 40px;
   }
+  #ticket #ticket_main #select_station {
+    width: 50%;
+  }
+  #ticket #ticket_main #select_station .select_station_window {
+    top: 135px;
+    height: 500px;
+    max-width: 1280px;
+  }
+  #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
+    width: 10.5%;
+  }
 }
 @media screen and (min-width: 1320px) {
   .show_in_PC {
@@ -1190,6 +1221,17 @@ footer #f_bot .copy address {
   }
   #ticket #ticket_main #select_station .ticket_title {
     margin-top: 12px;
+  }
+  #ticket #ticket_main #select_station > div {
+    margin: 90px 5px 0;
+  }
+  #ticket #ticket_main #select_station .select_station_window {
+    top: 150px;
+    max-width: 1280px;
+    height: 450px;
+  }
+  #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
+    width: 8%;
   }
   #ticket #ticket_main #select_date ul:first-child {
     margin-top: 52px;

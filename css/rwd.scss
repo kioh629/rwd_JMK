@@ -297,6 +297,7 @@ header {
 // 메인 - 승차권 예매
 #ticket {
     position: relative;
+    z-index: 6;
     top: 100px;
     width: 85%;
     height: 500px;
@@ -424,11 +425,10 @@ header {
             .select_station_window {
                 display: none;
                 position: absolute;
-                top: 107px;
+                top: 120px;
                 left: 50%;
                 transform: translateX(-50%);
-                z-index: 1003;
-                width: 90%;
+                width: 105%;
                 height: 650px;
                 margin-left: auto;
                 margin-right: auto;
@@ -519,9 +519,16 @@ header {
                             font-size: 14px;
                             font-weight: 500;
                             color: #414141;
+                            cursor: pointer;
+                            &:hover {
+                                background: #cfcfcf;
+                            }
                             
                             &.ktx_station {
                                 background: #C2E2FF;
+                                &:hover {
+                                    background: #90c9ff;
+                                }
                             }
                         }
                     }
@@ -1064,6 +1071,24 @@ footer {
                 }
             }
         }
+    }
+    #ticket {
+        #ticket_main {
+            #select_station {
+                .select_station_window {
+                    height: 580px;
+                    .search_filter {
+                        .station {
+                            li {
+                                width: 18%;
+                            }
+                        }
+                    }
+                }
+                
+            }    
+        }
+        
     }   
 }
 @media screen and (min-width:740px) {
@@ -1105,6 +1130,18 @@ footer {
             }
             #select_station {
                 width: 50%;
+                .select_station_window {
+                    top: 135px;
+                    width: 105%;
+                    .search_filter {
+                        .station {
+                            li {
+                                width: 14.66%;
+                            }
+                        }
+                    }
+                }
+                
             }
             #select_date ul:first-child {
                 margin-top: 26px;
@@ -1252,7 +1289,27 @@ footer {
             margin:0 0 0 40px;
         }
     }
-    
+    #ticket {
+        #ticket_main {
+            #select_station {
+                width: 50%;
+                .select_station_window {
+                    top: 135px;
+                    height: 500px;
+                    max-width: 1280px;
+                    .search_filter {
+                        .station {
+                            li {
+                                width: 10.5%;
+                            }
+                        }
+                    }
+                }
+                
+            }    
+        }
+        
+    }
 }
 @media screen and (min-width:1320px) {
     .show_in_PC {
@@ -1290,6 +1347,21 @@ footer {
                 width: 25%;
                 .ticket_title {
                     margin-top: 12px;
+                }
+                >div {
+                    margin:90px 5px 0;
+                }
+                .select_station_window {
+                    top: 150px;
+                    max-width: 1280px;
+                    height: 450px;
+                    .search_filter {
+                        .station {
+                            li {
+                                width: 8%;
+                            }
+                        }
+                    }
                 }
             }
             #select_date ul:first-child {
