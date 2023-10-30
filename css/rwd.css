@@ -388,7 +388,7 @@ header #tablet_pc_header li {
 #ticket #ticket_main #select_station .select_station_window {
   display: none;
   position: absolute;
-  z-index: 5;
+  z-index: 1000;
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
@@ -502,23 +502,52 @@ header #tablet_pc_header li {
   display: flex;
   justify-content: space-between;
 }
-#ticket #ticket_main #select_date .round_trip {
+#ticket #ticket_main #select_date form.round_trip {
   display: none;
+  width: 270px;
+  margin: 12px auto 0;
+  position: relative;
 }
-#ticket #ticket_main #select_date form {
+#ticket #ticket_main #select_date form.round_trip #round_trip_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+}
+#ticket #ticket_main #select_date form.round_trip label {
+  display: block;
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+#ticket #ticket_main #select_date form.round_trip input {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  width: 130px;
+  border-bottom: 1px solid #414141;
+  padding-bottom: 6px;
+}
+#ticket #ticket_main #select_date form.oneway_trip {
   display: flex;
   width: 270px;
   margin: 11px auto 0;
   padding-bottom: 7px;
   border-bottom: 1px solid #414141;
 }
-#ticket #ticket_main #select_date form i {
+#ticket #ticket_main #select_date form.oneway_trip i {
   line-height: 48px;
   font-size: 32px;
   color: #414141;
   text-align: left;
 }
-#ticket #ticket_main #select_date form #ticket_time {
+#ticket #ticket_main #select_date form.oneway_trip input#ticket_time {
   font-size: 32px;
   position: relative;
   width: 270px;
@@ -526,7 +555,7 @@ header #tablet_pc_header li {
   border-bottom: 1px solide #414141;
   text-align: right;
 }
-#ticket #ticket_main #select_date form input[type=date]::-webkit-calendar-picker-indicator, #ticket #ticket_main #select_date form ::-webkit-inner-spin-button {
+#ticket #ticket_main #select_date form.oneway_trip input[type=date]::-webkit-calendar-picker-indicator, #ticket #ticket_main #select_date form.oneway_trip ::-webkit-inner-spin-button {
   position: absolute;
   z-index: 3;
   left: 0;
@@ -579,7 +608,7 @@ header #tablet_pc_header li {
   justify-content: space-between;
 }
 #ticket #ticket_main #select_NumberOfPeople .select_num input {
-  width: 206px;
+  width: 238px;
   text-align: right;
   border: none;
   line-height: 50px;
@@ -592,13 +621,14 @@ header #tablet_pc_header li {
   margin-top: 5px;
 }
 #ticket #ticket_main #select_NumberOfPeople .select_num_window {
-  z-index: 4;
+  display: none;
+  z-index: 999;
   top: 390px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 650px;
+  height: 480px;
   margin-left: auto;
   margin-right: auto;
   background: #ffffff;
@@ -620,16 +650,7 @@ header #tablet_pc_header li {
 #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap {
   width: 85%;
   margin: 0 auto;
-}
-#ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap h4 {
-  color: #414141;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  font-size: 24px;
-  text-align: center;
-  height: 50px;
-  line-height: 50px;
+  padding-top: 30px;
 }
 #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num {
   color: #414141;
@@ -674,22 +695,94 @@ header #tablet_pc_header li {
   background: #005BAE;
   color: #fff;
 }
-#ticket #ticket_main #select_train .search_btn {
+#ticket #ticket_main #select_train .select_train_top {
+  position: relative;
+  width: 270px;
+  margin: 15px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+#ticket #ticket_main #select_train .train {
+  display: flex;
+  width: 270px;
+  margin: 0 auto;
+  border-bottom: 1px solid #414141;
+  padding: 11px 0 8px;
+}
+#ticket #ticket_main #select_train .train #select_train_box {
+  width: 198px;
+  border: none;
+  text-align: center;
+}
+#ticket #ticket_main #select_train .train .search_btn {
+  font-size: 24px;
   display: inline-block;
   width: 40px;
   height: 40px;
   line-height: 40px;
-  margin-left: 60px;
   color: #fff;
   background: #005BAE;
+  border: none;
   border-radius: 10px;
   text-align: center;
+  margin-top: 6px;
+  cursor: pointer;
 }
-#ticket #ticket_main #select_train .search_btn:hover {
+#ticket #ticket_main #select_train .train .search_btn:hover {
   background: #3da1ff;
 }
-#ticket #ticket_main #select_train .search_btn i {
-  margin-bottom: 8px;
+#ticket #ticket_main #select_train .train .search_btn i {
+  margin-bottom: 5px;
+}
+#ticket #ticket_main #select_train .train i.xi-train {
+  padding-top: 10px;
+}
+#ticket #ticket_main #select_train .select_train_window {
+  display: none;
+  z-index: 998;
+  top: 525px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#ticket #ticket_main #select_train .select_train_window .close_win {
+  border: none;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  font-size: 20px;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+}
+#ticket #ticket_main #select_train .select_train_window .close_win:hover {
+  background: #cfcfcf;
+}
+#ticket #ticket_main #select_train .select_train_window #train_wrap {
+  width: 80%;
+  margin: 30px auto 0;
+}
+#ticket #ticket_main #select_train .select_train_window #train_wrap ul li {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+}
+#ticket #ticket_main #select_train .select_train_window #train_wrap ul li:hover {
+  color: #3da1ff;
 }
 
 #banner {
@@ -826,6 +919,9 @@ header #tablet_pc_header li {
   font-weight: 400;
   font-size: 14px;
   color: #414141;
+}
+.more a:hover {
+  color: #3da1ff;
 }
 .more i {
   display: inline;
@@ -1176,6 +1272,23 @@ footer #f_bot .copy address {
   #ticket #ticket_main #select_NumberOfPeople .ticket_sub {
     padding-top: 15px;
   }
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window {
+    top: 265px;
+    height: 300px;
+  }
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num {
+    width: 45%;
+  }
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num:nth-child(odd) {
+    margin-right: 10%;
+  }
+  #ticket #ticket_main #select_train .select_train_window {
+    top: 265px;
+    height: 250px;
+  }
+  #ticket #ticket_main #select_train .select_train_window #train_wrap ul li {
+    width: 33%;
+  }
   #banner {
     margin-top: 260px;
   }
@@ -1364,8 +1477,28 @@ footer #f_bot .copy address {
   #ticket #ticket_main #select_NumberOfPeople .ticket_sub {
     padding-top: 57px;
   }
-  #ticket #ticket_main #select_train ul:first-child {
-    margin-top: 52px;
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window {
+    top: 155px;
+    height: 300px;
+  }
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap {
+    width: 75%;
+  }
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num {
+    width: 40%;
+  }
+  #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num:nth-child(odd) {
+    margin-right: 20%;
+  }
+  #ticket #ticket_main #select_train .select_train_window {
+    top: 155px;
+    height: 250px;
+  }
+  #ticket #ticket_main #select_train .select_train_window #train_wrap ul li {
+    width: 25%;
+  }
+  #ticket #ticket_main #select_train > ul:first-child {
+    margin-top: 56px;
   }
   #banner {
     margin-top: 250px;

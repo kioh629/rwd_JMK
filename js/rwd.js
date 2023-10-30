@@ -129,20 +129,46 @@ $(function(){
         $("#arrival").attr("value",dum); 
     });
 
-    // 날짜 선택 창 - 현재 날짜로 설정하기
+    // 날짜 선택 창 
+        // 현재 날짜로 설정하기
     const now = new Date();
     const year = now.getFullYear();
     const month = now.getMonth()+1;
     const date = now.getDate();
     $('input#ticket_time').attr('value',year+'-'+month+'-'+date);
     $('input#ticket_time').attr('min',year+'-'+month+'-'+date);
-    
-    // 승객 연령 및 좌석 선택
-    let sum = 0;
-    $('.num').each(function(){
-        sum += $(this).val();
+    $('input#depart_day').attr('value',year+'-'+month+'-'+date);
+    $('input#depart_day').attr('min',year+'-'+month+'-'+date);
+    $('input#arrival_day').attr('min',year+'-'+month+'-'+date);
+        // 편도 - 왕복 선택
+    $('.select_date_top .ticket_btn a:last-child').on('click',function(){
+        $('.select_date_top .ticket_btn a').removeClass('btn_selected');
+        $(this).addClass('btn_selected');
+        $('.oneway_trip').css('display','none');
+        $('.round_trip').css('display','block');
+        return false;
+    });
+    $('.select_date_top .ticket_btn a:first-child').on('click',function(){
+        $('.select_date_top .ticket_btn a').removeClass('btn_selected');
+        $(this).addClass('btn_selected');
+        $('.round_trip').css('display','none');
+        $('.oneway_trip').css('display','flex');
+        return false;
     });
 
+    // 승객 연령 및 좌석 선택
+        // 창 여닫기
+    $('.select_num').on('click', function(){
+        if ($('.select_num_window').is(':visible')){
+            $('.select_num_window').stop().slideUp();
+        } else {
+            $('.select_num_window').stop().slideDown();
+        }
+    })
+    $(".select_num_window .close_win").on("click",function(){
+        $('.select_num_window').stop().slideUp();
+    });
+        // 인원 - + 버튼 작동
     $(".add_num .xi-minus-min").on("click",function(){
         let num = $(this).parent().next().attr('value');
         if (num > 0) {
@@ -157,7 +183,74 @@ $(function(){
             $(this).parent().prev().attr('value',num)
         }
     });
+        // 인원 선택 시 밸류값 변경 (단독 연령일 경우 - 연령 이름도 반영)
+    setInterval(function(){
+        let sum = 0;
+        $('.num').each(function(){
+            sum += parseInt($(this).val());
+        });
+        if (sum-parseInt($('#adult').val()) == 0){
+            $('.select_num input').attr('value','어른 '+sum+'명')
+        } else if (sum-parseInt($('#child').val()) == 0){
+            $('.select_num input').attr('value','어린이 '+sum+'명')
+        } else if (sum-parseInt($('#bady').val()) == 0){
+            $('.select_num input').attr('value','유아 '+sum+'명')
+        } else if (sum-parseInt($('#senior').val()) == 0){
+            $('.select_num input').attr('value','경로 '+sum+'명')
+        } else if (sum-parseInt($('#s-disabled').val()) == 0){
+            $('.select_num input').attr('value','중증장애인 '+sum+'명')
+        } else if (sum-parseInt($('#m-disabled').val()) == 0){
+            $('.select_num input').attr('value','경증장애인 '+sum+'명')
+        }
+        else {
+            $('.select_num input').attr('value','총 '+sum+'명');
+        }
+    });
 
-    
+    // 열차유형 선택
+    $("#select_train_box").on("click",function(){
+        if ($(".select_train_window").is(':visible')) {
+            $('.select_train_window').stop().slideUp();
+        } else {
+            $('.select_train_window').stop().slideDown();
+        }
+    });
+    $(".select_train_window .close_win").on("click",function(){
+        $('.select_train_window').stop().slideUp();
+    });
+    $(".train_category li").on("click",function(){
+        let tname = $(this).text();
+        $('#select_train_box').attr('value',tname);
+        $('.select_train_window').stop().slideUp();
+    });
+        // 단일-환승
+    $('.round_btn').on("click",function(){
+        $('.select_train_top .ticket_btn a').removeClass('btn_selected');
+        $(this).addClass('btn_selected');
+        $('#select_train_box').attr('value','환승경로');
+        return false;
+    });
+    $('.oneway_btn').on("click",function(){
+        $('.select_train_top .ticket_btn a').removeClass('btn_selected');
+        $(this).addClass('btn_selected');
+        $('#select_train_box').attr('value','KTX');
+        return false;
+    });
 
+    // 여행상품 - 국내/국외 버튼
+    $('.int_btn').on("click",function(){
+        $('.trip_btn a').removeClass('p_btn_selected');
+        $(this).addClass('p_btn_selected');
+        $('#trip_overseas').css('display','none');
+        $('#trip_internal').css('display','block');
+        return false;
+
+    });
+    $('.ove_btn').on("click",function(){
+        $('.trip_btn a').removeClass('p_btn_selected');
+        $(this).addClass('p_btn_selected');
+        $('#trip_internal').css('display','none');
+        $('#trip_overseas').css('display','block');
+        return false;
+    });
 });

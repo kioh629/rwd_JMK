@@ -413,7 +413,7 @@ header {
             .select_station_window {
                 display: none;
                 position: absolute;
-                z-index: 5;
+                z-index: 1000;
                 top: 120px;
                 left: 50%;
                 transform: translateX(-50%);
@@ -535,10 +535,36 @@ header {
                 display: flex;
                 justify-content: space-between;
             }
-            .round_trip {
+
+            form.round_trip {
                 display: none;
+                width: 270px;
+                margin: 12px auto 0;
+                position: relative;
+                #round_trip_wrap {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 270px;
+                    div {
+                    }
+                }
+                label {
+                    display: block;
+                    @include sub_text;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+                input {
+                    @include title_text;
+                    font-size: 18px;
+                    text-align: center;
+                    border: none;
+                    width: 130px;
+                    border-bottom: 1px solid #414141;
+                    padding-bottom: 6px;
+                }
             }
-            form {
+            form.oneway_trip {
                 display: flex;
                 width: 270px;
                 margin: 11px auto 0;
@@ -550,7 +576,7 @@ header {
                     color: #414141;
                     text-align: left;
                 }
-                #ticket_time {
+                input#ticket_time {
                     font-size: 32px;
                     position: relative;
                     width: 270px;
@@ -618,7 +644,7 @@ header {
                 justify-content: space-between;
                 
                 input {
-                    width: 206px;
+                    width: 238px;
                     text-align: right;
                     border: none;
                     line-height: 50px;
@@ -632,14 +658,14 @@ header {
                 }
             }
             .select_num_window {
-                // display: none;
-                z-index: 4;
+                display: none;
+                z-index: 999;
                 top: 390px;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 100%;
-                height: 650px;
+                height: 480px;
                 margin-left: auto;
                 margin-right: auto;
                 background: #ffffff;
@@ -660,13 +686,7 @@ header {
                 #select_num_wrap {
                     width: 85%;
                     margin: 0 auto;
-                    h4 {
-                        @include title_text;
-                        font-size: 24px;
-                        text-align: center;
-                        height: 50px;
-                        line-height: 50px;
-                    }
+                    padding-top: 30px;
                     .age_num {
                         @include sub_text;
                         font-weight: 600;      
@@ -713,22 +733,92 @@ header {
             }
         }
         #select_train {
-            .search_btn {
-                display: inline-block;
-                width: 40px;
-                height: 40px;
-                line-height: 40px;
-                margin-left: 60px;
-                color: #fff;
-                background: #005BAE;
-                border-radius: 10px;
-                text-align: center;
-                &:hover {
-                    background: #3da1ff;
+            .select_train_top {
+                position: relative;
+                width: 270px;
+                margin: 15px auto 0;
+                display: flex;
+                justify-content: space-between;
+            }
+            .train {
+                display: flex;
+                width: 270px;
+                margin: 0 auto;
+                border-bottom: 1px solid #414141;
+                padding: 11px 0 8px;
+                #select_train_box {
+                    width: 198px;
+                    border: none;
+                    text-align: center;
                 }
+                .search_btn {
+                    font-size: 24px;
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    color: #fff;
+                    background: #005BAE;
+                    border: none;
+                    border-radius: 10px;
+                    text-align: center;
+                    margin-top: 6px;
+                    cursor: pointer;
+                    &:hover {
+                        background: #3da1ff;
+                    }
+                    i {
+                        margin-bottom: 5px;
+                    }
+                }
+                i.xi-train  {
+                    padding-top: 10px;                  
+                }
+            }
+            .select_train_window {
+                display: none;
+                z-index: 998;
+                top: 525px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 350px;
+                margin-left: auto;
+                margin-right: auto;
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                
+                .close_win {
+                    border: none;
+                    width: 100%;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 20px;
+                    background: #ffffff;
+                    border-radius: 20px 20px 0 0;
+                    &:hover {
+                        background: #cfcfcf;
+                    }
+                }
+                #train_wrap {
+                    width: 80%;
+                    margin:30px auto 0;
 
-                i {
-                    margin-bottom: 8px;
+                    ul li {
+                        @include sub_text;
+                        font-weight: 600;
+                        float: left;
+                        width: 50%;
+                        text-align: center;
+                        height: 50px;
+                        line-height: 50px;
+                        cursor: pointer;
+                        &:hover {
+                            color: #3da1ff;
+                        }
+                    }
                 }
             }
         }
@@ -882,6 +972,9 @@ header {
         font-weight: 400;
         font-size: 14px;
         color: #414141;
+        &:hover {
+            color: #3da1ff;
+        }
     }
     i {
         display: inline;
@@ -1270,6 +1363,30 @@ footer {
                 .ticket_sub {
                     padding-top: 15px;
                 }            
+                .select_num_window {
+                    top: 265px;
+                    height: 300px;
+                    #select_num_wrap {
+                        .age_num {
+                            width: 45%;
+                            &:nth-child(odd) {
+                                margin-right: 10%;
+                            }
+                        }
+                    }
+                }
+
+            }
+            #select_train {
+                .select_train_window {
+                    top: 265px;
+                    height: 250px;
+                    #train_wrap {
+                        ul li {
+                            width: 33%;
+                        }
+                    }
+                }
             }
         }
     }
@@ -1494,11 +1611,36 @@ footer {
             #select_NumberOfPeople {
                 .ticket_sub {
                     padding-top: 57px;
+                }
+                .select_num_window {
+                    top: 155px;
+                    height: 300px;
+                    #select_num_wrap {
+                        width: 75%;
+                        .age_num {
+                            width: 40%;
+                            &:nth-child(odd) {
+                                margin-right: 20%;
+                            }
+                        }
+                    }
                 }       
             }
-            #select_train ul:first-child {
-                margin-top: 52px;
+            #select_train {
+                .select_train_window {
+                    top: 155px;
+                    height: 250px;
+                    #train_wrap {
+                        ul li {
+                            width: 25%;
+                        }
+                    }
+                }
+                >ul:first-child {
+                    margin-top: 56px;
+                }
             }
+            
         }
     }
     #banner {
