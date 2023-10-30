@@ -197,7 +197,7 @@
             <li>관광열차</li>
         </ul>
         <fieldset id="ticket_main"  class="cf">
-            <div id="select_station" class="cf" action="" method="">
+            <div id="select_station" class="cf">
                 <form name="depart_station">
                     <label for="depart" class="ticket_sub">출발지</label>
                     <input type="text" id="depart" name="depart" class="ticket_title" placeholder="서울" value="서울" readonly alt="클릭 시 출발역 검색창 활성화"></input>
@@ -269,7 +269,7 @@
                     </div>
                 </form>
                 <div><i class="xi-renew ticket_xi"></i></div>
-                <form name="arrival_station" action="" method="">
+                <form name="arrival_station">
                     <label for="arrival" class="ticket_sub">도착지</label>
                     <input type="text" id="arrival" name="arrival" class="ticket_title" placeholder="부산" value="부산" readonly alt="클릭 시 도착역 검색창 활성화"></input>
                     <div class="select_station_window select_arrival">
@@ -341,26 +341,81 @@
                 </form>                
             </div>
             <div id="select_date">
-                <ul class=" cf">
+                <ul class="select_date_top">
                     <li class="ticket_sub">날짜선택</li>
                     <li class="ticket_btn">
                         <a href="#" class="btn_selected">편도</a>
                         <a href="#">왕복</a>
                     </li>
                 </ul>
-                <ul class="cf">
-                    <li><i class="xi-calendar-check ticket_xi"></i></li>
-                    <li class="ticket_title">2023.10.21.토 <span class="round_trip">2023.10.21.토</span></li>
+                <form name="select_date" class="cf">
+                    <i class="xi-calendar-check"></i>
+                    <input type="date" id="ticket_time" name="ticket_time" value="" min="" class="ticket_title" alt="클릭 시 날짜 선택 열림">
+                    <span class="round_trip">2023.10.21.토</span></li>
                     <!-- select로 변경 -->                                
-                </ul>
+                </form>
             </div>
             <div id="select_NumberOfPeople">
                 <li class="ticket_sub">승객 연령 및 좌석</li>
-                <ul class="cf">
-                    <li><i class="xi-users ticket_xi"></i></li>
-                    <li class="ticket_title">어른 1명</li>
+                <form class="select_num">
+                    <i class="xi-users ticket_xi"></i>
+                    <input type="text" value="어른 1명" class="ticket_title" alt="클릭 시 인원 선택" readonly></input>
                     <!-- select로 변경 -->                                
-                </ul>
+                </form>
+                <div class="select_num_window">
+                    <button class="close_win" alt="인원 선택 창 닫기"><i class="xi-angle-up"></i></button>
+                    <div id="select_num_wrap" class="cf">
+                        <h4>연령 및 수량 선택</h4>
+                        <div class="adult age_num">
+                            <li>어른(만 13세 이상)</li>
+                            <ul class="add_num">
+                                <li><i class="xi-minus-min"></i></li>
+                                <input id="adult" class="num" type="text" value="1">
+                                <li><i class="xi-plus-min"></i></li>    
+                            </ul>
+                        </div>
+                        <div class="child age_num">
+                            <li>어린이(만 6~ 12세)</li>
+                            <ul class="add_num">
+                                <li><i class="xi-minus-min"></i></li>
+                                <input id="child" class="num" type="text" value="0">
+                                <li><i class="xi-plus-min"></i></li>    
+                            </ul>
+                        </div>
+                        <div class="baby age_num">
+                            <li>유아(만 6세 미만)</li>
+                            <ul class="add_num">
+                                <li><i class="xi-minus-min"></i></li>
+                                <input id="baby" class="num" type="text" value="0">
+                                <li><i class="xi-plus-min"></i></li>    
+                            </ul>
+                        </div>
+                        <div class="senior age_num">
+                            <li>경로(만 65세 이상)</li>
+                            <ul class="add_num">
+                                <li><i class="xi-minus-min"></i></li>
+                                <input id="senior" class="num" type="text" value="0">
+                                <li><i class="xi-plus-min"></i></li>    
+                            </ul>
+                        </div>
+                        <div class="s-disabled age_num">
+                            <li>중증 장애인</li>
+                            <ul class="add_num">
+                                <li><i class="xi-minus-min"></i></li>
+                                <input id="s-disabled" class="num" type="text" value="0">
+                                <li><i class="xi-plus-min"></i></li>    
+                            </ul>
+                        </div>
+                        <div class="m-dispabled age_num">
+                            <li>경증 장애인</li>
+                            <ul class="add_num">
+                                <li><i class="xi-minus-min"></i></li>
+                                <input id="m-dispabled" class="num" type="text" value="0">
+                                <li><i class="xi-plus-min"></i></li>    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="select_train">
                 <ul class="cf">

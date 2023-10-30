@@ -128,4 +128,36 @@ $(function(){
         $("#depart").attr("value",$("#arrival").attr("value"));
         $("#arrival").attr("value",dum); 
     });
+
+    // 날짜 선택 창 - 현재 날짜로 설정하기
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth()+1;
+    const date = now.getDate();
+    $('input#ticket_time').attr('value',year+'-'+month+'-'+date);
+    $('input#ticket_time').attr('min',year+'-'+month+'-'+date);
+    
+    // 승객 연령 및 좌석 선택
+    let sum = 0;
+    $('.num').each(function(){
+        sum += $(this).val();
+    });
+
+    $(".add_num .xi-minus-min").on("click",function(){
+        let num = $(this).parent().next().attr('value');
+        if (num > 0) {
+            num--;
+            $(this).parent().next().attr('value',num)
+        }
+    });
+    $(".add_num .xi-plus-min").on("click",function(){
+        let num = $(this).parent().prev().attr('value');
+        if (num < 9) {
+            num++;
+            $(this).parent().prev().attr('value',num)
+        }
+    });
+
+    
+
 });

@@ -239,7 +239,7 @@ header {
     width: 100%;
     height: 70px;
     position: absolute;
-    z-index: 3;
+    z-index: 1000;
     top: 80px;
     background: #fff;
 }
@@ -302,19 +302,8 @@ header {
     width: 85%;
     height: 500px;
     margin: 0 auto;
-    
-    ul.cf {
-        li:first-child {
-        float: left;
-        clear: both;
-        }
-        li:last-child {
-            float: right;
-        }
-        i {
-            vertical-align: middle;
-        }
-    
+    i {
+        vertical-align: middle;
     }
     
 
@@ -398,7 +387,6 @@ header {
                     &::placeholder {
                         color: #414141;
                     }
-                    outline-color: #3da1ff;
                 }
             }
             >div {
@@ -419,23 +407,23 @@ header {
             }
             .ticket_title {
                 margin-top: 15px;
-                padding-bottom: 5px;
+                padding-bottom: 11px;
                 border-bottom: 1px solid #414141;
             }
             .select_station_window {
                 display: none;
                 position: absolute;
+                z-index: 5;
                 top: 120px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 105%;
+                width: 100%;
                 height: 650px;
                 margin-left: auto;
                 margin-right: auto;
                 background: #ffffff;
                 border-radius: 20px;
-                box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-                
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;                
                 .close_win {
                     border: none;
                     width: 100%;
@@ -537,27 +525,52 @@ header {
             }
         } // select_station 종료
         
-        // select_date ~ _train 까지 양식 동시 적용
-        >div:nth-child(2), >div:nth-child(3), >div:nth-child(4) {
-            ul {
+
+        
+        #select_date {
+            .select_date_top {
+                padding-top: 23.25px;
                 width: 270px;
                 margin: 0 auto;
-
-                &:first-child {
-                    height: 30px;
-                    line-height: 30px;
-                }
-                &:last-child {
-                    height: 60px;
-                    line-height: 60px;
-                    border-bottom: 1px solid #414141;
-                }
+                display: flex;
+                justify-content: space-between;
             }
-        }
-        #select_date {
             .round_trip {
                 display: none;
             }
+            form {
+                display: flex;
+                width: 270px;
+                margin: 11px auto 0;
+                padding-bottom: 7px;
+                border-bottom: 1px solid #414141;
+                i {
+                    line-height: 48px;
+                    font-size: 32px;
+                    color: #414141;
+                    text-align: left;
+                }
+                #ticket_time {
+                    font-size: 32px;
+                    position: relative;
+                    width: 270px;
+                    border: none;
+                    border-bottom: 1px solide #414141;
+                    text-align: right;
+                }
+                input[type="date"]::-webkit-calendar-picker-indicator, ::-webkit-inner-spin-button {
+                    position: absolute;
+                    z-index: 3;
+                    left: 0;
+                    top:0;
+                    width: 100%;
+                    height: 100%;
+                    background: transparent;
+                    color: transparent;
+                    cursor: pointer;
+                }
+            }
+
         }
         // 버튼
         .ticket_btn {
@@ -589,10 +602,114 @@ header {
             }
         } // .ticket_btn 종료
         #select_NumberOfPeople {
+            .ticket_sub {
+                padding-top: 15px;
+            }
             >li {
                 width: 270px;
                 margin: 0 auto;
                 text-align: left;
+            }
+            .select_num {
+                width: 270px;
+                margin: 11px auto 0;
+                border-bottom: 1px solid #414141;
+                display: flex;
+                justify-content: space-between;
+                
+                input {
+                    width: 206px;
+                    text-align: right;
+                    border: none;
+                    line-height: 50px;
+                }
+                i {
+                    line-height: 50px;
+                    font-size: 32px;
+                    color: #414141;
+                    text-align: left;
+                    margin-top: 5px;
+                }
+            }
+            .select_num_window {
+                // display: none;
+                z-index: 4;
+                top: 390px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 650px;
+                margin-left: auto;
+                margin-right: auto;
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                .close_win {
+                    border: none;
+                    width: 100%;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 20px;
+                    background: #ffffff;
+                    border-radius: 20px 20px 0 0;
+                    &:hover {
+                        background: #cfcfcf;
+                    }
+                }
+                #select_num_wrap {
+                    width: 85%;
+                    margin: 0 auto;
+                    h4 {
+                        @include title_text;
+                        font-size: 24px;
+                        text-align: center;
+                        height: 50px;
+                        line-height: 50px;
+                    }
+                    .age_num {
+                        @include sub_text;
+                        font-weight: 600;      
+                        width: 100%;
+                        height: 60px;
+                        line-height: 60px;
+                        float: left;                
+                        display: flex;
+                        justify-content: space-between;
+                        .add_num {
+                            width: 100px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            input {
+                                width: 30px;
+                                text-align: center;
+                                border: none;
+                                @include sub_text;
+                                font-weight: 600;
+                            }
+                            li {
+                                i { 
+                                    text-align: center;
+                                    font-size: 16px;
+                                    width: 20px;
+                                    height: 20px;
+                                    line-height: 18px;                                
+                                    background:#fff;
+                                    color: #414141;
+                                    border: 1px solid #414141;
+                                    border-radius: 20px;
+                                    &:hover {
+                                        background: #005BAE;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }    
+                }
+              
+                
+
             }
         }
         #select_train {
@@ -788,6 +905,7 @@ header {
             @include title_text();
         }       
     }
+
 
     // 공지사항 부분
     #announcement {
@@ -1131,8 +1249,8 @@ footer {
             #select_station {
                 width: 50%;
                 .select_station_window {
-                    top: 135px;
-                    width: 105%;
+                    top: 140px;
+                    width: 100%;
                     .search_filter {
                         .station {
                             li {
@@ -1143,11 +1261,15 @@ footer {
                 }
                 
             }
-            #select_date ul:first-child {
-                margin-top: 26px;
+            #select_date {
+                .select_date_top {
+                    padding-top: 32px;
+                }
             }
-            #select_NumberOfPeople>li {
-                margin-top: 6px;
+            #select_NumberOfPeople {
+                .ticket_sub {
+                    padding-top: 15px;
+                }            
             }
         }
     }
@@ -1294,7 +1416,7 @@ footer {
             #select_station {
                 width: 50%;
                 .select_station_window {
-                    top: 135px;
+                    top: 140px;
                     height: 500px;
                     max-width: 1280px;
                     .search_filter {
@@ -1364,11 +1486,15 @@ footer {
                     }
                 }
             }
-            #select_date ul:first-child {
-                margin-top: 52px;
+            #select_date {
+                .select_date_top {
+                    padding-top: 57px;
+                }
             }
-            #select_NumberOfPeople>li {
-                margin-top: 58px;
+            #select_NumberOfPeople {
+                .ticket_sub {
+                    padding-top: 57px;
+                }       
             }
             #select_train ul:first-child {
                 margin-top: 52px;
