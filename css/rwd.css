@@ -270,9 +270,6 @@ header #tablet_pc_header li {
   height: 500px;
   margin: 0 auto;
 }
-#ticket i {
-  vertical-align: middle;
-}
 #ticket #ticket_category {
   display: flex;
   justify-content: space-evenly;
@@ -333,7 +330,7 @@ header #tablet_pc_header li {
   color: #414141;
 }
 #ticket #ticket_main #select_station {
-  padding-top: 8px;
+  padding-top: 32px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -346,7 +343,6 @@ header #tablet_pc_header li {
 }
 #ticket #ticket_main #select_station form {
   height: 90px;
-  margin: auto 0;
 }
 #ticket #ticket_main #select_station form > label {
   display: block;
@@ -367,7 +363,7 @@ header #tablet_pc_header li {
 #ticket #ticket_main #select_station > div {
   height: 30px;
   width: 30px;
-  margin: 62px 5px 0;
+  margin: 40px 5px 0;
   border: 1px solid #adadad;
   border-radius: 40px;
   background: #fff;
@@ -381,7 +377,7 @@ header #tablet_pc_header li {
   margin: 1px auto;
 }
 #ticket #ticket_main #select_station .ticket_title {
-  margin-top: 15px;
+  margin-top: 13px;
   padding-bottom: 11px;
   border-bottom: 1px solid #414141;
 }
@@ -505,8 +501,11 @@ header #tablet_pc_header li {
 #ticket #ticket_main #select_date form.round_trip {
   display: none;
   width: 270px;
-  margin: 12px auto 0;
+  height: 53px;
+  margin: 11px auto 0;
   position: relative;
+  border-radius: none;
+  background: #fff;
 }
 #ticket #ticket_main #select_date form.round_trip #round_trip_wrap {
   display: flex;
@@ -527,25 +526,27 @@ header #tablet_pc_header li {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: 32px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   border: none;
   width: 130px;
   border-bottom: 1px solid #414141;
-  padding-bottom: 6px;
+  padding: 0 0 6px 0;
+  border-radius: 0;
+  background: #fff;
 }
 #ticket #ticket_main #select_date form.oneway_trip {
   display: flex;
   width: 270px;
   margin: 11px auto 0;
-  padding-bottom: 7px;
+  padding-bottom: 4px;
   border-bottom: 1px solid #414141;
 }
 #ticket #ticket_main #select_date form.oneway_trip i {
-  line-height: 48px;
   font-size: 32px;
   color: #414141;
   text-align: left;
+  margin-top: 8px;
 }
 #ticket #ticket_main #select_date form.oneway_trip input#ticket_time {
   font-size: 32px;
@@ -554,6 +555,10 @@ header #tablet_pc_header li {
   border: none;
   border-bottom: 1px solide #414141;
   text-align: right;
+  background: #fff;
+  border-radius: 0;
+  height: 48px;
+  line-height: 48px;
 }
 #ticket #ticket_main #select_date form.oneway_trip input[type=date]::-webkit-calendar-picker-indicator, #ticket #ticket_main #select_date form.oneway_trip ::-webkit-inner-spin-button {
   position: absolute;
@@ -611,14 +616,14 @@ header #tablet_pc_header li {
   width: 238px;
   text-align: right;
   border: none;
-  line-height: 50px;
+  height: 52px;
+  line-height: 52px;
 }
 #ticket #ticket_main #select_NumberOfPeople .select_num i {
-  line-height: 50px;
   font-size: 32px;
   color: #414141;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 12px;
 }
 #ticket #ticket_main #select_NumberOfPeople .select_num_window {
   display: none;
@@ -695,6 +700,180 @@ header #tablet_pc_header li {
   background: #005BAE;
   color: #fff;
 }
+#ticket #ticket_main #select_discount {
+  display: none;
+  padding-top: 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+#ticket #ticket_main #select_discount > li {
+  width: 270px;
+  margin: 0 auto;
+  text-align: left;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap {
+  margin: 10px auto 0;
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form {
+  width: 130px;
+  border-bottom: 1px solid #414141;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form.select_num_dis div {
+  display: flex;
+  justify-content: space-between;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form.select_num_dis div i {
+  font-size: 22px;
+  margin-top: 8px;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form.select_num_dis div input {
+  width: 102px;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form label {
+  display: block;
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+  font-size: 12px;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form input {
+  width: 130px;
+  text-align: center;
+  border: none;
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  border-radius: 0;
+  background: #fff;
+  margin: 3px 0 3px 0;
+}
+#ticket #ticket_main #select_discount .select_dis_window {
+  display: none;
+  z-index: 999;
+  top: 390px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#ticket #ticket_main #select_discount .select_dis_window .close_win {
+  border: none;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  font-size: 20px;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+}
+#ticket #ticket_main #select_discount .select_dis_window .close_win:hover {
+  background: #cfcfcf;
+}
+#ticket #ticket_main #select_discount .select_dis_window .discount_category {
+  width: 80%;
+  margin: 30px auto 0;
+}
+#ticket #ticket_main #select_discount .select_dis_window .discount_category li {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+}
+#ticket #ticket_main #select_discount .select_dis_window .discount_category li:hover {
+  color: #3da1ff;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount {
+  display: none;
+  z-index: 999;
+  top: 390px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount .close_win {
+  border: none;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  font-size: 20px;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount .close_win:hover {
+  background: #cfcfcf;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num {
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num input {
+  width: 30px;
+  text-align: center;
+  border: none;
+  color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num li i {
+  text-align: center;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  background: #fff;
+  color: #414141;
+  border: 1px solid #414141;
+  border-radius: 20px;
+}
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num li i:hover {
+  background: #005BAE;
+  color: #fff;
+}
 #ticket #ticket_main #select_train .select_train_top {
   position: relative;
   width: 270px;
@@ -704,15 +883,18 @@ header #tablet_pc_header li {
 }
 #ticket #ticket_main #select_train .train {
   display: flex;
+  justify-content: space-between;
   width: 270px;
-  margin: 0 auto;
+  margin: 11px auto 0;
   border-bottom: 1px solid #414141;
-  padding: 11px 0 8px;
+  padding: 0 0 4px 0;
 }
 #ticket #ticket_main #select_train .train #select_train_box {
   width: 198px;
   border: none;
   text-align: center;
+  height: 48px;
+  line-height: 48px;
 }
 #ticket #ticket_main #select_train .train .search_btn {
   font-size: 24px;
@@ -724,7 +906,6 @@ header #tablet_pc_header li {
   background: #005BAE;
   border: none;
   border-radius: 10px;
-  text-align: center;
   margin-top: 6px;
   cursor: pointer;
 }
@@ -732,7 +913,8 @@ header #tablet_pc_header li {
   background: #3da1ff;
 }
 #ticket #ticket_main #select_train .train .search_btn i {
-  margin-bottom: 5px;
+  text-align: center;
+  margin-top: 5px;
 }
 #ticket #ticket_main #select_train .train i.xi-train {
   padding-top: 10px;
@@ -783,6 +965,9 @@ header #tablet_pc_header li {
 }
 #ticket #ticket_main #select_train .select_train_window #train_wrap ul li:hover {
   color: #3da1ff;
+}
+#ticket #ticket_main #select_train .select_train_window #train_wrap .tour_train {
+  display: none;
 }
 
 #banner {
@@ -1266,8 +1451,14 @@ footer #f_bot .copy address {
   #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
     width: 14.66%;
   }
+  #ticket #ticket_main #select_date {
+    width: 50%;
+  }
   #ticket #ticket_main #select_date .select_date_top {
     padding-top: 32px;
+  }
+  #ticket #ticket_main #select_NumberOfPeople {
+    width: 50%;
   }
   #ticket #ticket_main #select_NumberOfPeople .ticket_sub {
     padding-top: 15px;
@@ -1281,6 +1472,15 @@ footer #f_bot .copy address {
   }
   #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num:nth-child(odd) {
     margin-right: 10%;
+  }
+  #ticket #ticket_main #select_discount {
+    width: 50%;
+  }
+  #ticket #ticket_main #select_discount .select_dis_window {
+    top: 265px;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount {
+    top: 265px;
   }
   #ticket #ticket_main #select_train .select_train_window {
     top: 265px;
@@ -1449,19 +1649,12 @@ footer #f_bot .copy address {
     height: 200px;
     padding-top: 0;
   }
-  #ticket #ticket_main > div {
-    float: left;
-    width: 25%;
-    height: 100%;
-  }
   #ticket #ticket_main #select_station {
     width: 25%;
+    padding-top: 57px;
   }
   #ticket #ticket_main #select_station .ticket_title {
     margin-top: 12px;
-  }
-  #ticket #ticket_main #select_station > div {
-    margin: 90px 5px 0;
   }
   #ticket #ticket_main #select_station .select_station_window {
     top: 150px;
@@ -1471,8 +1664,14 @@ footer #f_bot .copy address {
   #ticket #ticket_main #select_station .select_station_window .search_filter .station li {
     width: 8%;
   }
+  #ticket #ticket_main #select_date {
+    width: 25%;
+  }
   #ticket #ticket_main #select_date .select_date_top {
     padding-top: 57px;
+  }
+  #ticket #ticket_main #select_NumberOfPeople {
+    width: 25%;
   }
   #ticket #ticket_main #select_NumberOfPeople .ticket_sub {
     padding-top: 57px;
@@ -1489,6 +1688,19 @@ footer #f_bot .copy address {
   }
   #ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num:nth-child(odd) {
     margin-right: 20%;
+  }
+  #ticket #ticket_main #select_discount {
+    width: 25%;
+    padding-top: 57px;
+  }
+  #ticket #ticket_main #select_discount .select_dis_window {
+    top: 155px;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount {
+    top: 155px;
+  }
+  #ticket #ticket_main #select_train {
+    width: 25%;
   }
   #ticket #ticket_main #select_train .select_train_window {
     top: 155px;

@@ -302,10 +302,6 @@ header {
     width: 85%;
     height: 500px;
     margin: 0 auto;
-    i {
-        vertical-align: middle;
-    }
-    
 
     #ticket_category {
         display: flex;
@@ -361,7 +357,7 @@ header {
             color: #414141;
         }
         #select_station {
-            padding-top: 8px;
+            padding-top: 32px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -374,7 +370,6 @@ header {
             }
             form {
                 height: 90px;
-                margin: auto 0;
                 >label {
                     display: block;
                 }
@@ -392,7 +387,7 @@ header {
             >div {
                 height: 30px;
                 width: 30px;
-                margin: 62px 5px 0;
+                margin: 40px 5px 0;
                 border: 1px solid #adadad;
                 border-radius: 40px;
                 background: #fff;
@@ -406,7 +401,7 @@ header {
                 }
             }
             .ticket_title {
-                margin-top: 15px;
+                margin-top: 13px;
                 padding-bottom: 11px;
                 border-bottom: 1px solid #414141;
             }
@@ -539,14 +534,15 @@ header {
             form.round_trip {
                 display: none;
                 width: 270px;
-                margin: 12px auto 0;
+                height: 53px;
+                margin: 11px auto 0;
                 position: relative;
+                border-radius: none;
+                background: #fff;
                 #round_trip_wrap {
                     display: flex;
                     justify-content: space-between;
                     width: 270px;
-                    div {
-                    }
                 }
                 label {
                     display: block;
@@ -556,25 +552,27 @@ header {
                 }
                 input {
                     @include title_text;
-                    font-size: 18px;
+                    font-size: 16px;
                     text-align: center;
                     border: none;
                     width: 130px;
                     border-bottom: 1px solid #414141;
-                    padding-bottom: 6px;
+                    padding:0 0 6px 0;
+                    border-radius: 0;
+                    background: #fff;
                 }
             }
             form.oneway_trip {
                 display: flex;
                 width: 270px;
                 margin: 11px auto 0;
-                padding-bottom: 7px;
+                padding-bottom: 4px;
                 border-bottom: 1px solid #414141;
                 i {
-                    line-height: 48px;
                     font-size: 32px;
                     color: #414141;
                     text-align: left;
+                    margin-top: 8px;
                 }
                 input#ticket_time {
                     font-size: 32px;
@@ -583,6 +581,10 @@ header {
                     border: none;
                     border-bottom: 1px solide #414141;
                     text-align: right;
+                    background: #fff;
+                    border-radius: 0;
+                    height: 48px;
+                    line-height: 48px;
                 }
                 input[type="date"]::-webkit-calendar-picker-indicator, ::-webkit-inner-spin-button {
                     position: absolute;
@@ -647,14 +649,14 @@ header {
                     width: 238px;
                     text-align: right;
                     border: none;
-                    line-height: 50px;
+                    height: 52px;
+                    line-height: 52px;
                 }
                 i {
-                    line-height: 50px;
                     font-size: 32px;
                     color: #414141;
                     text-align: left;
-                    margin-top: 5px;
+                    margin-top: 12px;
                 }
             }
             .select_num_window {
@@ -727,11 +729,180 @@ header {
                         }
                     }    
                 }
-              
-                
-
             }
         }
+        #select_discount {
+            display: none;
+            padding-top: 15px;
+            margin: 0 auto;
+            width: 100%;
+            >li {
+                width: 270px;
+                margin: 0 auto;
+                text-align: left;
+            }
+            #select_dis_wrap {
+                margin: 10px auto 0;
+                width: 270px;
+                display: flex;
+                justify-content: space-between;
+                form {
+                    width: 130px;
+                    border-bottom: 1px solid #414141;
+                    &.select_num_dis {
+                        div {
+                            display: flex;
+                            justify-content: space-between;
+                            i {
+                                font-size: 22px;
+                                margin-top: 8px;
+                            }
+                            input {
+                                width: 102px;
+                            }
+                        }
+                    }
+                    label {
+                        display: block;
+                        @include sub_text;
+                        font-weight: 600;
+                        font-size: 12px;
+                        
+                    }
+                    input {
+                        width: 130px;
+                        text-align: center;
+                        border: none;
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 24px;
+                        border-radius: 0;
+                        background: #fff;
+                        margin:3px 0 3px 0;
+                    }
+                }
+            }
+            .select_dis_window {
+                display: none;
+                z-index: 999;
+                top: 390px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                .close_win {
+                    border: none;
+                    width: 100%;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 20px;
+                    background: #ffffff;
+                    border-radius: 20px 20px 0 0;
+                    &:hover {
+                        background: #cfcfcf;
+                    }
+                }
+                .discount_category {
+                    width: 80%;
+                    margin:30px auto 0;
+
+                    li {
+                        @include sub_text;
+                        font-weight: 600;
+                        float: left;
+                        width: 50%;
+                        text-align: center;
+                        height: 50px;
+                        line-height: 50px;
+                        cursor: pointer;
+                        &:hover {
+                            color: #3da1ff;
+                        }
+                    }
+                }
+
+            }
+            .select_num_window_discount {
+                display: none;
+                z-index: 999;
+                top: 390px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 480px;
+                margin-left: auto;
+                margin-right: auto;
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                .close_win {
+                    border: none;
+                    width: 100%;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 20px;
+                    background: #ffffff;
+                    border-radius: 20px 20px 0 0;
+                    &:hover {
+                        background: #cfcfcf;
+                    }
+                }
+                #select_num_dis_wrap {
+                    width: 85%;
+                    margin: 0 auto;
+                    padding-top: 30px;
+                    .age_num {
+                        @include sub_text;
+                        font-weight: 600;      
+                        width: 100%;
+                        height: 60px;
+                        line-height: 60px;
+                        float: left;                
+                        display: flex;
+                        justify-content: space-between;
+                        .dis_add_num {
+                            width: 100px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            input {
+                                width: 30px;
+                                text-align: center;
+                                border: none;
+                                @include sub_text;
+                                font-weight: 600;
+                            }
+                            li {
+                                i { 
+                                    text-align: center;
+                                    font-size: 16px;
+                                    width: 20px;
+                                    height: 20px;
+                                    line-height: 18px;                                
+                                    background:#fff;
+                                    color: #414141;
+                                    border: 1px solid #414141;
+                                    border-radius: 20px;
+                                    &:hover {
+                                        background: #005BAE;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+
+        
+
         #select_train {
             .select_train_top {
                 position: relative;
@@ -742,14 +913,17 @@ header {
             }
             .train {
                 display: flex;
+                justify-content: space-between;
                 width: 270px;
-                margin: 0 auto;
+                margin: 11px auto 0;
                 border-bottom: 1px solid #414141;
-                padding: 11px 0 8px;
+                padding: 0 0 4px 0;
                 #select_train_box {
                     width: 198px;
                     border: none;
                     text-align: center;
+                    height: 48px;
+                    line-height: 48px;
                 }
                 .search_btn {
                     font-size: 24px;
@@ -761,14 +935,14 @@ header {
                     background: #005BAE;
                     border: none;
                     border-radius: 10px;
-                    text-align: center;
                     margin-top: 6px;
                     cursor: pointer;
                     &:hover {
                         background: #3da1ff;
                     }
                     i {
-                        margin-bottom: 5px;
+                        text-align: center;
+                        margin-top: 5px;
                     }
                 }
                 i.xi-train  {
@@ -818,6 +992,9 @@ header {
                         &:hover {
                             color: #3da1ff;
                         }
+                    }
+                    .tour_train {
+                        display: none;
                     }
                 }
             }
@@ -1355,11 +1532,13 @@ footer {
                 
             }
             #select_date {
+                width: 50%;
                 .select_date_top {
                     padding-top: 32px;
                 }
             }
             #select_NumberOfPeople {
+                width: 50%;
                 .ticket_sub {
                     padding-top: 15px;
                 }            
@@ -1375,7 +1554,15 @@ footer {
                         }
                     }
                 }
-
+            }
+            #select_discount {
+                width: 50%;
+                .select_dis_window {
+                    top: 265px;
+                }
+                .select_num_window_discount {
+                    top: 265px;
+                }
             }
             #select_train {
                 .select_train_window {
@@ -1577,18 +1764,11 @@ footer {
         
         #ticket_main {
             height: 200px;padding-top: 0;
-            &>div {
-                float: left;
-                width: 25%;
-                height: 100%;
-            }
             #select_station {
                 width: 25%;
+                padding-top: 57px;
                 .ticket_title {
                     margin-top: 12px;
-                }
-                >div {
-                    margin:90px 5px 0;
                 }
                 .select_station_window {
                     top: 150px;
@@ -1604,11 +1784,13 @@ footer {
                 }
             }
             #select_date {
+                width: 25%;
                 .select_date_top {
                     padding-top: 57px;
                 }
             }
             #select_NumberOfPeople {
+                width: 25%;
                 .ticket_sub {
                     padding-top: 57px;
                 }
@@ -1626,7 +1808,18 @@ footer {
                     }
                 }       
             }
+            #select_discount {
+                width: 25%;
+                padding-top: 57px;
+                .select_dis_window {
+                    top: 155px;
+                }
+                .select_num_window_discount {
+                    top: 155px;
+                }
+            }
             #select_train {
+                width: 25%;
                 .select_train_window {
                     top: 155px;
                     height: 250px;
