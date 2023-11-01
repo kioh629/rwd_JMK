@@ -83,6 +83,22 @@ header #tablet_pc_header li {
   text-align: center;
   margin-right: 20px;
 }
+header #tablet_pc_header #lang_select_f {
+  background: none;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+header #tablet_pc_header #lang_select_f option {
+  color: #414141;
+}
+header #tablet_pc_header #lang_select_f:hover {
+  color: #3da1ff;
+}
 
 #logo {
   margin-left: 20px;
@@ -142,6 +158,22 @@ header #tablet_pc_header li {
   text-align: center;
 }
 #ham_wrap #ham_top li:hover {
+  color: #3da1ff;
+}
+#ham_wrap #ham_top #lang_select_h {
+  background: none;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #414141;
+  outline: none;
+  cursor: pointer;
+}
+#ham_wrap #ham_top #lang_select_h option {
+  color: #414141;
+}
+#ham_wrap #ham_top #lang_select_h:hover {
   color: #3da1ff;
 }
 #ham_wrap .ham_quick {
@@ -336,7 +368,7 @@ header #tablet_pc_header li {
   justify-content: center;
 }
 #ticket #ticket_main #select_station .ticket_title {
-  font-size: 28px;
+  font-size: 26px;
 }
 #ticket #ticket_main #select_station .ticket_sub {
   text-align: center;
@@ -378,7 +410,7 @@ header #tablet_pc_header li {
 }
 #ticket #ticket_main #select_station .ticket_title {
   margin-top: 13px;
-  padding-bottom: 11px;
+  padding: 1px 0 11px 0;
   border-bottom: 1px solid #414141;
 }
 #ticket #ticket_main #select_station .select_station_window {
@@ -890,6 +922,7 @@ header #tablet_pc_header li {
   padding: 0 0 4px 0;
 }
 #ticket #ticket_main #select_train .train #select_train_box {
+  font-size: 28px;
   width: 198px;
   border: none;
   text-align: center;
@@ -1330,30 +1363,41 @@ footer #f_bot {
   height: 420px;
   background: #414141;
 }
-footer #f_bot .f_logo {
+footer #f_bot .icon_wrap {
+  height: 60px;
+}
+footer #f_bot .icon_wrap .f_logo {
   text-align: center;
   padding: 20px 0 50px;
+  height: 60px;
 }
-footer #f_bot .f_sns {
+footer #f_bot .icon_wrap .f_logo img {
+  width: 200px;
+}
+footer #f_bot .icon_wrap .f_sns {
+  margin-top: 20px;
   text-align: center;
+  height: 60px;
 }
-footer #f_bot .f_sns a i {
+footer #f_bot .icon_wrap .f_sns a i {
   color: #fff;
-  font-size: 40px;
+  font-size: 30px;
+  line-height: 60px;
 }
 footer #f_bot .copy {
   width: 335px;
   height: 170px;
-  margin: 30px auto 0;
+  margin: 100px auto 0;
 }
 footer #f_bot .copy ul {
-  margin: 0 auto 10px;
+  margin: 0 0 10px 35px;
 }
 footer #f_bot .copy ul li {
   float: left;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  font-size: 14px;
   color: #fff;
   margin-right: 20px;
   margin-left: 10px;
@@ -1543,7 +1587,7 @@ footer #f_bot .copy address {
     float: left;
     margin-right: 30px;
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #fff;
   }
@@ -1563,12 +1607,12 @@ footer #f_bot .copy address {
     clear: both;
     height: 60px;
     margin-left: 30px;
-    padding: 0;
+    padding: 10px 0 0 0;
   }
   footer #f_bot .icon_wrap .f_sns {
+    margin-top: 0;
     float: right;
     height: 60px;
-    padding-top: 10px;
     padding-right: 30px;
   }
   footer #f_bot .copy {
@@ -1582,15 +1626,11 @@ footer #f_bot .copy address {
   }
   footer #f_bot .copy ul li {
     float: left;
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
     color: #fff;
     margin-right: 20px;
     margin-left: 10px;
   }
   footer #f_bot .copy address {
-    font-size: 16px;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 400;
     color: #fff;
@@ -1744,21 +1784,22 @@ footer #f_bot .copy address {
   footer #f_bot .site_map {
     position: absolute;
     top: 80px;
-    right: 40px;
-    width: 160px;
+    right: 30px;
+  }
+  footer #f_bot .site_map #family_site {
+    width: 135px;
     height: 30px;
     line-height: 30px;
     font-size: 16px;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 400;
     color: #fff;
+    border: 0;
     border-bottom: 1px solid #fff;
+    background: none;
+    outline: none;
   }
-  footer #f_bot .site_map a {
-    float: left;
-  }
-  footer #f_bot .site_map i {
-    float: right;
-    margin-top: 7px;
+  footer #f_bot .site_map #family_site option {
+    color: #414141;
   }
 }/*# sourceMappingURL=main.css.map */

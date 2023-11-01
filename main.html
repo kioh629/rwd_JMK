@@ -32,8 +32,13 @@
             <ul id="tablet_pc_header" class="show_in_tablet">
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">고객센터</a></li>
-                <li>LANGUAGE<i class="xi-caret-down-min"></i></li>
-                <!-- LANGUAGE -> Select로 변경 -->
+                <li>
+                    <select class="lang_select" id="lang_select_f">
+                        <option value="language">LANGUAGE</option>
+                        <option value="kor">KOR</option>
+                        <option value="eng">ENG</option>
+                    </select>
+                </li>
                 <li><a href="#">기업전용</a></li>
             </ul> 
         </div>
@@ -45,8 +50,13 @@
             <ul id="ham_top">
                 <li><a href="#">고객센터</a></li>
                 <li><a href="#">기업전용</a></li>
-                <li>LANGUAGE</li> 
-                <!-- LANGUAGE -> Select로 변경 -->
+                <li>
+                    <select class="lang_select" id="lang_select_h">
+                        <option value="language">LANGUAGE</option>
+                        <option value="kor">KOR</option>
+                        <option value="eng">ENG</option>
+                    </select>
+                </li>
             </ul>
             <div id="ham_login" class="ham_quick">
                 <a href="#">
@@ -728,9 +738,16 @@
                 </ul>
                 <address>COPYRIGHT &#169; KOREA RAILROAD. ALL RIGHTS RESERVED. </address>
             </div>
-            <div class="site_map show_in_PC cf">
-                <a href="#">코레일FAMILY</a>
-                <i class="xi-caret-down"></i>
+            <div class="site_map show_in_PC">
+                <select name="family_site" id="family_site">
+                    <option value="코레일FAMILY">코레일FAMILY</option>
+                    <option value="코레일홈페이지"><a href="#">코레일홈페이지</a></option>
+                    <option value="물류정보"><a href="#">물류정보</a></option>
+                    <option value="윤리경영"><a href="#">윤리경영</a></option>
+                    <option value="이사회커뮤니티"><a href="#">이사회커뮤니티</a></option>
+                    <option value="조달 입찰"><a href="#">조달 입찰</a></option>
+                    <option value="철도박물관"><a href="#">철도박물관</a></option>
+                </select>
             </div>
         </div>
     </footer>

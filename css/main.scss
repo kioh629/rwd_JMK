@@ -107,6 +107,22 @@ header {
             text-align: center;
             margin-right: 20px;
         }
+        #lang_select_f {
+            background: none;
+            border: 0;
+            font-family: 'Noto Sans KR',sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            option {
+                color: #414141;
+            }
+            &:hover{
+                color: #3da1ff;
+            }
+        }
     }
 }
 
@@ -164,6 +180,22 @@ header {
             color: #414141;
             text-align: center;
             &:hover {
+                color: #3da1ff;
+            }
+        }
+        #lang_select_h {
+            background: none;
+            border: 0;
+            font-family: 'Noto Sans KR',sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #414141;
+            outline: none;
+            cursor: pointer;
+            option {
+                color: #414141;
+            }
+            &:hover{
                 color: #3da1ff;
             }
         }
@@ -363,7 +395,7 @@ header {
             justify-content: center;
 
             .ticket_title {
-                font-size: 28px;
+                font-size: 26px;
             }
             .ticket_sub {
                 text-align: center;
@@ -402,7 +434,7 @@ header {
             }
             .ticket_title {
                 margin-top: 13px;
-                padding-bottom: 11px;
+                padding:1px 0 11px 0;
                 border-bottom: 1px solid #414141;
             }
             .select_station_window {
@@ -919,6 +951,7 @@ header {
                 border-bottom: 1px solid #414141;
                 padding: 0 0 4px 0;
                 #select_train_box {
+                    font-size: 28px;
                     width: 198px;
                     border: none;
                     text-align: center;
@@ -1385,28 +1418,40 @@ footer {
         width: 100%;
         height: 420px;
         background: #414141;
-        .f_logo {
-            text-align: center;
-            padding: 20px 0 50px;
-        }
-        .f_sns {
-            text-align: center;
-            a i {
-                color: #fff;
-                font-size: 40px;
+        .icon_wrap {
+            height: 60px;
+            .f_logo {
+                text-align: center;
+                padding: 20px 0 50px;
+                height: 60px;
+                img {
+                    width: 200px;
+                }
+            }
+            .f_sns {
+                margin-top: 20px;
+                text-align: center;
+                height: 60px;
+                a i {
+                    color: #fff;
+                    font-size: 30px;
+                    line-height: 60px;
+                }
             }
         }
+
         .copy {
             width: 335px;
             height: 170px;
-            margin: 30px auto 0;
+            margin: 100px auto 0;
 
             ul {
-                margin: 0 auto 10px;
+                margin: 0 0 10px 35px;
             
                 li {
                     float: left;
                     @include sub_text_to_size;
+                    font-size: 14px;
                     color: #fff;
                     margin-right: 20px;
                     margin-left: 10px;
@@ -1643,7 +1688,7 @@ footer {
                         float: left;
                         margin-right: 30px;
                         font-family: 'Noto Sans KR',sans-serif;
-                        font-size: 16px;
+                        font-size: 14px;
                         font-weight: 400;
                         color: #fff;
                     }
@@ -1664,12 +1709,12 @@ footer {
                     clear: both;
                     height: 60px;
                     margin-left: 30px;
-                    padding: 0;
+                    padding: 10px 0 0 0;
                 }
                 .f_sns {
+                    margin-top: 0;
                     float: right;
                     height: 60px;
-                    padding-top: 10px;
                     padding-right: 30px;
                 }
             }
@@ -1684,14 +1729,12 @@ footer {
                 
                     li {
                         float: left;
-                        @include sub_text_to_size;
                         color: #fff;
                         margin-right: 20px;
                         margin-left: 10px;
                     }
                 }
                 address {
-                    font-size: 16px;
                     font-family: 'Noto Sans KR',sans-serif;
                     font-weight: 400;
                     color: #fff;
@@ -1868,22 +1911,22 @@ footer {
             .site_map {
                 position: absolute;
                 top: 80px;
-                right: 40px;
-
-                width: 160px;
-                height:30px;
-                line-height: 30px;
-                font-size: 16px;
-                font-family: 'Noto Sans KR',sans-serif;
-                font-weight: 400;
-                color: #fff;
-                border-bottom: 1px solid #fff;
-                a {
-                    float: left;
-                }
-                i {
-                    float: right;
-                    margin-top: 7px;
+                right: 30px;
+                #family_site {
+                    width: 135px;
+                    height:30px;
+                    line-height: 30px;
+                    font-size: 16px;
+                    font-family: 'Noto Sans KR',sans-serif;
+                    font-weight: 400;
+                    color: #fff;
+                    border: 0;
+                    border-bottom: 1px solid #fff;
+                    background: none;
+                    outline: none;
+                    option {
+                        color: #414141;
+                    }
                 }
             }
         }
