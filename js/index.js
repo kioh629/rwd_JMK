@@ -156,12 +156,21 @@ $(function(){
     const year = now.getFullYear();
     const month = now.getMonth()+1;
     const date = now.getDate();
-    $('input#ticket_time').attr('value',year+'-'+month+'-'+date);
-    $('input#ticket_time').attr('min',year+'-'+month+'-'+date);
-    $('input#depart_day').attr('value',year+'-'+month+'-'+date);
-    $('input#depart_day').attr('min',year+'-'+month+'-'+date);
-    $('input#arrival_day').attr('value',year+'-'+month+'-'+date);
-    $('input#arrival_day').attr('min',year+'-'+month+'-'+date);
+        // month, date가 한 자리수가 되면 value값에 입력이 되지 않으므로 -> 앞에 0을 붙임
+        if (date < 10){
+            $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+month+'-'+'0'+date);
+            $('#ticket_time,#depart_day,#arrival_day').attr('min',year+'-'+month+'-'+'0'+date);
+        } else if (month < 10){
+            $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+'0'+month+'-'+date);
+            $('#ticket_time,#depart_day,#arrival_day').attr('min',year+'-'+'0'+month+'-'+date);
+        } else if (date < 10 && month < 10) {
+            $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+'0'+month+'-'+'0'+date);
+            $('#ticket_time,#depart_day,#arrival_day').attr('min',year+'-'+'0'+month+'-'+'0'+date);
+        }
+        else {
+            $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+month+'-'+date);
+            $('#ticket_time,#depart_day,#arrival_day').attr('min',year+'-'+month+'-'+date);
+        }
 
         // 편도 - 왕복 선택
     $('.select_date_top .ticket_btn a:last-child').on('click',function(){
