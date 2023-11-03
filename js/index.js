@@ -1,5 +1,6 @@
 $(function(){
 
+// 햄메뉴
     // 햄메뉴 여닫기
     $("#ham_btn a").on("click",function(){
         $("#modal").css("display","block");
@@ -25,6 +26,7 @@ $(function(){
         }
     });
 
+// 풀메뉴
     // 풀메뉴 마우스 엔터
     $("#main_menu li").on("mouseenter",function(){
         const a = $(this).index();
@@ -34,6 +36,7 @@ $(function(){
         $("#sub_menu").slideDown();
         $("#sub_menu ul").css("display","none");
         sub.css("display","block");
+        return false;
     });
     $("#full_menu").on("mouseleave",function(){
         $("#main_menu li").css("color","#414141").css("border-bottom","none");
@@ -41,7 +44,7 @@ $(function(){
         $("#sub_menu ul").css("display","none");
     });
     
-    // 빠른 예매 상단 범주 선택
+//  빠른 예매 상단 범주 선택
         // 클릭 시 흰색으로
     $('#ticket_category li').on("click",function(){
         $('#ticket_category li').removeClass('ticket_selected');
@@ -62,7 +65,7 @@ $(function(){
         }
     });
 
-    // 배너(slick)
+// 배너(slick)
     $('#slide_banner').slick({
         dots: true, // 인디케이터 활성화
         autoplay: true,
@@ -88,22 +91,27 @@ $(function(){
         ]
     });
 
-    // 역 선택 창
+// 역 선택 창
     // input클릭 여닫기
-    $("#depart").on("click",function(){
-        if ($(".select_station_window").is(':visible')){
-            $(".select_station_window").stop().slideUp();
-        } else {
-            $(this).next().stop().slideDown();
-        }
-    });
-    $("#arrival").on("click",function(){
-        if ($(".select_station_window").is(':visible')){
-            $(".select_station_window").stop().slideUp();
-        } else {
-            $(this).next().stop().slideDown();
-        }
-    });
+    function windowSlide(a,b){
+        $(a).on("click",function(){
+            if ($(b).is(':visible')){
+                $(b).stop().slideUp();
+            } else if ($(".window").not(b).is(':visible')){
+                $(".window").not(b).stop().fadeOut();
+                $(this).next().stop().slideDown();
+            } else {
+                $(this).next().stop().slideDown();
+            }
+        });
+        $(".close_win").on("click",function(){
+            $(b).stop().slideUp();
+            return false;
+        });
+    } 
+    windowSlide('#depart','.select_station_window');
+    windowSlide('#arrival','.select_station_window');
+
     // 버튼클릭 여닫기
     $(".close_win").on("click",function(){
         $(".select_station_window").stop().slideUp();
@@ -111,7 +119,8 @@ $(function(){
     });
     // 검색어 필터
     const $station = $('.station li')
-    const $search = $('#station_search');
+    const $departSearch = $('#depart_search');
+    const $arrivalSearch = $('#arrival_search');
     const cache = [];
     $station.each(function(){
         cache.push({
@@ -129,20 +138,23 @@ $(function(){
             li.element.style.display = index === -1 ? 'none':'';
         });
     };
-    $search.on('keyup',filter)
-    // 선택창에서 역 클릭 시 밸류값 변경
-    $(".select_depart .search_filter ul li").on("click",function(){
-        let departure = $(this).text();
-        $("#depart").attr('value',departure);
-        $("#depart").attr('placeholder',departure);
-        $(".select_station_window").stop().slideUp();
-    });
-    $(".select_arrival .search_filter ul li").on("click",function(){
-        let arrival = $(this).text();
-        $("#arrival").attr('value',arrival);
-        $("#arrival").attr('placeholder',arrival);
-        $(".select_station_window").stop().slideUp();
-    });
+    $departSearch.on('keyup',filter)
+    $arrivalSearch.on('keyup',filter)
+    
+    // 선택창에서 역 클릭 시 밸류값 변경 + 검색창 및 필터 초기화
+    function stationValue(a,b){
+        $(a).on("click",function(){
+            let station = $(this).text();
+            $(b).attr('value',station);
+            $(b).attr('placeholder',station);
+            $(".select_station_window").stop().slideUp();
+            $departSearch.val('');
+            $arrivalSearch.val('');
+            $('.station li').css('display','block');
+        });
+    }
+    stationValue(".select_depart .search_filter ul li","#depart");
+    stationValue(".select_arrival .search_filter ul li","#arrival");
     // 체인지 버튼 클릭 시 출발지-도착지 변경
     $("#select_station>div").on("click",function(){
         let dum = $("#depart").attr("value");
@@ -150,7 +162,7 @@ $(function(){
         $("#arrival").attr("value",dum); 
     });
 
-    // 날짜 선택 창 
+// 날짜 선택 창 
         // 현재 날짜로 설정하기
     const now = new Date();
     const year = now.getFullYear();
@@ -166,40 +178,29 @@ $(function(){
         } else if (date < 10 && month < 10) {
             $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+'0'+month+'-'+'0'+date);
             $('#ticket_time,#depart_day,#arrival_day').attr('min',year+'-'+'0'+month+'-'+'0'+date);
-        }
-        else {
+        } else {
             $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+month+'-'+date);
             $('#ticket_time,#depart_day,#arrival_day').attr('min',year+'-'+month+'-'+date);
         }
-
         // 편도 - 왕복 선택
     $('.select_date_top .ticket_btn a:last-child').on('click',function(){
         $('.select_date_top .ticket_btn a').removeClass('btn_selected');
         $(this).addClass('btn_selected');
-        $('.oneway_trip').css('display','none');
-        $('.round_trip').css('display','block');
+        $('#oneway_trip').css('display','none');
+        $('#round_trip').css('display','block');
         return false;
     });
     $('.select_date_top .ticket_btn a:first-child').on('click',function(){
         $('.select_date_top .ticket_btn a').removeClass('btn_selected');
         $(this).addClass('btn_selected');
-        $('.round_trip').css('display','none');
-        $('.oneway_trip').css('display','flex');
+        $('#round_trip').css('display','none');
+        $('#oneway_trip').css('display','flex');
         return false;
     });
 
-    // 승객 연령 및 좌석 선택
+// 승객 연령 및 좌석 선택
         // 창 여닫기
-    $('.select_num').on('click', function(){
-        if ($('.select_num_window').is(':visible')){
-            $('.select_num_window').stop().slideUp();
-        } else {
-            $('.select_num_window').stop().slideDown();
-        }
-    })
-    $(".select_num_window .close_win").on("click",function(){
-        $('.select_num_window').stop().slideUp();
-    });
+    windowSlide('.select_num','.select_num_window')
         // 인원 - + 버튼 작동
     $(".add_num .xi-minus-min").on("click",function(){
         let num = $(this).parent().next().attr('value');
@@ -231,7 +232,7 @@ $(function(){
         }
     });
 
-    // 할인 선택창
+// 할인 선택창
         // 할인 선택 -> 할인 유형 및 인원으로 변경
     setInterval(function(){
         if($('.discount_ticket').hasClass('ticket_selected')){
@@ -242,17 +243,16 @@ $(function(){
             $('#select_discount').css('display','none');
         }
     });
-        // 인원 - 여닫기
-    $('#dis_num').on('click', function(){
-        if ($('.select_num_window_discount').is(':visible')){
-            $('.select_num_window_discount').stop().slideUp();
-        } else {
-            $('.select_num_window_discount').stop().slideDown();
-        }
-    })
-    $(".select_num_window_discount .close_win").on("click",function(){
-        $('.select_num_window_discount').stop().slideUp();
+        // 할인유형 - 여닫기
+     windowSlide('.select_dis','.select_dis_window')
+        // 할인유형 - 밸류값 변경
+    $(".discount_category li").on("click",function(){
+        let disName = $(this).text();
+        $("#discount").attr('value',disName);
+        $(".select_dis_window").stop().slideUp();
     });
+        // 인원 - 여닫기
+    windowSlide('.select_num_dis','.select_num_window_discount')
         // 인원 - + 버튼 작동
         $(".dis_add_num .xi-minus-min").on("click",function(){
             let num = $(this).parent().next().attr('value');
@@ -269,37 +269,9 @@ $(function(){
             }
         });
 
-        // 할인유형 - 여닫기
-    $('#discount').on('click', function(){
-        if ($('.select_dis_window').is(':visible')){
-            $('.select_dis_window').stop().slideUp();
-        } else {
-            $('.select_dis_window').stop().slideDown();
-        }
-    })
-    $(".select_dis_window .close_win").on("click",function(){
-        $('.select_dis_window').stop().slideUp();
-    });
-        // 할인유형 - 밸류값 변경
-    $(".discount_category li").on("click",function(){
-        let disName = $(this).text();
-        $("#discount").attr('value',disName);
-        $(".select_dis_window").stop().slideUp();
-    });
-    
-
-
-    // 열차유형 선택
-    $("#select_train_box").on("click",function(){
-        if ($(".select_train_window").is(':visible')) {
-            $('.select_train_window').stop().slideUp();
-        } else {
-            $('.select_train_window').stop().slideDown();
-        }
-    });
-    $(".select_train_window .close_win").on("click",function(){
-        $('.select_train_window').stop().slideUp();
-    });
+// 열차유형 선택
+    windowSlide('.train','.select_train_window')
+        // 밸류 변경
     $(".select_train_window .train_category li").on("click",function(){
         let tname = $(this).text();
         $('#select_train_box').attr('value',tname);
@@ -319,7 +291,7 @@ $(function(){
         return false;
     });
 
-    // 관광열차 변경 시
+// 관광열차 변경 시
     setInterval(function(){
         if ($('.tour_train').hasClass('ticket_selected')){
             $('.select_train_window #train_wrap .normal_train').css('display','none');
@@ -354,14 +326,13 @@ $(function(){
         $('#arrival').attr('value','정선')
     });
 
-    // 여행상품 - 국내/국외 버튼
+// 여행상품 - 국내/국외 구분 버튼
     $('.int_btn').on("click",function(){
         $('.trip_btn a').removeClass('p_btn_selected');
         $(this).addClass('p_btn_selected');
         $('#trip_overseas').css('display','none');
         $('#trip_internal').css('display','block');
         return false;
-
     });
     $('.ove_btn').on("click",function(){
         $('.trip_btn a').removeClass('p_btn_selected');
@@ -371,6 +342,7 @@ $(function(){
         return false;
     });
 
+// 맨 위로 버튼
     $("#scrl_top").on("click",function(){
         $("html, body").animate({scrollTop:0},500);
     })

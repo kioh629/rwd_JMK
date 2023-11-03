@@ -41,9 +41,17 @@ header {
   z-index: 1000;
   top: 0;
 }
-header li {
+header #logo {
+  float: left;
   height: 60px;
   line-height: 60px;
+  margin-left: 20px;
+}
+header #logo img {
+  height: 40px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 header #login_btn {
   color: #fff;
@@ -59,9 +67,6 @@ header #ham_btn {
 header #ham_btn:hover {
   color: #3da1ff;
 }
-header > div > li {
-  float: left;
-}
 header > div > ul {
   float: right;
 }
@@ -70,10 +75,11 @@ header > div > ul > li {
   margin-right: 10px;
 }
 header #tablet_pc_header {
-  color: #fff;
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  color: #fff;
 }
 header #tablet_pc_header li:hover {
   color: #3da1ff;
@@ -86,6 +92,7 @@ header #tablet_pc_header li {
 header #tablet_pc_header #lang_select_f {
   background: none;
   border: 0;
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -98,16 +105,6 @@ header #tablet_pc_header #lang_select_f option {
 }
 header #tablet_pc_header #lang_select_f:hover {
   color: #3da1ff;
-}
-
-#logo {
-  margin-left: 20px;
-}
-#logo img {
-  height: 40px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* 햄버거메뉴 */
@@ -151,10 +148,11 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #ham_wrap #ham_top li {
   width: 33.3%;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
   color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
   text-align: center;
 }
 #ham_wrap #ham_top li:hover {
@@ -163,10 +161,11 @@ header #tablet_pc_header #lang_select_f:hover {
 #ham_wrap #ham_top #lang_select_h {
   background: none;
   border: 0;
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: #414141;
+  font-weight: 600;
   outline: none;
   cursor: pointer;
 }
@@ -182,10 +181,11 @@ header #tablet_pc_header #lang_select_f:hover {
   line-height: 50px;
   text-align: center;
   margin: 20px auto 0;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
   color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 700;
   border-radius: 10px;
 }
 #ham_wrap .ham_quick i {
@@ -244,25 +244,24 @@ header #tablet_pc_header #lang_select_f:hover {
   top: 80px;
   background: #fff;
 }
-
-#main_menu {
+#full_menu #main_menu {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   height: 70px;
   margin: 0 auto;
 }
-#main_menu li {
+#full_menu #main_menu li {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
+  font-weight: 700;
   height: 70px;
   line-height: 70px;
   text-align: center;
 }
-
-#sub_menu {
+#full_menu #sub_menu {
   width: 100%;
   padding-top: 20px;
   height: 200px;
@@ -271,10 +270,10 @@ header #tablet_pc_header #lang_select_f:hover {
   display: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
-#sub_menu ul {
+#full_menu #sub_menu ul {
   display: none;
 }
-#sub_menu ul li {
+#full_menu #sub_menu ul li {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
@@ -285,12 +284,11 @@ header #tablet_pc_header #lang_select_f:hover {
   line-height: 50px;
   text-align: center;
 }
-#sub_menu ul li:hover {
+#full_menu #sub_menu ul li:hover {
   color: #005BAE;
   font-weight: 500;
 }
-
-.sub_box {
+#full_menu .sub_box {
   margin: 0 auto;
 }
 
@@ -311,6 +309,7 @@ header #tablet_pc_header #lang_select_f:hover {
   z-index: 1;
 }
 #ticket #ticket_category li {
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -444,30 +443,32 @@ header #tablet_pc_header #lang_select_f:hover {
   margin-top: 20px;
   height: 80px;
 }
-#ticket #ticket_main #select_station .select_station_window .station_search #search_win {
+#ticket #ticket_main #select_station .select_station_window .station_search .search_win {
   width: 85%;
   height: 35px;
-  background: #ececec;
+  background: #cfcfcf;
   margin: 0 auto;
   border-radius: 20px;
 }
-#ticket #ticket_main #select_station .select_station_window .station_search #search_win i.xi-search {
+#ticket #ticket_main #select_station .select_station_window .station_search .search_win i.xi-search {
   margin-left: 20px;
   line-height: 35px;
   font-size: 20px;
   color: #414141;
   text-align: left;
 }
-#ticket #ticket_main #select_station .select_station_window .station_search #search_win #station_search {
+#ticket #ticket_main #select_station .select_station_window .station_search .search_win .search_input {
   margin: 0 0 7px 20px;
   width: 170px;
   background: none;
   outline: none;
   border: none;
   line-height: 35px;
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
+  font-weight: 600;
   padding: 0;
 }
 #ticket #ticket_main #select_station .select_station_window .station_search .result {
@@ -530,7 +531,7 @@ header #tablet_pc_header #lang_select_f:hover {
   display: flex;
   justify-content: space-between;
 }
-#ticket #ticket_main #select_date form.round_trip {
+#ticket #ticket_main #select_date #round_trip {
   display: none;
   width: 270px;
   height: 53px;
@@ -539,12 +540,12 @@ header #tablet_pc_header #lang_select_f:hover {
   border-radius: none;
   background: #fff;
 }
-#ticket #ticket_main #select_date form.round_trip #round_trip_wrap {
+#ticket #ticket_main #select_date #round_trip #round_trip_wrap {
   display: flex;
   justify-content: space-between;
   width: 270px;
 }
-#ticket #ticket_main #select_date form.round_trip label {
+#ticket #ticket_main #select_date #round_trip label {
   display: block;
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
@@ -553,7 +554,7 @@ header #tablet_pc_header #lang_select_f:hover {
   font-size: 14px;
   font-weight: 600;
 }
-#ticket #ticket_main #select_date form.round_trip input {
+#ticket #ticket_main #select_date #round_trip input {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
@@ -567,32 +568,31 @@ header #tablet_pc_header #lang_select_f:hover {
   border-radius: 0;
   background: #fff;
 }
-#ticket #ticket_main #select_date form.oneway_trip {
+#ticket #ticket_main #select_date #oneway_trip {
   display: flex;
   width: 270px;
   margin: 11px auto 0;
   padding-bottom: 4px;
   border-bottom: 1px solid #414141;
 }
-#ticket #ticket_main #select_date form.oneway_trip i {
+#ticket #ticket_main #select_date #oneway_trip i {
   font-size: 32px;
   color: #414141;
   text-align: left;
   margin-top: 8px;
 }
-#ticket #ticket_main #select_date form.oneway_trip input#ticket_time {
+#ticket #ticket_main #select_date #oneway_trip #ticket_time {
   font-size: 32px;
   position: relative;
   width: 270px;
   border: none;
-  border-bottom: 1px solide #414141;
   text-align: right;
   background: #fff;
   border-radius: 0;
   height: 48px;
   line-height: 48px;
 }
-#ticket #ticket_main #select_date form.oneway_trip input[type=date]::-webkit-calendar-picker-indicator, #ticket #ticket_main #select_date form.oneway_trip ::-webkit-inner-spin-button {
+#ticket #ticket_main #select_date #oneway_trip input[type=date]::-webkit-calendar-picker-indicator, #ticket #ticket_main #select_date #oneway_trip ::-webkit-inner-spin-button {
   position: absolute;
   z-index: 3;
   left: 0;
@@ -617,7 +617,6 @@ header #tablet_pc_header #lang_select_f:hover {
   font-weight: 500;
   border-radius: 5px;
   text-align: center;
-  color: #414141;
   background: #fff;
   border: 1px solid #cfcfcf;
 }
@@ -631,8 +630,6 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #ticket #ticket_main #select_NumberOfPeople .ticket_sub {
   padding-top: 15px;
-}
-#ticket #ticket_main #select_NumberOfPeople > li {
   width: 270px;
   margin: 0 auto;
   text-align: left;
@@ -717,18 +714,18 @@ header #tablet_pc_header #lang_select_f:hover {
   font-size: 16px;
   font-weight: 600;
 }
-#ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num .add_num li i {
+#ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num .add_num div i {
   text-align: center;
   font-size: 16px;
+  color: #414141;
   width: 20px;
   height: 20px;
   line-height: 18px;
   background: #fff;
-  color: #414141;
   border: 1px solid #414141;
   border-radius: 20px;
 }
-#ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num .add_num li i:hover {
+#ticket #ticket_main #select_NumberOfPeople .select_num_window #select_num_wrap .age_num .add_num div i:hover {
   background: #005BAE;
   color: #fff;
 }
@@ -738,7 +735,7 @@ header #tablet_pc_header #lang_select_f:hover {
   margin: 0 auto;
   width: 100%;
 }
-#ticket #ticket_main #select_discount > li {
+#ticket #ticket_main #select_discount .ticket_sub {
   width: 270px;
   margin: 0 auto;
   text-align: left;
@@ -891,7 +888,7 @@ header #tablet_pc_header #lang_select_f:hover {
   font-size: 16px;
   font-weight: 600;
 }
-#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num li i {
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num div i {
   text-align: center;
   font-size: 16px;
   width: 20px;
@@ -902,7 +899,7 @@ header #tablet_pc_header #lang_select_f:hover {
   border: 1px solid #414141;
   border-radius: 20px;
 }
-#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num li i:hover {
+#ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num .dis_add_num div i:hover {
   background: #005BAE;
   color: #fff;
 }
@@ -1085,7 +1082,7 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #guide .guide_title {
   color: #414141;
-  font-family: "Noto Sans KR Black";
+  font-family: "Noto Sans KR Black", sans-serif;
   font-size: 32px;
   text-align: center;
   margin-bottom: 30px;
@@ -1122,6 +1119,7 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #guide .guide_list ul li:last-child {
   margin-top: 5px;
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1133,10 +1131,11 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 
 .more a {
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
+  font-size: 16px;
   font-size: 14px;
-  color: #414141;
 }
 .more a:hover {
   color: #3da1ff;
@@ -1182,14 +1181,19 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #contents #announcement .announcement_board .ab_text {
   width: 75%;
-  font-size: 16px;
   color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   overflow: hidden;
 }
 #contents #announcement .announcement_board .ab_date {
   width: 20%;
-  font-size: 12px;
   color: #414141;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 12px;
   text-align: right;
 }
 #contents #magazine {
@@ -1220,7 +1224,7 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #contents #magazine .magazine_title .magazine_main {
   color: #414141;
-  font-family: "Noto Sans KR Black";
+  font-family: "Noto Sans KR Black", sans-serif;
   font-size: 24px;
 }
 #contents #magazine .magazine_title .magazine_main:hover {
@@ -1231,6 +1235,7 @@ header #tablet_pc_header #lang_select_f:hover {
   color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
+  font-size: 16px;
   font-size: 12px;
   padding-top: 5px;
   clear: both;
@@ -1282,7 +1287,7 @@ header #tablet_pc_header #lang_select_f:hover {
   background: #005BAE;
   border: none;
 }
-#trip #trip_top li {
+#trip #trip_top .more {
   line-height: 70px;
 }
 #trip .trip_box > ul {
@@ -1351,8 +1356,6 @@ footer #f_top #scrl_top {
   border-bottom: 1px solid #676767;
   text-align: center;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
   color: #fff;
 }
 footer #f_top #scrl_top a i {
@@ -1394,6 +1397,7 @@ footer #f_bot .copy ul {
 }
 footer #f_bot .copy ul li {
   float: left;
+  color: #414141;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1463,7 +1467,14 @@ footer #f_bot .copy address {
     height: 80px;
     position: absolute;
   }
-  header li {
+  header #logo {
+    height: 80px;
+    line-height: 80px;
+  }
+  header #logo img {
+    margin-bottom: 5px;
+  }
+  header ul li {
     height: 80px;
     line-height: 80px;
   }
@@ -1525,6 +1536,13 @@ footer #f_bot .copy address {
   }
   #ticket #ticket_main #select_discount .select_num_window_discount {
     top: 265px;
+    height: 300px;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num {
+    width: 45%;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num:nth-child(odd) {
+    margin-right: 10%;
   }
   #ticket #ticket_main #select_train .select_train_window {
     top: 265px;
@@ -1585,11 +1603,13 @@ footer #f_bot .copy address {
   }
   footer #f_top #f_info ul li {
     float: left;
-    margin-right: 30px;
+    color: #414141;
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 14px;
     font-weight: 400;
+    font-size: 16px;
+    font-size: 14px;
     color: #fff;
+    margin-right: 30px;
   }
   footer #f_top #scrl_top {
     width: 15% !important;
@@ -1631,8 +1651,6 @@ footer #f_bot .copy address {
     margin-left: 10px;
   }
   footer #f_bot .copy address {
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: 400;
     color: #fff;
     margin-top: 20px;
     margin-left: 10px;
@@ -1738,6 +1756,16 @@ footer #f_bot .copy address {
   }
   #ticket #ticket_main #select_discount .select_num_window_discount {
     top: 155px;
+    height: 300px;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap {
+    width: 75%;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num {
+    width: 40%;
+  }
+  #ticket #ticket_main #select_discount .select_num_window_discount #select_num_dis_wrap .age_num:nth-child(odd) {
+    margin-right: 20%;
   }
   #ticket #ticket_main #select_train {
     width: 25%;
@@ -1790,9 +1818,10 @@ footer #f_bot .copy address {
     width: 135px;
     height: 30px;
     line-height: 30px;
-    font-size: 16px;
+    color: #414141;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 400;
+    font-size: 16px;
     color: #fff;
     border: 0;
     border-bottom: 1px solid #fff;

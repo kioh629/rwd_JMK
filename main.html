@@ -16,7 +16,7 @@
 <style>
     @font-face {
         font-family: 'Noto Sans KR Black';
-        src: url(font/NotoSansKR-Black.woff) format(woff);
+        src: url(font/NotoSansKR-Black.woff) format("woff");
     }
 </style>
 </head>
@@ -24,9 +24,9 @@
     <div id="back_img"></div>
     <header>
         <div id="header_wrap" class="cf">
-            <li id="logo"><a href="#"><img src="img/logo_full.png" alt="로고"></a></li>
+            <div id="logo"><a href="#"><img src="img/logo_full.png" alt="로고"></a></div>
             <ul id="mobile_header">
-                <li id="login_btn"><a href="#"><i class="xi-user"></i></a></i></li>
+                <li id="login_btn"><a href="#"><i class="xi-user"></i></a></li>
                 <li id="ham_btn"><a href="#"><i class="xi-bars"></i></a></li>
             </ul>
             <ul id="tablet_pc_header" class="show_in_tablet">
@@ -200,6 +200,7 @@
         
     </nav>
     <section id="ticket">
+        <h2 class="skip">빠른티켓예매</h2>
         <ul id="ticket_category">
             <li class="normal ticket_selected">일반<span class="category_text_add">승차권</span></li>
             <li class="discount_ticket">할인<span class="category_text_add">승차권</span></li>
@@ -210,13 +211,13 @@
             <div id="select_station" class="cf">
                 <form name="depart_station">
                     <label for="depart" class="ticket_sub">출발지</label>
-                    <input type="text" id="depart" name="depart" class="ticket_title" placeholder="서울" value="서울" readonly alt="클릭 시 출발역 검색창 활성화"></input>
-                    <div class="select_station_window select_depart">
-                        <button class="close_win" alt="역 검색창 닫기"><i class="xi-angle-up"></i></button>
+                    <input type="text" id="depart" name="depart" class="ticket_title" placeholder="서울" value="서울" readonly>
+                    <div class="select_station_window select_depart window">
+                        <button class="close_win"><i class="xi-angle-up"></i></button>
                         <div class="station_search">
-                            <div id="search_win" class="cf">
+                            <div class="search_win cf">
                                 <i class="xi-search"></i>
-                                <input type="search" id="station_search" placeholder="역 이름을 입력하세요">
+                                <input type="search" id="depart_search" class="search_input" placeholder="역 이름을 입력하세요">
                             </div>
                             <div class="result">검색 결과
                                 <span>KTX정차역</span>
@@ -281,13 +282,13 @@
                 <div><i class="xi-renew ticket_xi"></i></div>
                 <form name="arrival_station">
                     <label for="arrival" class="ticket_sub">도착지</label>
-                    <input type="text" id="arrival" name="arrival" class="ticket_title" placeholder="부산" value="부산" readonly alt="클릭 시 도착역 검색창 활성화"></input>
-                    <div class="select_station_window select_arrival">
-                        <button class="close_win" alt="역 검색창 닫기"><i class="xi-angle-up"></i></button>
+                    <input type="text" id="arrival" name="arrival" class="ticket_title" placeholder="부산" value="부산" readonly>
+                    <div class="select_station_window select_arrival window">
+                        <button class="close_win"><i class="xi-angle-up"></i></button>
                         <div class="station_search">
-                            <div id="search_win">
+                            <div class="search_win">
                                 <i class="xi-search"></i>
-                                <input type="search" id="station_search" placeholder="역 이름을 입력하세요">
+                                <input type="search" id="arrival_search" class="search_input" placeholder="역 이름을 입력하세요">
                             </div>
                             <div class="result">검색 결과
                                 <span>KTX정차역</span>
@@ -358,165 +359,163 @@
                         <a href="#">왕복</a>
                     </li>
                 </ul>
-                <form name="select_date" class="oneway_trip">
+                <form name="oneway_trip" id="oneway_trip">
                     <i class="xi-calendar-check"></i>
-                    <input type="date" id="ticket_time" name="ticket_time" value="2023-10-31" min="2023-10-31" class="ticket_title" alt="클릭 시 날짜 선택 열림">
+                    <input type="date" id="ticket_time" name="ticket_time" class="ticket_title">
                 </form>
-                <form name="select_date" class="round_trip">
+                <form name="round_trip" id="round_trip">
                     <div id="round_trip_wrap">
                         <div>
                             <label for="depart_day">가는 날</label>
-                            <input type="date" id="depart_day" name="depart_day" value="" min="" alt="클릭 시 출발 날짜 선택 열림">
+                            <input type="date" id="depart_day" name="depart_day">
                         </div>
                         <div>
                             <label for="arrival_day">돌아오는 날</label>
-                            <input type="date" id="arrival_day" name="arrival_day" value="" min="" alt="클릭 시 도착 날짜 선택 열림">
+                            <input type="date" id="arrival_day" name="arrival_day">
                         </div>
                     </div>
                     
                 </form>
             </div>
             <div id="select_NumberOfPeople">
-                <li class="ticket_sub">승객 연령 및 좌석</li>
+                <div class="ticket_sub">승객 연령 및 좌석</div>
                 <form class="select_num">
                     <i class="xi-users ticket_xi"></i>
-                    <input type="text" value="어른 1명" class="ticket_title" alt="클릭 시 인원 선택" readonly></input>
+                    <input type="text" value="어른 1명" class="ticket_title" readonly>
                 </form>
-                <div class="select_num_window">
-                    <button class="close_win" alt="인원 선택 창 닫기"><i class="xi-angle-up"></i></button>
+                <div class="select_num_window window">
+                    <button class="close_win"><i class="xi-angle-up"></i></button>
                     <div id="select_num_wrap" class="cf">
                         <div class="adult age_num">
-                            <li>어른(만 13세 이상)</li>
-                            <ul class="add_num">
-                                <li><i class="xi-minus-min"></i></li>
+                            <div>어른(만 13세 이상)</div>
+                            <div class="add_num">
+                                <div><i class="xi-minus-min"></i></div>
                                 <input id="adult" class="num" type="text" value="1" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                                <div><i class="xi-plus-min"></i></div>    
+                            </div>
                         </div>
                         <div class="child age_num">
-                            <li>어린이(만 6~ 12세)</li>
-                            <ul class="add_num">
-                                <li><i class="xi-minus-min"></i></li>
+                            <div>어린이(만 6~ 12세)</div>
+                            <div class="add_num">
+                                <div><i class="xi-minus-min"></i></div>
                                 <input id="child" class="num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                                <div><i class="xi-plus-min"></i></div>    
+                            </div>
                         </div>
                         <div class="baby age_num">
-                            <li>유아(만 6세 미만)</li>
-                            <ul class="add_num">
-                                <li><i class="xi-minus-min"></i></li>
+                            <div>유아(만 6세 미만)</div>
+                            <div class="add_num">
+                                <div><i class="xi-minus-min"></i></div>
                                 <input id="baby" class="num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                                <div><i class="xi-plus-min"></i></div>    
+                            </div>
                         </div>
                         <div class="senior age_num">
-                            <li>경로(만 65세 이상)</li>
-                            <ul class="add_num">
-                                <li><i class="xi-minus-min"></i></li>
+                            <div>경로(만 65세 이상)</div>
+                            <div class="add_num">
+                                <div><i class="xi-minus-min"></i></div>
                                 <input id="senior" class="num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                                <div><i class="xi-plus-min"></i></div>    
+                            </div>
                         </div>
                         <div class="s-disabled age_num">
-                            <li>중증 장애인</li>
-                            <ul class="add_num">
-                                <li><i class="xi-minus-min"></i></li>
+                            <div>중증 장애인</div>
+                            <div class="add_num">
+                                <div><i class="xi-minus-min"></i></div>
                                 <input id="s-disabled" class="num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                                <div><i class="xi-plus-min"></i></div>    
+                            </div>
                         </div>
                         <div class="m-dispabled age_num">
-                            <li>경증 장애인</li>
-                            <ul class="add_num">
-                                <li><i class="xi-minus-min"></i></li>
+                            <div>경증 장애인</div>
+                            <div class="add_num">
+                                <div><i class="xi-minus-min"></i></div>
                                 <input id="m-dispabled" class="num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                                <div><i class="xi-plus-min"></i></div>    
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="select_discount">
-                <li class="ticket_sub">할인 유형 및 인원</li>
+                <div class="ticket_sub">할인 유형 및 인원</div>
                 <div id="select_dis_wrap">
                     <form class="select_dis">
                         <label for="discount" class="ticket_sub">할인 유형</label>
-                        <input type="text" value="힘내라 청춘" id="discount" class="ticket_title" alt="클릭 시 인원 선택" readonly></input>
-                        <!-- select로 변경 -->                               
+                        <input type="text" value="힘내라 청춘" id="discount" class="ticket_title" readonly>
                     </form>
+                    <div class="select_dis_window window">
+                        <button class="close_win"><i class="xi-angle-up"></i></button>
+                        <ul class="discount_category">
+                            <li>청소년드림</li>
+                            <li>힘내라청춘</li>
+                            <li>맘편한KTX</li>
+                            <li>다자녀행복</li>
+                            <li>기차누리</li>
+                            <li>KTX5000</li>
+                            <li>단체</li>
+                        </ul>
+                    </div>
                     <form class="select_num_dis">
                         <label for="dis_num" class="ticket_sub">인원 선택</label>
                         <div>
                         <i class="xi-users ticket_xi"></i>
-                        <input type="text" value="어른 1명" id="dis_num" class="ticket_title" alt="클릭 시 인원 선택" readonly></input>
-                        <!-- select로 변경 -->  
+                        <input type="text" value="어른 1명" id="dis_num" class="ticket_title" readonly>
                         </div>                              
-                    </form>    
-                </div>
-                <div class="select_dis_window">
-                    <button class="close_win" alt="할인 선택 창 닫기"><i class="xi-angle-up"></i></button>
-                    <ul class="discount_category">
-                        <li>청소년드림</li>
-                        <li>힘내라청춘</li>
-                        <li>맘편한KTX</li>
-                        <li>다자녀행복</li>
-                        <li>기차누리</li>
-                        <li>KTX5000</li>
-                        <li>단체</li>
-                    </ul>
-                </div>
-                <div class="select_num_window_discount">
-                    <button class="close_win" alt="인원 선택 창 닫기"><i class="xi-angle-up"></i></button>
-                    <div id="select_num_dis_wrap" class="cf">
-                        <div class="adult age_num">
-                            <li>어른(만 13세 이상)</li>
-                            <ul class="dis_add_num">
-                                <li><i class="xi-minus-min"></i></li>
-                                <input id="dis_adult" class="dis_num" type="text" value="1" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
+                    </form> 
+                    <div class="select_num_window_discount window">
+                        <button class="close_win"><i class="xi-angle-up"></i></button>
+                        <div id="select_num_dis_wrap" class="cf">
+                            <div class="adult age_num">
+                                <div>어른(만 13세 이상)</div>
+                                <div class="dis_add_num">
+                                    <div><i class="xi-minus-min"></i></div>
+                                    <input id="dis_adult" class="dis_num" type="text" value="1" readonly>
+                                    <div><i class="xi-plus-min"></i></div>    
+                                </div>
+                            </div>
+                            <div class="child age_num">
+                                <div>어린이(만 6~ 12세)</div>
+                                <div class="dis_add_num">
+                                    <div><i class="xi-minus-min"></i></div>
+                                    <input id="dis_child" class="dis_num" type="text" value="0" readonly>
+                                    <div><i class="xi-plus-min"></i></div>    
+                                </div>
+                            </div>
+                            <div class="baby age_num">
+                                <div>유아(만 6세 미만)</div>
+                                <div class="dis_add_num">
+                                    <div><i class="xi-minus-min"></i></div>
+                                    <input id="dis_baby" class="dis_num" type="text" value="0" readonly>
+                                    <div><i class="xi-plus-min"></i></div>    
+                                </div>
+                            </div>
+                            <div class="senior age_num">
+                                <div>경로(만 65세 이상)</div>
+                                <div class="dis_add_num">
+                                    <div><i class="xi-minus-min"></i></div>
+                                    <input id="dis_senior" class="dis_num" type="text" value="0" readonly>
+                                    <div><i class="xi-plus-min"></i></div>    
+                                </div>
+                            </div>
+                            <div class="s-disabled age_num">
+                                <div>중증 장애인</div>
+                                <div class="dis_add_num">
+                                    <div><i class="xi-minus-min"></i></div>
+                                    <input id="dis_s-disabled" class="dis_num" type="text" value="0" readonly>
+                                    <div><i class="xi-plus-min"></i></div>    
+                                </div>
+                            </div>
+                            <div class="m-dispabled age_num">
+                                <div>경증 장애인</div>
+                                <div class="dis_add_num">
+                                    <div><i class="xi-minus-min"></i></div>
+                                    <input id="dis_m-dispabled" class="dis_num" type="text" value="0" readonly>
+                                    <div><i class="xi-plus-min"></i></div>    
+                                </div>
+                            </div>
                         </div>
-                        <div class="child age_num">
-                            <li>어린이(만 6~ 12세)</li>
-                            <ul class="dis_add_num">
-                                <li><i class="xi-minus-min"></i></li>
-                                <input id="dis_child" class="dis_num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
-                        </div>
-                        <div class="baby age_num">
-                            <li>유아(만 6세 미만)</li>
-                            <ul class="dis_add_num">
-                                <li><i class="xi-minus-min"></i></li>
-                                <input id="dis_baby" class="dis_num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
-                        </div>
-                        <div class="senior age_num">
-                            <li>경로(만 65세 이상)</li>
-                            <ul class="dis_add_num">
-                                <li><i class="xi-minus-min"></i></li>
-                                <input id="dis_senior" class="dis_num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
-                        </div>
-                        <div class="s-disabled age_num">
-                            <li>중증 장애인</li>
-                            <ul class="dis_add_num">
-                                <li><i class="xi-minus-min"></i></li>
-                                <input id="dis_s-disabled" class="dis_num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
-                        </div>
-                        <div class="m-dispabled age_num">
-                            <li>경증 장애인</li>
-                            <ul class="dis_add_num">
-                                <li><i class="xi-minus-min"></i></li>
-                                <input id="dis_m-dispabled" class="dis_num" type="text" value="0" readonly>
-                                <li><i class="xi-plus-min"></i></li>    
-                            </ul>
-                        </div>
-                    </div>
+                    </div>   
                 </div>
             </div>
             <div id="select_train">
@@ -527,13 +526,13 @@
                         <a href="#" class="round_btn">환승</a>
                     </li>
                 </ul>
-                <form class="train" action="#" method="#">
+                <form class="train" name="train">
                     <i class="xi-train ticket_xi"></i>
                     <input type="text" id="select_train_box" class="ticket_title" value="KTX" readonly>
                     <button class="search_btn" value="submit"><i class="xi-search"></i></button>
                 </form>
-                <div class="select_train_window">
-                    <button class="close_win" alt="인원 선택 창 닫기"><i class="xi-angle-up"></i></button>
+                <div class="select_train_window window">
+                    <button class="close_win"><i class="xi-angle-up"></i></button>
                     <div id="train_wrap">
                         <ul class="normal_train train_category cf">
                             <li>전체</li>
@@ -561,18 +560,19 @@
         </fieldset>
     </section>
     <section id="banner">
+        <h2 class="skip">이벤트 및 프로모션 배너</h2>
         <ul id="slide_banner">
-                <li><a href="#"><img src="img/banner1.jpg" alt=""> </a></li>
-                <li><a href="#"><img src="img/banner2.jpg" alt=""> </a></li>
-                <li><a href="#"><img src="img/banner3.jpg" alt=""> </a></li>
-                <li><a href="#"><img src="img/banner4.jpg" alt=""> </a></li>
-                <li><a href="#"><img src="img/banner5.jpg" alt=""> </a></li>
-                <li><a href="#"><img src="img/banner6.jpg" alt=""> </a></li>
+                <li><a href="#"><img src="img/banner1.jpg" alt="배너1 여수 여행 프로모션"> </a></li>
+                <li><a href="#"><img src="img/banner2.jpg" alt="배너2 대구 달성군 체크인 이벤트"> </a></li>
+                <li><a href="#"><img src="img/banner3.jpg" alt="배너3 페이코 결제 리워드 이벤트"> </a></li>
+                <li><a href="#"><img src="img/banner4.jpg" alt="배너4 관광열차 홍보 포스터"> </a></li>
+                <li><a href="#"><img src="img/banner5.jpg" alt="배너5 현대프리미엄 아울렛 대전점 방문 이벤트"> </a></li>
+                <li><a href="#"><img src="img/banner6.jpg" alt="배너6 여행이 있는 주말 안내"> </a></li>
         </ul>
     </section>
 
     <section id="guide">
-        <div class="guide_title">종합 이용 가이드</div>
+        <h2 class="guide_title">종합 이용 가이드</h2>
         <div class="guide_list cf">
             <ul>
                 <li><a href="#"><img src="img/icon1.png" alt="티켓아이콘"></a></li>
@@ -610,6 +610,7 @@
         </div>
     </section>
     <section id="contents" class="cf">
+        <h2 class="skip">공지사항</h2>
         <div id="announcement">
             <ul class="contents_top flex">
                 <li class="contents_title">공지사항</li>
@@ -641,7 +642,7 @@
                 <li class="contents_title">KTX 매거진</li>
                 <li class="more"><a href="#">MORE </a><i class="xi-plus-circle"></i></li>
             </ul>
-            <div class="magazine_img" alt="KTX매거진 이미지"></div>
+            <div class="magazine_img"></div>
             <ul class="magazine_title flex">
                 <li class="magazine_sub"><a href="#">바로 지금, 여행</a></li>
                 <li class="magazine_main"><a href="#">예술이 그린 섬, 신안</a></li>
@@ -649,6 +650,7 @@
         </div>
     </section>
     <section id="trip">
+        <h2 class="skip">여행상품 안내</h2>
         <div id="trip_top">
             <ul class="cf">
                 <li class="contents_title">여행상품</li>
@@ -657,18 +659,18 @@
                     <a href="#" class="ove_btn">국외</a>
                 </li>
             </ul>
-            <li class="more"><a href="#">MORE </a><i class="xi-plus-circle"></i></li>
+            <div class="more"><a href="#">MORE </a><i class="xi-plus-circle"></i></div>
         </div>
         <div id="trip_internal" class="trip_box cf">
             <ul class="sightseeing_train">
-                <li class="sightseeing_train_img" alt="정기관광열차 홍보 이미지"></li>
+                <li class="sightseeing_train_img"></li>
                 <li>
                     <a href="#">정기관광열차 예매하러 가기</a><br>
                     <span>동해산타열차 / 백두대간협곡열차 / 남도해양열차 / 정선아리랑열차/ 서해금빛열차</span>
                 </li>
             </ul>
             <ul class="nailo">
-                <li class="nailo_img" alt="내일로 자유여행 홍보 이미지"></li>
+                <li class="nailo_img"></li>
                 <li>
                     <a href="#">내일로 패스 이용권 구매하기</a><br>
                     <span>전 국민 누구나 즐기는 7일간의 자유여행! </span>
@@ -677,14 +679,14 @@
         </div>
         <div id="trip_overseas" class="trip_box cf">
             <ul class="Japan_pass">
-                <li class="Japan_pass_img" alt="일본여행패스 홍보 이미지"></li>
+                <li class="Japan_pass_img"></li>
                 <li>
                     <a href="#">일본철도패스(JR 패스) 구매하기</a><br>
                     <span>유효기간 동안 지정된 구간의 JR열차를 이용할 수 있는 철도패스</span>
                 </li>
             </ul>
             <ul class="Europe_pass">
-                <li class="Europe_pass_img" alt="유레일패스 홍보 이미지"></li>
+                <li class="Europe_pass_img"></li>
                 <li>
                     <a href="#">유레일패스 구매하기</a><br>
                     <span>유럽 33개국에서 철도를 자유롭게 이용할 수 있는 철도패스</span>
@@ -714,7 +716,7 @@
         </div>
         <div id="f_bot">
             <div class="icon_wrap cf">
-                <div class="f_logo"><img src="img/logo_full.png" alt="푸터로고"></div>
+                <div class="f_logo"><img src="img/logo_full.png" alt="로고"></div>
                 <div class="f_sns">
                     <a href="#"><i class="xi-instagram"></i></a>
                     <a href="#"><i class="xi-facebook"></i></a>
@@ -741,12 +743,12 @@
             <div class="site_map show_in_PC">
                 <select name="family_site" id="family_site">
                     <option value="코레일FAMILY">코레일FAMILY</option>
-                    <option value="코레일홈페이지"><a href="#">코레일홈페이지</a></option>
-                    <option value="물류정보"><a href="#">물류정보</a></option>
-                    <option value="윤리경영"><a href="#">윤리경영</a></option>
-                    <option value="이사회커뮤니티"><a href="#">이사회커뮤니티</a></option>
-                    <option value="조달 입찰"><a href="#">조달 입찰</a></option>
-                    <option value="철도박물관"><a href="#">철도박물관</a></option>
+                    <option value="홈페이지 링크">코레일홈페이지</option>
+                    <option value="물류정보 링크">물류정보</option>
+                    <option value="윤리경영 링크">윤리경영</option>
+                    <option value="이사회커뮤니티 링크">이사회커뮤니티</option>
+                    <option value="조달 입찰 링크">조달 입찰</option>
+                    <option value="철도박물관 링크">철도박물관</option>
                 </select>
             </div>
         </div>

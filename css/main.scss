@@ -6,26 +6,21 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-@mixin align_vertical{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+@mixin noto{
+    font-family: 'Noto Sans KR', sans-serif;
 }
-
-@mixin sub_text_to_size {
-    font-family: 'Noto Sans KR',sans-serif;
+@mixin notoblack {
+    font-family: 'Noto Sans KR Black',sans-serif;
+}
+@mixin sub_text {
+    color: #414141;
+    @include noto;
     font-weight: 400;
     font-size: 16px; 
 }
-
-@mixin sub_text {
-    color: #414141;
-    @include sub_text_to_size;
-}
-
 @mixin title_text {
     color: #414141;
-    font-family: 'Noto Sans KR',sans-serif;
+    @include noto;
     font-weight: 700;
     font-size: 32px; 
 }
@@ -64,9 +59,17 @@ header {
     z-index: 1000; 
     top: 0;
 
-    li {
+    #logo {
+        float: left;
         height: 60px;
-        line-height: 60px ;
+        line-height: 60px;
+        margin-left: 20px;
+        img {
+        height: 40px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        }
     }
     #login_btn {
         color: #fff;
@@ -82,26 +85,19 @@ header {
             color: #3da1ff;
             }
     }
-    &>div>li {
-        float: left;
-    }
     &>div>ul {
         float: right;
-
         &>li {
         float: left;
         margin-right: 10px;
         }
     }
     #tablet_pc_header {
+        @include sub_text();
         color: #fff;
-        font-family: 'Noto Sans KR',sans-serif;
-        font-weight: 400;
-        font-size: 16px;
         & li:hover {
             color: #3da1ff;
         }
-    
         li {
             height: 80px;
             text-align: center;
@@ -110,9 +106,7 @@ header {
         #lang_select_f {
             background: none;
             border: 0;
-            font-family: 'Noto Sans KR',sans-serif;
-            font-weight: 400;
-            font-size: 16px;
+            @include sub_text();
             color: #fff;
             outline: none;
             cursor: pointer;
@@ -126,13 +120,7 @@ header {
     }
 }
 
-#logo {
-    margin-left: 20px;
-    img {
-    height: 40px;
-    @include align_vertical;
-    }
-}
+
 
 /* 햄버거메뉴 */
 #modal {
@@ -174,22 +162,19 @@ header {
         
         li {
             width: 33.3%;
-            font-family: 'Noto Sans KR',sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #414141;
+            @include sub_text();
+            font-weight: 600;
             text-align: center;
             &:hover {
                 color: #3da1ff;
             }
+
         }
         #lang_select_h {
             background: none;
             border: 0;
-            font-family: 'Noto Sans KR',sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            color: #414141;
+            @include sub_text();
+            font-weight: 600;
             outline: none;
             cursor: pointer;
             option {
@@ -206,12 +191,9 @@ header {
         line-height: 50px;
         text-align: center;
         margin: 20px auto 0;
-        font-family: 'Noto Sans KR',sans-serif;
+        @include sub_text();
         font-weight: 700;
-        font-size: 16px;
-        color: #414141;
         border-radius: 10px;
-
         i {
             font-size: 20px;
         }
@@ -236,7 +218,7 @@ header {
         }
         .ham_main {
         color: #414141;
-        font-family: 'Noto Sans KR',sans-serif;
+        @include noto();
         font-weight: 700;
         font-size: 20px; 
         cursor: pointer;
@@ -255,18 +237,14 @@ header {
         .ham_sub {
             display: none;
             li {
-                color: #414141;
-                font-family: 'Noto Sans KR',sans-serif;
-                font-weight: 400;
-                font-size: 16px; 
+                @include sub_text();
                 margin: 0 0 10px 30px;
             }
         }
     }
-
 }
 
-
+// 풀메뉴
 #full_menu {
     width: 100%;
     height: 70px;
@@ -274,8 +252,8 @@ header {
     z-index: 1000;
     top: 80px;
     background: #fff;
-}
-#main_menu {
+
+    #main_menu {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -283,10 +261,8 @@ header {
     margin: 0 auto;
 
     li {
-        color: #414141;
-        font-family: 'Noto Sans KR',sans-serif;
+        @include sub_text();
         font-weight: 700;
-        font-size: 16px;
         height: 70px;
         line-height: 70px;
         text-align: center;
@@ -322,6 +298,8 @@ header {
 .sub_box {
     margin: 0 auto;
 }
+}
+
 
 // 역 선택 박스
 
@@ -344,7 +322,7 @@ header {
         z-index: 1;
         
         li {
-            @include sub_text_to_size;
+            @include sub_text;
             color: #fff;
             width: 25%;
             height: 100px;
@@ -466,10 +444,10 @@ header {
                 .station_search {
                     margin-top: 20px;
                     height: 80px;
-                    #search_win {
+                    .search_win {
                         width: 85%;
                         height: 35px;
-                        background: #ececec;
+                        background: #cfcfcf;
                         margin: 0 auto;
                         border-radius: 20px;
                         i.xi-search {
@@ -479,16 +457,15 @@ header {
                             color: #414141;
                             text-align: left;
                         }
-                        #station_search {
+                        .search_input {
                             margin: 0 0 7px 20px;
                             width: 170px;
                             background: none;
                             outline: none;
                             border: none;
                             line-height: 35px;
-                            font-family: "Noto Sans KR", sans-serif;
-                            font-weight: 500;
-                            font-size: 16px;
+                            @include sub_text();
+                            font-weight: 600;
                             padding: 0;
 
                         }
@@ -530,7 +507,7 @@ header {
                             line-height: 30px;
                             background: #ECECEC;
                             border-radius: 5px;
-                            font-family: "Noto Sans KR", sans-serif;
+                            @include noto;
                             font-size: 14px;
                             font-weight: 500;
                             color: #414141;
@@ -563,7 +540,7 @@ header {
                 justify-content: space-between;
             }
 
-            form.round_trip {
+            #round_trip {
                 display: none;
                 width: 270px;
                 height: 53px;
@@ -594,7 +571,7 @@ header {
                     background: #fff;
                 }
             }
-            form.oneway_trip {
+            #oneway_trip {
                 display: flex;
                 width: 270px;
                 margin: 11px auto 0;
@@ -606,12 +583,11 @@ header {
                     text-align: left;
                     margin-top: 8px;
                 }
-                input#ticket_time {
+                #ticket_time {
                     font-size: 32px;
                     position: relative;
                     width: 270px;
                     border: none;
-                    border-bottom: 1px solide #414141;
                     text-align: right;
                     background: #fff;
                     border-radius: 0;
@@ -643,11 +619,10 @@ header {
                 line-height: 20px;
                 margin-left: 5px;
                 font-size: 14px;
-                font-family: 'Noto Sans KR',sans-serif;
+                @include noto;
                 font-weight: 500;
                 border-radius: 5px;
                 text-align: center;
-                color: #414141;
                 background: #fff;
                 border: 1px solid #cfcfcf;
                 &:hover {
@@ -664,8 +639,6 @@ header {
         #select_NumberOfPeople {
             .ticket_sub {
                 padding-top: 15px;
-            }
-            >li {
                 width: 270px;
                 margin: 0 auto;
                 text-align: left;
@@ -741,15 +714,16 @@ header {
                                 @include sub_text;
                                 font-weight: 600;
                             }
-                            li {
+                            div {
                                 i { 
                                     text-align: center;
                                     font-size: 16px;
+                                    color: #414141;
                                     width: 20px;
                                     height: 20px;
                                     line-height: 18px;                                
                                     background:#fff;
-                                    color: #414141;
+                                    
                                     border: 1px solid #414141;
                                     border-radius: 20px;
                                     &:hover {
@@ -768,7 +742,7 @@ header {
             padding-top: 15px;
             margin: 0 auto;
             width: 100%;
-            >li {
+            .ticket_sub {
                 width: 270px;
                 margin: 0 auto;
                 text-align: left;
@@ -910,7 +884,7 @@ header {
                                 @include sub_text;
                                 font-weight: 600;
                             }
-                            li {
+                            div {
                                 i { 
                                     text-align: center;
                                     font-size: 16px;
@@ -1126,7 +1100,7 @@ header {
     margin: 80px auto 80px;
     .guide_title {
         color: #414141;
-        font-family: 'Noto Sans KR Black';
+        @include notoblack;
         font-size: 32px; 
         text-align: center;
         margin-bottom: 30px;
@@ -1162,7 +1136,7 @@ header {
                 }
                 &:last-child {
                     margin-top: 5px;
-                    @include sub_text_to_size;
+                    @include sub_text;
                     font-size: 12px;
                     font-weight: 700;
                 }
@@ -1178,10 +1152,8 @@ header {
 // contents 시작
 .more {
     a {
-        font-family: 'Noto Sans KR',sans-serif;
-        font-weight: 400;
+        @include sub_text();
         font-size: 14px;
-        color: #414141;
         &:hover {
             color: #3da1ff;
         }
@@ -1193,7 +1165,6 @@ header {
     &:hover {
         color: #3da1ff;
     }
-
 } 
 #contents {
     margin-top: 80px;
@@ -1221,20 +1192,19 @@ header {
         .announcement_board {
             height: 60px;
             line-height: 60px;
-            font-family: 'Noto Sans KR',sans-serif;
+            @include noto;
             border-bottom: 1px solid #8D8C8C;
             overflow: hidden;
 
             .ab_text {
                 width: 75%;
-                font-size: 16px;
-                color: #414141;
+                @include sub_text();
                 overflow: hidden;
             }
             .ab_date {
                 width: 20%;
+                @include sub_text();
                 font-size: 12px;
-                color: #414141;
                 text-align: right;
             }
         }
@@ -1256,7 +1226,7 @@ header {
             height: 40px;
             line-height: 40px;
             .magazine_sub {
-                font-family: 'Noto Sans KR',sans-serif;
+                @include noto;
                 color:#8D8C8C;
                 font-size: 16px;
                 font-weight: 700;
@@ -1266,7 +1236,7 @@ header {
             }
             .magazine_main {
                 color: #414141;
-                font-family: 'Noto Sans KR Black';
+                @include notoblack();
                 font-size: 24px;
                 &:hover {
                     text-decoration: underline;
@@ -1275,9 +1245,7 @@ header {
         }
         >li {
             height: 70px;
-            color: #414141;
-            font-family: 'Noto Sans KR',sans-serif;
-            font-weight: 400;
+            @include sub_text();
             font-size: 12px;
             padding-top: 5px;
             clear: both;
@@ -1310,7 +1278,7 @@ header {
                     line-height: 20px;
                     margin-left: 5px;
                     font-size: 14px;
-                    font-family: 'Noto Sans KR',sans-serif;
+                    @include noto;
                     font-weight: 500;
                     border-radius: 5px;
                     color: #414141;
@@ -1328,7 +1296,7 @@ header {
                 }
             }
         }
-        li {
+        .more {
             line-height: 70px;
         }    
     }
@@ -1355,7 +1323,7 @@ header {
                 margin: 10px 10px 10px 20px;
                 height: 70px;
                 color: #414141;
-                font-family: 'Noto Sans KR',sans-serif;
+                @include noto;
                 a {
                     font-size: 20px;
                     font-weight: 700;
@@ -1404,9 +1372,7 @@ footer {
             line-height: 50px;
             border-bottom: 1px solid #676767;
             text-align: center;
-            font-family: 'Noto Sans KR',sans-serif;
-            font-size: 16px;
-            font-weight: 400;
+            @include noto;
             color: #fff;
             a {
                 i {margin-right: 7px;}
@@ -1450,7 +1416,7 @@ footer {
             
                 li {
                     float: left;
-                    @include sub_text_to_size;
+                    @include sub_text;
                     font-size: 14px;
                     color: #fff;
                     margin-right: 20px;
@@ -1459,7 +1425,7 @@ footer {
             }
             address {
                 font-size: 12px;
-                font-family: 'Noto Sans KR',sans-serif;
+                @include noto();
                 font-weight: 400;
                 color: #fff;
                 text-align: center;
@@ -1540,7 +1506,15 @@ footer {
     header {
         height: 80px;
         position: absolute;
-        li {
+        
+        #logo {
+            height: 80px;
+            line-height: 80px;
+            img {
+                margin-bottom: 5px;
+            }
+        }
+        ul li {
             height: 80px;
             line-height: 80px;
         }
@@ -1607,6 +1581,15 @@ footer {
                 }
                 .select_num_window_discount {
                     top: 265px;
+                    height: 300px;
+                    #select_num_dis_wrap {
+                        .age_num {
+                            width: 45%;
+                            &:nth-child(odd) {
+                                margin-right: 10%;
+                            }
+                        }
+                    }
                 }
             }
             #select_train {
@@ -1686,11 +1669,10 @@ footer {
                     line-height: 50px;
                     li {
                         float: left;
-                        margin-right: 30px;
-                        font-family: 'Noto Sans KR',sans-serif;
+                        @include sub_text;
                         font-size: 14px;
-                        font-weight: 400;
                         color: #fff;
+                        margin-right: 30px;
                     }
                 }
             }
@@ -1735,8 +1717,6 @@ footer {
                     }
                 }
                 address {
-                    font-family: 'Noto Sans KR',sans-serif;
-                    font-weight: 400;
                     color: #fff;
                     margin-top: 20px;
                     margin-left: 10px;
@@ -1859,6 +1839,16 @@ footer {
                 }
                 .select_num_window_discount {
                     top: 155px;
+                    height: 300px;
+                    #select_num_dis_wrap {
+                        width: 75%;
+                        .age_num {
+                            width: 40%;
+                            &:nth-child(odd) {
+                                margin-right: 20%;
+                            }
+                        }
+                    }
                 }
             }
             #select_train {
@@ -1916,9 +1906,7 @@ footer {
                     width: 135px;
                     height:30px;
                     line-height: 30px;
-                    font-size: 16px;
-                    font-family: 'Noto Sans KR',sans-serif;
-                    font-weight: 400;
+                    @include sub_text();
                     color: #fff;
                     border: 0;
                     border-bottom: 1px solid #fff;
