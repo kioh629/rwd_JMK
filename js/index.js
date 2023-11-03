@@ -45,16 +45,18 @@ $(function(){
     });
     
 //  빠른 예매 상단 범주 선택
-        // 클릭 시 흰색으로
+        // 클릭 시 흰색
     $('#ticket_category li').on("click",function(){
         $('#ticket_category li').removeClass('ticket_selected');
         $(this).addClass('ticket_selected');
     });
+
+    
     setInterval(function(){
         if ($('.four_man').hasClass('ticket_selected')){
-            $('#select_NumberOfPeople>li').text('총 4명의 인원을 선택하세요')
+            $('#select_NumberOfPeople>.ticket_sub').text('총 4명의 인원을 선택하세요')
         } else {
-            $('#select_NumberOfPeople>li').text('승객 연령 및 좌석')
+            $('#select_NumberOfPeople>.ticket_sub').text('승객 연령 및 좌석')
         }
         if ($('.tour_train').hasClass('ticket_selected')){
             $('.select_train_top .ticket_sub').text('관광열차를 선택해주세요')
@@ -98,7 +100,7 @@ $(function(){
             if ($(b).is(':visible')){
                 $(b).stop().slideUp();
             } else if ($(".window").not(b).is(':visible')){
-                $(".window").not(b).stop().fadeOut();
+                $(".window").not(b).stop().fadeOut('fast');
                 $(this).next().stop().slideDown();
             } else {
                 $(this).next().stop().slideDown();
@@ -155,6 +157,7 @@ $(function(){
     }
     stationValue(".select_depart .search_filter ul li","#depart");
     stationValue(".select_arrival .search_filter ul li","#arrival");
+    
     // 체인지 버튼 클릭 시 출발지-도착지 변경
     $("#select_station>div").on("click",function(){
         let dum = $("#depart").attr("value");
@@ -168,6 +171,12 @@ $(function(){
     const year = now.getFullYear();
     const month = now.getMonth()+1;
     const date = now.getDate();
+        // 클릭 시 다른 항목 내려가게
+        $('#ticket_time').on('click',function(){
+            if ($(".window").is(':visible')){
+                $(".window").stop().fadeOut('fast')
+            }
+        });
         // month, date가 한 자리수가 되면 value값에 입력이 되지 않으므로 -> 앞에 0을 붙임
         if (date < 10){
             $('#ticket_time,#depart_day,#arrival_day').attr('value',year+'-'+month+'-'+'0'+date);
@@ -268,6 +277,21 @@ $(function(){
                 $(this).parent().prev().attr('value',num)
             }
         });
+        setInterval(function(){
+            let sum = 0;
+            $('.dis_num').each(function(){
+                sum += parseInt($(this).val());
+            });
+            if (sum-parseInt($('#dis_adult').val()) == 0){
+                $('.select_num_dis input').attr('value','어른 '+sum+'명')
+            } else if (sum-parseInt($('#dis_senior').val()) == 0) {
+                $('.select_num_dis input').attr('value','경로 '+sum+'명')
+            }
+            else {
+                $('.select_num_dis input').attr('value','총 '+sum+'명');
+            }
+        });
+
 
 // 열차유형 선택
     windowSlide('.train','.select_train_window')

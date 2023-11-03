@@ -316,17 +316,24 @@ header #tablet_pc_header #lang_select_f:hover {
   color: #fff;
   width: 25%;
   height: 100px;
-  background: rgba(58, 60, 83, 0.9);
+  background: rgba(58, 60, 83, 0.8);
   border-radius: 15px;
   padding-top: 10px;
+  cursor: pointer;
 }
 #ticket #ticket_category li:last-child {
   margin-right: 0;
 }
+#ticket #ticket_category li:hover {
+  background: rgb(58, 60, 83);
+}
 #ticket #ticket_category .ticket_selected {
   background: #fff;
   color: #414141;
-  font-weight: 600;
+  font-weight: 700;
+}
+#ticket #ticket_category .ticket_selected:hover {
+  background: #fff;
 }
 #ticket #ticket_main {
   width: 100%;
@@ -390,6 +397,9 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #ticket #ticket_main #select_station form > input::placeholder {
   color: #414141;
+}
+#ticket #ticket_main #select_station form > input:hover {
+  color: #3da1ff;
 }
 #ticket #ticket_main #select_station > div {
   height: 30px;
@@ -459,9 +469,8 @@ header #tablet_pc_header #lang_select_f:hover {
 }
 #ticket #ticket_main #select_station .select_station_window .station_search .search_win .search_input {
   margin: 0 0 7px 20px;
-  width: 170px;
+  width: 80%;
   background: none;
-  outline: none;
   border: none;
   line-height: 35px;
   color: #414141;
@@ -507,7 +516,7 @@ header #tablet_pc_header #lang_select_f:hover {
   margin: 1%;
   height: 30px;
   line-height: 30px;
-  background: #ECECEC;
+  background: #dfdfdf;
   border-radius: 5px;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
@@ -568,6 +577,9 @@ header #tablet_pc_header #lang_select_f:hover {
   border-radius: 0;
   background: #fff;
 }
+#ticket #ticket_main #select_date #round_trip input:hover {
+  color: #3da1ff;
+}
 #ticket #ticket_main #select_date #oneway_trip {
   display: flex;
   width: 270px;
@@ -591,6 +603,9 @@ header #tablet_pc_header #lang_select_f:hover {
   border-radius: 0;
   height: 48px;
   line-height: 48px;
+}
+#ticket #ticket_main #select_date #oneway_trip #ticket_time:hover {
+  color: #3da1ff;
 }
 #ticket #ticket_main #select_date #oneway_trip input[type=date]::-webkit-calendar-picker-indicator, #ticket #ticket_main #select_date #oneway_trip ::-webkit-inner-spin-button {
   position: absolute;
@@ -648,11 +663,17 @@ header #tablet_pc_header #lang_select_f:hover {
   height: 52px;
   line-height: 52px;
 }
+#ticket #ticket_main #select_NumberOfPeople .select_num input:hover {
+  color: #3da1ff;
+}
 #ticket #ticket_main #select_NumberOfPeople .select_num i {
   font-size: 32px;
   color: #414141;
   text-align: left;
   margin-top: 12px;
+}
+#ticket #ticket_main #select_NumberOfPeople .select_num i:hover {
+  color: #3da1ff;
 }
 #ticket #ticket_main #select_NumberOfPeople .select_num_window {
   display: none;
@@ -761,6 +782,9 @@ header #tablet_pc_header #lang_select_f:hover {
 #ticket #ticket_main #select_discount #select_dis_wrap form.select_num_dis div input {
   width: 102px;
 }
+#ticket #ticket_main #select_discount #select_dis_wrap form.select_num_dis div input:hover {
+  color: #3da1ff;
+}
 #ticket #ticket_main #select_discount #select_dis_wrap form label {
   display: block;
   color: #414141;
@@ -780,6 +804,9 @@ header #tablet_pc_header #lang_select_f:hover {
   border-radius: 0;
   background: #fff;
   margin: 3px 0 3px 0;
+}
+#ticket #ticket_main #select_discount #select_dis_wrap form input:hover {
+  color: #3da1ff;
 }
 #ticket #ticket_main #select_discount .select_dis_window {
   display: none;
@@ -926,6 +953,9 @@ header #tablet_pc_header #lang_select_f:hover {
   height: 48px;
   line-height: 48px;
 }
+#ticket #ticket_main #select_train .train #select_train_box:hover {
+  color: #3da1ff;
+}
 #ticket #ticket_main #select_train .train .search_btn {
   font-size: 24px;
   display: inline-block;
@@ -1015,6 +1045,9 @@ header #tablet_pc_header #lang_select_f:hover {
   width: 100%;
   border-radius: 20px;
 }
+#banner #slide_banner li:hover {
+  opacity: 0.7;
+}
 #banner #slide_banner .slick-arrow {
   cursor: pointer;
   border: none;
@@ -1031,7 +1064,7 @@ header #tablet_pc_header #lang_select_f:hover {
   transform: translateY(-50%);
 }
 #banner #slide_banner .slick-arrow:hover {
-  background: #ececec;
+  background: #cfcfcf;
 }
 #banner #slide_banner .slick-arrow::before {
   font-family: "xeicon";
@@ -1185,7 +1218,11 @@ header #tablet_pc_header #lang_select_f:hover {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  font-weight: 500;
   overflow: hidden;
+}
+#contents #announcement .announcement_board .ab_text a:hover {
+  color: #3da1ff;
 }
 #contents #announcement .announcement_board .ab_date {
   width: 20%;
@@ -1299,7 +1336,7 @@ header #tablet_pc_header #lang_select_f:hover {
   cursor: pointer;
 }
 #trip .trip_box > ul:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 #trip .trip_box > ul li:first-child {
   width: 100%;
@@ -1355,11 +1392,15 @@ footer #f_top #scrl_top {
   line-height: 50px;
   border-bottom: 1px solid #676767;
   text-align: center;
+  background: #414141;
   font-family: "Noto Sans KR", sans-serif;
   color: #fff;
 }
 footer #f_top #scrl_top a i {
   margin-right: 7px;
+}
+footer #f_top #scrl_top:hover {
+  background-color: #2a2a2a;
 }
 footer #f_bot {
   width: 100%;
@@ -1386,6 +1427,9 @@ footer #f_bot .icon_wrap .f_sns a i {
   color: #fff;
   font-size: 30px;
   line-height: 60px;
+}
+footer #f_bot .icon_wrap .f_sns a i:hover {
+  color: #3da1ff;
 }
 footer #f_bot .copy {
   width: 335px;
@@ -1554,6 +1598,9 @@ footer #f_bot .copy address {
   #banner {
     margin-top: 260px;
   }
+  #guide .guide_list ul li {
+    opacity: 1;
+  }
   #guide .guide_list ul li:first-child {
     width: 130px;
     height: 130px;
@@ -1610,6 +1657,9 @@ footer #f_bot .copy address {
     font-size: 14px;
     color: #fff;
     margin-right: 30px;
+  }
+  footer #f_top #f_info ul li:hover {
+    color: #3da1ff;
   }
   footer #f_top #scrl_top {
     width: 15% !important;
@@ -1830,5 +1880,9 @@ footer #f_bot .copy address {
   }
   footer #f_bot .site_map #family_site option {
     color: #414141;
+  }
+  footer #f_bot .site_map #family_site:hover {
+    color: #3da1ff;
+    border-bottom: 1px solid #3da1ff;
   }
 }/*# sourceMappingURL=main.css.map */

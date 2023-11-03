@@ -320,23 +320,29 @@ header {
         width: 100%;
         position: absolute;
         z-index: 1;
-        
         li {
             @include sub_text;
             color: #fff;
             width: 25%;
             height: 100px;
-            background: rgba(58, 60, 83, 0.9);
+            background: rgba(58, 60, 83, 0.8);
             border-radius: 15px;
             padding-top: 10px;
+            cursor: pointer;
             &:last-child {
                 margin-right: 0;
+            }
+            &:hover {
+                background: rgba(58, 60, 83, 1);
             }
         }
         .ticket_selected {
             background: #fff;
             color: #414141;
-            font-weight: 600;
+            font-weight: 700;
+            &:hover {
+                background: #fff;
+            }
         }
     }
     #ticket_main {
@@ -392,7 +398,11 @@ header {
                     &::placeholder {
                         color: #414141;
                     }
+                    &:hover {
+                        color: #3da1ff;
+                    }
                 }
+                
             }
             >div {
                 height: 30px;
@@ -459,9 +469,8 @@ header {
                         }
                         .search_input {
                             margin: 0 0 7px 20px;
-                            width: 170px;
+                            width: 80%;
                             background: none;
-                            outline: none;
                             border: none;
                             line-height: 35px;
                             @include sub_text();
@@ -505,7 +514,7 @@ header {
                             margin: 1%;
                             height: 30px;
                             line-height: 30px;
-                            background: #ECECEC;
+                            background: #dfdfdf;
                             border-radius: 5px;
                             @include noto;
                             font-size: 14px;
@@ -569,6 +578,10 @@ header {
                     padding:0 0 6px 0;
                     border-radius: 0;
                     background: #fff;
+                    &:hover {
+                        color: #3da1ff;
+                    }
+
                 }
             }
             #oneway_trip {
@@ -593,6 +606,9 @@ header {
                     border-radius: 0;
                     height: 48px;
                     line-height: 48px;
+                    &:hover {
+                        color: #3da1ff;
+                    }
                 }
                 input[type="date"]::-webkit-calendar-picker-indicator, ::-webkit-inner-spin-button {
                     position: absolute;
@@ -656,12 +672,18 @@ header {
                     border: none;
                     height: 52px;
                     line-height: 52px;
+                    &:hover {
+                        color: #3da1ff;
+                    }
                 }
                 i {
                     font-size: 32px;
                     color: #414141;
                     text-align: left;
                     margin-top: 12px;
+                    &:hover {
+                        color: #3da1ff;
+                    }
                 }
             }
             .select_num_window {
@@ -765,6 +787,9 @@ header {
                             }
                             input {
                                 width: 102px;
+                                &:hover {
+                                    color: #3da1ff;
+                                }
                             }
                         }
                     }
@@ -785,6 +810,9 @@ header {
                         border-radius: 0;
                         background: #fff;
                         margin:3px 0 3px 0;
+                        &:hover {
+                            color: #3da1ff;
+                        }
                     }
                 }
             }
@@ -931,6 +959,9 @@ header {
                     text-align: center;
                     height: 48px;
                     line-height: 48px;
+                    &:hover {
+                        color: #3da1ff;
+                    }
                 }
                 .search_btn {
                     font-size: 24px;
@@ -1023,8 +1054,12 @@ header {
             margin: 0 5px;
             img {
                 width: 100%;
-                border-radius: 20px;
+                border-radius: 20px;           
             }
+            &:hover {
+                opacity: 0.7;
+            } 
+
         }
         .slick-arrow {
             cursor: pointer;
@@ -1036,7 +1071,7 @@ header {
             border-radius: 20px;
             background: #ffffff;
             &:hover {
-                background: #ececec;
+                background: #cfcfcf;
             }
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.3) 0px 2px 4px -1px;
             position: absolute;
@@ -1195,11 +1230,15 @@ header {
             @include noto;
             border-bottom: 1px solid #8D8C8C;
             overflow: hidden;
-
+            
             .ab_text {
                 width: 75%;
                 @include sub_text();
+                font-weight: 500;
                 overflow: hidden;
+                a:hover {
+                    color:#3da1ff;
+                }
             }
             .ab_date {
                 width: 20%;
@@ -1309,7 +1348,7 @@ header {
             box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
             cursor: pointer;
             &:hover {
-                opacity: 0.7;
+                opacity: 0.8;
             }
 
             li:first-child {
@@ -1372,10 +1411,14 @@ footer {
             line-height: 50px;
             border-bottom: 1px solid #676767;
             text-align: center;
+            background: #414141;
             @include noto;
             color: #fff;
             a {
                 i {margin-right: 7px;}
+            }
+            &:hover {
+                background-color: #2a2a2a;
             }
         }
     }
@@ -1402,6 +1445,9 @@ footer {
                     color: #fff;
                     font-size: 30px;
                     line-height: 60px;
+                    &:hover {
+                        color: #3da1ff;
+                    }
                 }
             }
         }
@@ -1626,6 +1672,7 @@ footer {
                     img {
                         height: 60px;
                     }
+                    opacity: 1;
                 }
             }
         }
@@ -1673,6 +1720,9 @@ footer {
                         font-size: 14px;
                         color: #fff;
                         margin-right: 30px;
+                        &:hover {
+                            color: #3da1ff;
+                        }
                     }
                 }
             }
@@ -1914,6 +1964,11 @@ footer {
                     outline: none;
                     option {
                         color: #414141;
+                    }
+                    &:hover {
+                        color: #3da1ff;
+                        border-bottom: 1px solid #3da1ff;
+
                     }
                 }
             }
